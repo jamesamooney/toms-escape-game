@@ -17,8 +17,8 @@ function App() {
           Tom's Escape Game
         </p>
         <Key />
-        <Door />
-        <Padlock padClick={() => setPadlockClicked(!padlockClicked)}/>
+        <div ><Door /></div>
+      <Padlock padClick={() => setPadlockClicked(!padlockClicked)} showForm={padlockClicked}/>
         {padlockClicked && <PadlockForm />}
     </div>
   );
