@@ -13,18 +13,19 @@ function App() {
 
   const [padlockClicked, setPadlockClicked] = useState(false)
   const [showBookClue, setShowBookClue] = useState(false)
+  const [passwordCorrect, setPasswordCorrect] = useState(false)
 
   return (
     <div className="App">
         <p>
           Tom's Escape Game
         </p>
-        <Key />
+        {passwordCorrect && <Key />}
         <Door />
         <Book bookClick={() => setShowBookClue(!showBookClue)} />
         {showBookClue && <BookClue />}
         <Padlock padClick={() => setPadlockClicked(!padlockClicked)}/>
-        {padlockClicked && <PadlockForm />}
+        {padlockClicked && <PadlockForm setPasswordCorrect={setPasswordCorrect} />}
     </div>
   );
 }
