@@ -1,10 +1,21 @@
+import { useState } from 'react'
 
+export const PadlockForm = ( { setPasswordCorrect }) => {
+  const password = 'spike'
+  const [passwordGuess, setPasswordGuess] = useState("")
+  const checkPassword = (e) => {
+    if(passwordGuess === password) {
+      e.preventDefault()
+      setPasswordCorrect(true)
+    }
+  }
 
-export const PadlockForm = () => {
   return (
     <form className="padlock-form">
-        <input type="text"/>
-        <input type="submit"/>
+        <input type="text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
+        <input type="submit" onClick={checkPassword} />
     </form>
   )
 }
+
+
