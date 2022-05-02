@@ -1,9 +1,14 @@
 import padlock from "../images/items/padlock_with_code2.png"
+import { PadlockForm } from "./PadlockForm"
 
 export const Padlock = ({padClick }) => {
   return (
-    <div>
-      <img src={padlock} style={{ height: '60px'}} onClick={padClick}/>
+    <div className='padlock-div'>
+      
+      <img src={padlock} className="padlock" onClick={padClick} />
+      
+      
+      
     </div>
   )
 }

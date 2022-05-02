@@ -1,11 +1,53 @@
 .App {
   text-align: center;
   background-image: url("./images/backgrounds/basement.png");
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
+  position: relative;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
 }
 
-p {
-  background-color: white;
+.door {
+  position: absolute;
+  bottom: 90px;
+  left: 400px;
+  height: 200px;
+  
 }
+
+.padlock-div {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+
+}
+
+.padlock {
+  position: absolute;
+  bottom: 30px;
+  height: 60px;
+  
+  
+}
+
+.padlock:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 5px rgb(249, 249, 78);
+}
+
+.padlock-form {
+  position: absolute;
+  bottom: 160px;
+  left: 30px;
+}
+
+input[type="text"] {
+  width: 80px;
+}
+
+/* input[type="submit"] {
+  width: 10px;
+} */
