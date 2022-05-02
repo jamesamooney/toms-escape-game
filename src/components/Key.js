@@ -1,6 +1,7 @@
+import key from "../images/items/key.png"
 
 export const Key = () => {
   return (
-    <div>Key</div>
+    <img src={key} style={{ height: '60px'}}/>
   )
 }
