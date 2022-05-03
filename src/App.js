@@ -5,12 +5,13 @@ import { Padlock } from './components/Padlock'
 import { Book } from './components/Book'
 import { BookClue } from './components/BookClue'
 import { PadlockForm } from './components/PadlockForm'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import TextInterface from './components/TextInterface'
 
 import './App.css';
 
 function App() {
+  const messagesEnd = useRef(null)
 
   const [padlockClicked, setPadlockClicked] = useState(false)
   const [showBookClue, setShowBookClue] = useState(false)
@@ -20,6 +21,7 @@ function App() {
   const bookclicked = () => {
     setShowBookClue(!showBookClue)
     setLogs([...logs, <p>Book has been clicked</p>])
+    messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
   }
 
   return (
@@ -36,8 +38,8 @@ function App() {
           {padlockClicked && <PadlockForm setPasswordCorrect={setPasswordCorrect} />}
       </div>
       <div className = "text-interface">
-        Hello
         <TextInterface logs={logs}/>
+        <div ref={messagesEnd}></div>
       </div>
 
     </div>
