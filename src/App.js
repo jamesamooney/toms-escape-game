@@ -19,9 +19,6 @@ function App() {
 
   return (
     <div className="App">
-        <p>
-          Tom's Escape Game
-        </p>
         {passwordCorrect && <Key setHasKeyOne={setHasKeyOne}/>}
         <Door setDoorOneOpen={setDoorOneOpen} doorOneOpen={doorOneOpen} hasKeyOne={hasKeyOne}/>
         <Book bookClick={() => setShowBookClue(!showBookClue)} />
