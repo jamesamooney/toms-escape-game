@@ -48,6 +48,14 @@ input[type="text"] {
   width: 80px;
 }
 
+.text-interface {
+  outline: solid black;
+  margin: 0 100px 20px 100px;
+  height: 150px;
+  width: 1200px;
+}
+
+
 /* input[type="submit"] {
   width: 10px;
 } */
