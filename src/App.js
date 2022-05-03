@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   const messagesEnd = useRef(null)
 
-  const [padlockClicked, setPadlockClicked] = useState(false)
+  const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [showBookClue, setShowBookClue] = useState(false)
   const [passwordCorrect, setPasswordCorrect] = useState(false)
   const [logs, setLogs] = useState([<p>message1</p>, <p>message2</p>])
@@ -21,6 +21,12 @@ function App() {
   const bookclicked = () => {
     setShowBookClue(!showBookClue)
     setLogs([...logs, <p>Book has been clicked</p>])
+    messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
+  }
+
+  const padlockClicked = () => {
+    setPadlockClicked(!padlockClicked)
+    setLogs([...logs, <p>Padlock has been clicked</p>])
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
   }
 
@@ -34,12 +40,12 @@ function App() {
           <Door />
           <Book bookClick={() => bookclicked()} />
           {showBookClue && <BookClue />}
-          <Padlock padClick={() => setPadlockClicked(!padlockClicked)}/>
-          {padlockClicked && <PadlockForm setPasswordCorrect={setPasswordCorrect} />}
+          <Padlock padClick={() => padlockClicked()}/>
+          {isPadlockClicked && <PadlockForm setPasswordCorrect={setPasswordCorrect} />}
       </div>
       <div className = "text-interface">
         <TextInterface logs={logs}/>
-        <div ref={messagesEnd}></div>
+        <div ref={messagesEnd} style={{height: "20px"}}></div>
       </div>
 
     </div>
