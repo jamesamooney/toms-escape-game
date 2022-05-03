@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 
 import { useState, useRef, useEffect } from 'react'
-import { LevelOne } from './components/LevelOne'
-import { LevelTwo } from './components/LevelTwo'
+import { LevelOne } from './components/levels/LevelOne'
+import { LevelTwo } from './components/levels/LevelTwo'
 import TextInterface from './components/TextInterface'
 
 
