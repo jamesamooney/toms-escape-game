@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 
 import { useState, useRef, useEffect } from 'react'
+import { MyStopwatch } from './components/Stopwatch'
 import { LevelOne } from './components/levels/LevelOne'
 import { LevelTwo } from './components/levels/LevelTwo'
 import TextInterface from './components/TextInterface'
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className= "center">
       <div className='game-interface'>
+        <MyStopwatch />
         {!levelOneComplete && <LevelOne setLevelOneComplete={setLevelOneComplete} logs={logs} setLogs={setLogs}/>}
         {levelOneComplete && <LevelTwo />}
       </div>
