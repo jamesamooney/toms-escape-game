@@ -6,6 +6,6 @@ export const Key = ( { setHasKeyOne }) => {
     console.log('You got the key!')
   }
   return (
-    <img onClick={grabKey} src={key} style={{ height: '60px'}}/>
+    <img className='key' onClick={grabKey} src={key} style={{ height: '60px'}}/>
   )
 }
