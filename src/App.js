@@ -13,7 +13,8 @@ import './App.css';
 function App() {
   const messagesEnd = useRef(null)
 
-  const [logs, setLogs] = useState([<p>message1</p>, <p>message2</p>])
+  const [logs, setLogs] = useState([<p>Oh no! You've been locked in the dungeon with Tom! Look around you to find something that might help you escape!</p>])
+
   const [levelOneComplete, setLevelOneComplete] = useState(false)
 
   useEffect(() => {
