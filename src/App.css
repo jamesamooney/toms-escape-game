@@ -13,8 +13,8 @@
 .door {
   position: absolute;
   bottom: 90px;
-  left: 400px;
-  height: 200px;
+  left: 380px;
+  height: 250px;
   
 }
 
@@ -42,6 +42,22 @@
   position: absolute;
   bottom: 160px;
   left: 30px;
+}
+
+.book {
+  position: absolute;
+  bottom: 20px;
+  left: 670px;
+  height: 200px;
+  
+}
+
+.key {
+  position: absolute;
+  bottom: 20px;
+  left: 170px;
+  height: 200px;
+  
 }
 
 input[type="text"] {
