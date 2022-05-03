@@ -1,6 +1,6 @@
 import book from "../images/items/book.jpg"
 
-export const Book = ({ bookClick, setLogs }) => {
+export const Book = ({ bookClick }) => {
   return (
     <div>
       

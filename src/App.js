@@ -17,6 +17,11 @@ function App() {
   const [passwordCorrect, setPasswordCorrect] = useState(false)
   const [logs, setLogs] = useState([<p>message1</p>, <p>message2</p>])
 
+  const bookclicked = () => {
+    setShowBookClue(!showBookClue)
+    setLogs([...logs, <p>Book has been clicked</p>])
+  }
+
   return (
     <div className= "center">
     <div className="App">
@@ -25,7 +30,7 @@ function App() {
           </p>
           {passwordCorrect && <Key />}
           <Door />
-          <Book bookClick={() => setShowBookClue(!showBookClue)} setLogs={setLogs} />
+          <Book bookClick={() => bookclicked()} />
           {showBookClue && <BookClue />}
           <Padlock padClick={() => setPadlockClicked(!padlockClicked)}/>
           {padlockClicked && <PadlockForm setPasswordCorrect={setPasswordCorrect} />}
