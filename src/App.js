@@ -1,10 +1,12 @@
 // import logo from './logo.svg';
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, } from 'react'
+import { PouchContext } from './PouchContext'
 import { MyStopwatch } from './components/Stopwatch'
 import { LevelOne } from './components/levels/LevelOne'
 import { LevelTwo } from './components/levels/LevelTwo'
 import { TextInterface } from './components/TextInterface'
+import { Pouch } from './components/Pouch'
 
 
 
@@ -22,8 +24,11 @@ function App() {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
   })
   
+  const [pouch, setPouch] = useState([])
+
   return (
     <div className= "center">
+      <PouchContext.Provider value={{pouch, setPouch}} >
       <div className='game-interface'>
         <MyStopwatch />
         {playerLocation === 1 && <LevelOne
@@ -41,6 +46,10 @@ function App() {
         <TextInterface logs={logs}/>
         <div ref={messagesEnd} style={{height: "20px"}}></div>
       </div>
+      <div className ='pouch'>
+        <Pouch />
+      </div>
+      </PouchContext.Provider>
     </div>
   )
 

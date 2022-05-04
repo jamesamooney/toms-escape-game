@@ -3,7 +3,8 @@ import { Door } from '../level-items/Door'
 import { Padlock } from '../level-items/Padlock'
 import { Book } from '../level-items/Book'
 import { PadlockForm } from '../level-items/PadlockForm'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { PouchContext } from '../../PouchContext'
 
 
 import '../../App.css';
@@ -16,6 +17,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const [passwordCorrect, setPasswordCorrect] = useState(false)
   const [doorOneOpen, setDoorOneOpen] = useState(false)
   const [hasKeyOne, setHasKeyOne] = useState(false)
+  const [hasBook, setHasBook] = useState(false)
 
   const bookClicked = () => {
     setLogs([...logs, <p>You found a book on the floor, there seems to be scribbles on it, maybe try reading it from your pouch</p>])
@@ -33,10 +35,11 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
 
   }
 
+  
 
   return (
     <div className="App">
-        {passwordCorrect && <Key
+        {(passwordCorrect && !hasKeyOne) && <Key
         setHasKeyOne={setHasKeyOne}
         logs={logs}
         setLogs={setLogs}
@@ -50,7 +53,10 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
         setLogs={setLogs}
       />
       <Armour armourClick={() => armourClicked()}/>
-        <Book bookClick={() => bookClicked()} />
+        {!hasBook && <Book 
+        setHasBook={setHasBook}
+        logs={logs}
+        setLogs={setLogs}/>}
         {!isPadlockSolved && <Padlock padClick={() => padlockClicked()}/>}
       {isPadlockClicked && <PadlockForm
         setPasswordCorrect={setPasswordCorrect}
