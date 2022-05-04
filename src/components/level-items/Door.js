@@ -1,8 +1,8 @@
 import doorOneClosedImg from "../../images/items/closedDoor.png"
-import doorOneOpenImg from  "../../images/items/openDoor.png"
+import arrowForward from  "../../images/items/arrowForward.png"
 
 
-export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setLevelOneComplete, logs, setLogs }) => {
+export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation, logs, setLogs }) => {
   
   const openDoor = () => {
     if(hasKeyOne) {
@@ -16,12 +16,12 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setLevelOneComple
   
   const levelComplete = () => {
     if(doorOneOpen) {
-      setLevelOneComplete(true)
       setLogs([...logs, <p>Room 1 IS COMPLETE</p>])
+      setPlayerLocation(2)
     }
   }
 
   return doorOneOpen ? (
-    <img src={doorOneOpenImg} className='door' onClick={levelComplete} />)
+    <img src={arrowForward} className='arrow-forward' onClick={levelComplete} />)
     : (<img src={doorOneClosedImg} onClick={openDoor} className='door' />)
 }

@@ -1,4 +1,4 @@
-const TextInterface = ({logs}) => {
+export const TextInterface = ({logs}) => {
 
   return (
     <>
@@ -6,5 +6,3 @@ const TextInterface = ({logs}) => {
     </>
   )
 }
-
-export default TextInterface
