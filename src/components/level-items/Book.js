@@ -1,10 +1,11 @@
 import book from "../../images/items/book.png"
 import { PouchBook } from "../pouch-items/PouchBook"
-import { PouchContext } from "../../PouchContext"
+import { AppContext } from "../../AppContext"
 import { useContext } from "react"
 
-export const Book = ({ setHasBook, logs, setLogs }) => {
-  const { pouch, setPouch } = useContext(PouchContext)
+export const Book = ({ setHasBook }) => {
+  const { pouch, setPouch } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
   
   const grabBook = () => {
     setHasBook(true)

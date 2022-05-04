@@ -1,10 +1,10 @@
 import key from "../../images/items/key.png"
 import { useContext } from "react"
-import { PouchContext } from "../../PouchContext"
+import { AppContext } from "../../AppContext"
 import { PouchKey } from "../pouch-items/PouchKey"
 
 export const Key = ( { setHasKeyOne, logs, setLogs }) => {
-  const { pouch, setPouch } = useContext(PouchContext)
+  const { pouch, setPouch } = useContext(AppContext)
 
   const grabKey = () => {
     setHasKeyOne(true)
