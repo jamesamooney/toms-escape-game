@@ -9,6 +9,21 @@
   outline: solid black;
   margin: 0 100px 0 100px;
 }
+.level-two {
+  background-image: url("./images/backgrounds/kitchen.jpg");
+  height: 600px;
+  width: 1200px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.down-arrow {
+  height: 70px;
+  position: absolute;
+  bottom: 10px;
+  left: 630px;
+}
 
 .arrow-forward {
   height: 70px;

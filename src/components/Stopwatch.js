@@ -4,7 +4,7 @@ import { useStopwatch } from 'react-timer-hook';
 export const MyStopwatch = () => {
   const {
     seconds,
-    minutes,
+    minutes
   } = useStopwatch({ autoStart: true });
 
   return (
