@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 import '../../App.css';
 
-export const LevelOne = ({ setLevelOneComplete, logs, setLogs }) => {
+export const LevelOne = ({ setLevelOneComplete, logs, setLogs, pouchItems, setPouchItems }) => {
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [showBookClue, setShowBookClue] = useState(false)
@@ -31,7 +31,7 @@ export const LevelOne = ({ setLevelOneComplete, logs, setLogs }) => {
 
   return (
     <div className="App">
-        {passwordCorrect && <Key setHasKeyOne={setHasKeyOne}/>}
+        {(passwordCorrect && !hasKeyOne) && <Key setHasKeyOne={setHasKeyOne} setPouchItems={setPouchItems}/>}
         <Door setDoorOneOpen={setDoorOneOpen} doorOneOpen={doorOneOpen} hasKeyOne={hasKeyOne} setLevelOneComplete={setLevelOneComplete} />
         <Book bookClick={() => bookClicked()} />
         {showBookClue && <BookClue />}
