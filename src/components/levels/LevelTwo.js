@@ -1,5 +1,14 @@
-export const LevelTwo = () => {
+import downArrow from  "../../images/items/arrowDown.png"
+
+export const LevelTwo = ({ setPlayerLocation }) => {
+
+  const goToBasement = () => {
+    setPlayerLocation(1)
+  }
+
   return (
-    <h1 style={{fontSize: '100px'}}>LevelTwo</h1>
+    <div className="level-two">
+      <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
+    </div>
   )
 }
