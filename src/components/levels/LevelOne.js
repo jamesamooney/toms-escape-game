@@ -13,16 +13,12 @@ import Armour from '../level-items/Armour'
 export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
-  const [isPadlockSolved, setPadlockSolved] = useState(false)
   const [passwordCorrect, setPasswordCorrect] = useState(false)
-  const [doorOneOpen, setDoorOneOpen] = useState(false)
   const [hasKeyOne, setHasKeyOne] = useState(false)
-  const [hasBook, setHasBook] = useState(false)
-
-  const bookClicked = () => {
-    setLogs([...logs, <p>You found a book on the floor, there seems to be scribbles on it, maybe try reading it from your pouch</p>])
-    
-  }
+  const { hasBook, setHasBook } = useContext(AppContext)
+  const { isPadlockSolved, setPadlockSolved } = useContext(AppContext)
+  const { doorOneOpen, setDoorOneOpen } = useContext(AppContext)
+  
 
   const armourClicked = () => {
     setLogs([...logs, <p>Looks like this angry fella won't let you pass</p>])
