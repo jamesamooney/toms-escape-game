@@ -3,6 +3,7 @@ import { Light } from "../level-items/Light"
 import { LightSwitch1 } from "../level-items/LightSwitch1"
 import { LightSwitch2 } from "../level-items/LightSwitch2"
 import { LightSwitch3 } from "../level-items/LightSwitch3"
+import { Safe } from "../level-items/Safe"
 import { useState } from "react"
 
 export const LevelTwo = ({ setPlayerLocation }) => {
@@ -10,6 +11,16 @@ export const LevelTwo = ({ setPlayerLocation }) => {
   const [light1, setLight1] = useState(0)
   const [light2, setLight2] = useState(0)
   const [light3, setLight3] = useState(0)
+
+  const [safeAppears, setSafeAppears] = useState(false)
+  
+  const checkLightPuzzle = () => {
+    if (light1 === 2 && light2 === 1 && light3 === 2) {
+      setSafeAppears(true)
+      console.log("safe open")
+      }
+      console.log("function running")
+  }
 
   const goToBasement = () => {
     setPlayerLocation(1)
@@ -21,9 +32,10 @@ export const LevelTwo = ({ setPlayerLocation }) => {
   return (
     <div className="level-two">
       <Light light1={light1} light2={light2} light3={light3} />
-      <LightSwitch1 setLight1={setLight1} light1={light1}/>
-      <LightSwitch2 setLight2={setLight2} light2={light2}/>
-      <LightSwitch3 setLight3={setLight3} light3={light3}/>
+      <LightSwitch1 setLight1={setLight1} light1={light1} checkLightPuzzle={checkLightPuzzle}/>
+      <LightSwitch2 setLight2={setLight2} light2={light2} checkLightPuzzle={checkLightPuzzle}/>
+      <LightSwitch3 setLight3={setLight3} light3={light3} checkLightPuzzle={checkLightPuzzle}/>
+      {safeAppears && <Safe />}
       <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
     </div>
   )
