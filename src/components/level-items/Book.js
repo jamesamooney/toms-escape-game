@@ -1,9 +1,9 @@
-import book from "../../images/items/book.jpg"
+import book from "../../images/items/book.png"
 
 export const Book = ({ bookClick }) => {
   return (
     <div>
-      <img className='book' src={book} onClick={bookClick} style={{ height: '60px'}}/>
+      <img className='item' id="book" src={book} onClick={bookClick} style={{ height: '60px'}}/>
     </div>
   )
 }
