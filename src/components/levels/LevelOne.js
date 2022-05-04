@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 
 import '../../App.css';
+import Armour from '../level-items/Armour'
 
 export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
 
@@ -17,8 +18,12 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const [hasKeyOne, setHasKeyOne] = useState(false)
 
   const bookClicked = () => {
-    setLogs([...logs, <p>you found a book on the floor, there seems to be scribbles on it, maybe try reading it from your pouch</p>])
+    setLogs([...logs, <p>You found a book on the floor, there seems to be scribbles on it, maybe try reading it from your pouch</p>])
+    
+  }
 
+  const armourClicked = () => {
+    setLogs([...logs, <p>Looks like this angry fella won't let you pass</p>])
     
   }
 
@@ -44,6 +49,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
         logs={logs}
         setLogs={setLogs}
       />
+      <Armour armourClick={() => armourClicked()}/>
         <Book bookClick={() => bookClicked()} />
         {!isPadlockSolved && <Padlock padClick={() => padlockClicked()}/>}
       {isPadlockClicked && <PadlockForm

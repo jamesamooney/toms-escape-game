@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url("./images/backgrounds/basement.png");
+  background-image: url("./images/backgrounds/basement_better.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   position: relative;
@@ -25,24 +25,20 @@
   left: 630px;
 }
 
-.arrow-forward {
+#arrow-forward {
   height: 70px;
   position: absolute;
   bottom: 130px;
   left: 455px;
 }
 
-.arrow-forward:hover {
-  opacity: 0.9;
-  box-shadow: 0 0 5px rgb(249, 249, 78);
-}
 
-.door {
+
+#door {
   position: absolute;
-  bottom: 90px;
+  bottom: 80px;
   left: 380px;
   height: 250px;
-  
 }
 
 .stopwatch {
@@ -74,17 +70,10 @@
 
 }
 
-.padlock {
+#padlock {
   position: absolute;
   bottom: 30px;
   height: 60px;
-  
-  
-}
-
-.padlock:hover {
-  opacity: 0.9;
-  box-shadow: 0 0 5px rgb(249, 249, 78);
 }
 
 .padlock-form {
@@ -93,20 +82,30 @@
   left: 30px;
 }
 
-.book {
+#book {
   position: absolute;
   bottom: 20px;
   left: 670px;
-  height: 200px;
-  
+  height: 200px;  
 }
 
-.key {
+.item:hover {
+  box-shadow: 0 0 5px rgb(249, 249, 78);
+}
+
+
+#key {
   position: absolute;
   bottom: 20px;
   left: 170px;
   height: 200px;
-  
+}
+
+#armour {
+  position: absolute;
+  bottom: 140px;
+  left: 270px;
+  height: 150px;
 }
 
 input[type="text"] {
