@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 import '../../App.css';
 
-export const LevelOne = ({ setLevelOneComplete, logs, setLogs }) => {
+export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [isPadlockSolved, setPadlockSolved] = useState(false)
@@ -40,7 +40,7 @@ export const LevelOne = ({ setLevelOneComplete, logs, setLogs }) => {
         setDoorOneOpen={setDoorOneOpen}
         doorOneOpen={doorOneOpen}
         hasKeyOne={hasKeyOne}
-        setLevelOneComplete={setLevelOneComplete}
+        setPlayerLocation={setPlayerLocation}
         logs={logs}
         setLogs={setLogs}
       />

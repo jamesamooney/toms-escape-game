@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { MyStopwatch } from './components/Stopwatch'
 import { LevelOne } from './components/levels/LevelOne'
 import { LevelTwo } from './components/levels/LevelTwo'
-import TextInterface from './components/TextInterface'
+import { TextInterface } from './components/TextInterface'
 
 
 
@@ -14,8 +14,9 @@ function App() {
   const messagesEnd = useRef(null)
 
   const [logs, setLogs] = useState([<p>Oh no! You've been locked in the dungeon with Tom! Look around you to find something that might help you escape!</p>])
-
-  const [levelOneComplete, setLevelOneComplete] = useState(false)
+  
+  // Locations are: 1 for basement, 2 for kitchen, 3 for garden
+  const [playerLocation, setPlayerLocation] = useState(1)
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
@@ -25,8 +26,16 @@ function App() {
     <div className= "center">
       <div className='game-interface'>
         <MyStopwatch />
-        {!levelOneComplete && <LevelOne setLevelOneComplete={setLevelOneComplete} logs={logs} setLogs={setLogs}/>}
-        {levelOneComplete && <LevelTwo />}
+        {playerLocation === 1 && <LevelOne
+          setPlayerLocation={setPlayerLocation}
+          logs={logs}
+          setLogs={setLogs}
+          />}
+        {playerLocation === 2 && <LevelTwo
+          setPlayerLocation={setPlayerLocation}
+          logs={logs}
+          setLogs={setLogs}
+        />}
       </div>
       <div className = "text-interface">
         <TextInterface logs={logs}/>

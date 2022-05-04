@@ -10,7 +10,17 @@
   margin: 0 100px 0 100px;
 }
 
+.arrow-forward {
+  height: 70px;
+  position: absolute;
+  bottom: 130px;
+  left: 455px;
+}
 
+.arrow-forward:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 5px rgb(249, 249, 78);
+}
 
 .door {
   position: absolute;
