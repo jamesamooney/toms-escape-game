@@ -6,6 +6,8 @@ import { PadlockForm } from '../level-items/PadlockForm'
 import { PowerSwitch } from '../level-items/PowerSwitch'
 import { useContext, useState } from 'react'
 import { AppContext } from '../../AppContext'
+import { Paper4 } from "../level-items/Paper4"
+import { Paper5 } from "../level-items/Paper5"
 
 
 import '../../App.css';
@@ -19,6 +21,8 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const { hasBook, setHasBook } = useContext(AppContext)
   const { isPadlockSolved, setPadlockSolved } = useContext(AppContext)
   const { doorOneOpen, setDoorOneOpen } = useContext(AppContext)
+  const { hasPaper4, setHasPaper4 } = useContext(AppContext)
+  const { hasPaper5, setHasPaper5 } = useContext(AppContext)
   
   return (
     <div className="App">
@@ -44,6 +48,8 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
         isPadlockClicked={isPadlockClicked}
         setPadlockSolved={setPadlockSolved}
       />}
+      {!hasPaper4 && <Paper4  />}
+      {!hasPaper5 && <Paper5  />}
     </div>
   );
 }
