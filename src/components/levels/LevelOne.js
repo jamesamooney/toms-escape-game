@@ -3,6 +3,7 @@ import { Door } from '../level-items/Door'
 import { Padlock } from '../level-items/Padlock'
 import { Book } from '../level-items/Book'
 import { PadlockForm } from '../level-items/PadlockForm'
+import { PowerSwitch } from '../level-items/PowerSwitch'
 import { useContext, useState } from 'react'
 import { AppContext } from '../../AppContext'
 
@@ -30,6 +31,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
         hasKeyOne={hasKeyOne}
         setPlayerLocation={setPlayerLocation}
       />
+      <PowerSwitch />
       <Armour/>
         {!hasBook && <Book 
         setHasBook={setHasBook}

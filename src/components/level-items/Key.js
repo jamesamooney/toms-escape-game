@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import { PouchKey } from "../pouch-items/PouchKey"
 
-export const Key = ( { setHasKeyOne}) => {
+export const Key = ( { setHasKeyOne } ) => {
   const { pouch, setPouch } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
 
