@@ -160,6 +160,33 @@ input[type="text"] {
   right: 220px;
 }
 
+#safe {
+  height: 90px;
+  position: absolute;
+  bottom: 160px;
+  left: 120px;
+}
+
+#crumpled-1 {
+  height: 30px;
+  position: absolute;
+  bottom: 160px;
+  left: 300px;
+}
+
+#crumpled-2 {
+  height: 30px;
+  position: absolute;
+  bottom: 50px;
+  right: 300px;
+}
+
+#crumpled-3 {
+  height: 30px;
+  position: absolute;
+  bottom: 190px;
+  right: 520px;
+}
 /* input[type="submit"] {
   width: 10px;
 } */
