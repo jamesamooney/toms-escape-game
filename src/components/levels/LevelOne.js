@@ -8,7 +8,7 @@ import { AppContext } from '../../AppContext'
 
 
 import '../../App.css';
-import Armour from '../level-items/Armour'
+import { Armour } from '../level-items/Armour'
 
 export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
 
@@ -19,20 +19,6 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const { isPadlockSolved, setPadlockSolved } = useContext(AppContext)
   const { doorOneOpen, setDoorOneOpen } = useContext(AppContext)
   
-
-  const armourClicked = () => {
-    setLogs([...logs, <p>Looks like this angry fella won't let you pass</p>])
-    
-  }
-
-  const padlockClicked = () => {
-    setPadlockClicked(!isPadlockClicked)
-    setLogs([...logs, <p>You need to insert the correct combination of numbers to open this padlock</p>])
-
-  }
-
-  
-
   return (
     <div className="App">
         {(passwordCorrect && !hasKeyOne) && <Key
@@ -48,12 +34,12 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
         logs={logs}
         setLogs={setLogs}
       />
-      <Armour armourClick={() => armourClicked()}/>
+      <Armour setLogs={setLogs} logs={logs}/>
         {!hasBook && <Book 
         setHasBook={setHasBook}
         logs={logs}
         setLogs={setLogs}/>}
-        {!isPadlockSolved && <Padlock padClick={() => padlockClicked()}/>}
+        {!isPadlockSolved && <Padlock logs={logs} setLogs={setLogs} isPadlockClicked={isPadlockClicked} setPadlockClicked={setPadlockClicked}/>}
       {isPadlockClicked && <PadlockForm
         setPasswordCorrect={setPasswordCorrect}
         setPadlockClicked={setPadlockClicked}

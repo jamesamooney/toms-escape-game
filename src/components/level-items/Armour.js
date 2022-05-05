@@ -1,16 +1,20 @@
 import armour from "../../images/items/armour.png"
 
 
-const Armour = ({armourClick}) => {
+
+export const Armour = ({ logs, setLogs }) => {
+
+  const armourClicked = () => {
+    setLogs([...logs, <p>Looks like this angry fella won't let you pass</p>])
+    
+  }
   return (
     <div>
       <img src={armour}
         id="armour"
         className="item"
-        onClick={armourClick}
+        onClick={armourClicked}
       />
     </div>
   )
 }
-
-export default Armour

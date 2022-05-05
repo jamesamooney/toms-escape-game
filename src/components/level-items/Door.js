@@ -16,7 +16,7 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation
   
   const levelComplete = () => {
     if(doorOneOpen) {
-      setLogs([...logs, <p>Room 1 IS COMPLETE</p>])
+      setLogs([...logs, <p>You tip toe into the kitchen... these rich folk probably got bare munch</p>])
       setPlayerLocation(2)
     }
   }
