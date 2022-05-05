@@ -4,7 +4,7 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
 
   const goToBasement = () => {
     setPlayerLocation(1)
-    setLogs([...logs, <p>Running back to the basement? Coward!</p>])
+    setLogs([...logs, <p>Running back to the basement? Coward...</p>])
   }
 
   return (
