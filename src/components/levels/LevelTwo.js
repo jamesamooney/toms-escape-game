@@ -8,7 +8,7 @@ import { CrumpledOnLvl2 } from "../level-items/CrumpledOnLvl2"
 
 import { useState, useEffect } from "react"
 
-export const LevelTwo = ({ setPlayerLocation }) => {
+export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   //lights colours are: 0 = Yellow, 1 = Red, 2 = Green
   const [light1, setLight1] = useState(0)
   const [light2, setLight2] = useState(0)
@@ -28,6 +28,7 @@ export const LevelTwo = ({ setPlayerLocation }) => {
 
   const goToBasement = () => {
     setPlayerLocation(1)
+    setLogs([...logs, <p>Running back to the basement? Coward...</p>])
   }
 
   
