@@ -12,10 +12,11 @@ import { AppContext } from '../../AppContext'
 
 export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   //lights colours are: 0 = Yellow, 1 = Red, 2 = Green
-  const [light1, setLight1] = useState(0)
-  const [light2, setLight2] = useState(0)
-  const [light3, setLight3] = useState(0)
+  const { light1, setLight1 } = useContext(AppContext)
+  const { light2, setLight2 } = useContext(AppContext)
+  const { light3, setLight3 } = useContext(AppContext)
   const { hasBroom, setHasBroom } = useContext(AppContext)
+
 
   const [safeAppears, setSafeAppears] = useState(false)
   
@@ -40,9 +41,9 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   return (
     <div className="level-two">
       <Light light1={light1} light2={light2} light3={light3} />
-      <LightSwitch1 setLight1={setLight1} light1={light1} />
-      <LightSwitch2 setLight2={setLight2} light2={light2} />
-      <LightSwitch3 setLight3={setLight3} light3={light3} />
+      <LightSwitch1 />
+      <LightSwitch2 />
+      <LightSwitch3 />
       <CrumpledOnLvl2  />
       {!hasBroom &&<Broom /> }
       {safeAppears && <Safe />}

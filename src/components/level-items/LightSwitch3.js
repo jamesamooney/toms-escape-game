@@ -2,9 +2,10 @@ import lightSwitch3 from "../../images/items/lightSwitchRight.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 
-export const LightSwitch3 = ({setLight3, light3, checkLightPuzzle}) => {
+export const LightSwitch3 = ({checkLightPuzzle}) => {
   const { hasTurnedOnPower, setHasTurnedOnPower } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
+  const { light3, setLight3 } = useContext(AppContext)
 
   const switchLight = () => {
     if (!hasTurnedOnPower) {
