@@ -24,8 +24,18 @@ function App() {
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
   })
-  
 
+  
+  // const url = 'http://localhost:3030/scores'
+
+  // const getData = async () => {
+  //   const response = await fetch(url)
+  //   const resolvedPromise = await response.json()
+  //   console.log(resolvedPromise.name);
+  //   console.log(resolvedPromise.time);
+  // }
+
+  // getData();
   return (
     <div className= "center">
       <AppContext.Provider value={{pouch, setPouch, logs, setLogs}} >
