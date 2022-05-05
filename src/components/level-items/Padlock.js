@@ -1,6 +1,10 @@
 import padlock from "../../images/items/padlock_with_code2.png"
+import { useContext } from "react"
+import { AppContext } from "../../AppContext"
 
-export const Padlock = ({ logs, setLogs, setPadlockClicked, isPadlockClicked}) => {
+export const Padlock = ({  setPadlockClicked, isPadlockClicked}) => {
+
+  const { logs, setLogs } = useContext(AppContext)
 
   const padlockClicked = () => {
     setPadlockClicked(!isPadlockClicked)

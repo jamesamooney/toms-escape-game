@@ -1,8 +1,11 @@
 import doorOneClosedImg from "../../images/items/closedDoor.png"
 import arrowForward from  "../../images/items/arrowForward.png"
+import { AppContext } from "../../AppContext"
+import { useContext } from "react"
 
+export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation}) => {
 
-export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation, logs, setLogs }) => {
+  const { logs, setLogs } = useContext(AppContext)
   
   const openDoor = () => {
     if(hasKeyOne) {

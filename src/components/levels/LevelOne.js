@@ -23,30 +23,24 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
     <div className="App">
         {(passwordCorrect && !hasKeyOne) && <Key
         setHasKeyOne={setHasKeyOne}
-        logs={logs}
-        setLogs={setLogs}
         />}
         <Door
         setDoorOneOpen={setDoorOneOpen}
         doorOneOpen={doorOneOpen}
         hasKeyOne={hasKeyOne}
         setPlayerLocation={setPlayerLocation}
-        logs={logs}
-        setLogs={setLogs}
       />
-      <Armour setLogs={setLogs} logs={logs}/>
+      <Armour/>
         {!hasBook && <Book 
         setHasBook={setHasBook}
         logs={logs}
         setLogs={setLogs}/>}
-        {!isPadlockSolved && <Padlock logs={logs} setLogs={setLogs} isPadlockClicked={isPadlockClicked} setPadlockClicked={setPadlockClicked}/>}
+        {!isPadlockSolved && <Padlock isPadlockClicked={isPadlockClicked} setPadlockClicked={setPadlockClicked}/>}
       {isPadlockClicked && <PadlockForm
         setPasswordCorrect={setPasswordCorrect}
         setPadlockClicked={setPadlockClicked}
         isPadlockClicked={isPadlockClicked}
         setPadlockSolved={setPadlockSolved}
-        logs={logs}
-        setLogs={setLogs}
       />}
     </div>
   );
