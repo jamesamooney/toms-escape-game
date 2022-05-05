@@ -110,8 +110,8 @@
 
 #key {
   position: absolute;
-  bottom: 20px;
-  left: 170px;
+  bottom: 15px;
+  left: 45px;
   height: 200px;
 }
 
@@ -181,25 +181,39 @@ input[type="text"] {
   left: 120px;
 }
 
-#crumpled-1 {
+#paper-1 {
   height: 30px;
   position: absolute;
   bottom: 160px;
   left: 300px;
 }
 
-#crumpled-2 {
+#paper-2 {
   height: 30px;
   position: absolute;
   bottom: 50px;
   right: 300px;
 }
 
-#crumpled-3 {
+#paper-3 {
   height: 30px;
   position: absolute;
   bottom: 190px;
   right: 520px;
+}
+
+#paper-4 {
+  height: 30px;
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+}
+
+#paper-5 {
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 300px;
 }
 /* input[type="submit"] {
   width: 10px;
