@@ -17,7 +17,10 @@ function App() {
   
   const [logs, setLogs] = useState([<p>Oh no! You've been locked in the dungeon with Tom! Look around you to find something that might help you escape!</p>])
   const [pouch, setPouch] = useState([])
-  
+  const [hasBook, setHasBook] = useState(false)
+  const [isPadlockSolved, setPadlockSolved] = useState(false)
+  const [doorOneOpen, setDoorOneOpen] = useState(false)
+
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
   const [playerLocation, setPlayerLocation] = useState(1)
 
@@ -28,7 +31,7 @@ function App() {
 
   return (
     <div className= "center">
-      <AppContext.Provider value={{pouch, setPouch, logs, setLogs}} >
+      <AppContext.Provider value={{pouch, setPouch, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen}} >
       <div className='game-interface'>
         <MyStopwatch />
         {playerLocation === 1 && <LevelOne

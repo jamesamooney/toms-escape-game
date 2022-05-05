@@ -1,6 +1,10 @@
 import { useState } from 'react'
+import { useContext } from "react"
+import { AppContext } from "../../AppContext"
 
-export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockClicked, setPadlockSolved, logs, setLogs }) => {
+export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockClicked, setPadlockSolved }) => {
+
+  const { logs, setLogs } = useContext(AppContext)
   const password = 'spike'
   const [passwordGuess, setPasswordGuess] = useState("")
   const checkPassword = (e) => {
