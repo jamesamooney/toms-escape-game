@@ -122,7 +122,71 @@ input[type="text"] {
   color: white;
 }
 
+#light-1 {
+  height: 130px;
+  position: absolute;
+  left: 470px;
+  margin-left: 40px;
+}
+#light-2 {
+  height: 150px;
+  position: absolute;
+  left: 570px;
+  margin-left: 40px;
+}
+#light-3 {
+  height: 130px;
+  position: absolute;
+  left: 670px;
+  margin-left: 40px;
+}
 
+#light-switch-1 {
+  height: 50px;
+  position: absolute;
+  top: 230px;
+  left: 80px;
+}
+#light-switch-2 {
+  height: 60px;
+  position: absolute;
+  top: 200px;
+  right: 13px;
+}
+#light-switch-3 {
+  height: 50px;
+  position: absolute;
+  top: 200px;
+  right: 220px;
+}
+
+#safe {
+  height: 90px;
+  position: absolute;
+  bottom: 160px;
+  left: 120px;
+}
+
+#crumpled-1 {
+  height: 30px;
+  position: absolute;
+  bottom: 160px;
+  left: 300px;
+}
+
+#crumpled-2 {
+  height: 30px;
+  position: absolute;
+  bottom: 50px;
+  right: 300px;
+}
+
+#crumpled-3 {
+  height: 30px;
+  position: absolute;
+  bottom: 190px;
+  right: 520px;
+}
 /* input[type="submit"] {
   width: 10px;
 } */
