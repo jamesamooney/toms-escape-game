@@ -19,6 +19,7 @@ export const Broom = () => {
     <div>
       <img src={broom}
       id="broom" 
+      role="broom-image"
       className="item"
       onClick={grabBroom}
       />

@@ -17,9 +17,9 @@ export const Light = ({light1, light2, light3}) => {
   
   return (
     <div>
-      <img src={checkLight(light1)} className="item" id="light-1"/>
-      <img src={checkLight(light2)} className="item" id="light-2"/>
-      <img src={checkLight(light3)} className="item" id="light-3"/>
+      <img src={checkLight(light1)} className="item" id="light-1" role="light-image" />
+      <img src={checkLight(light2)} className="item" id="light-2" role="light-image-2" />
+      <img src={checkLight(light3)} className="item" id="light-3" role="light-image-3" />
     </div>
   )
 }
