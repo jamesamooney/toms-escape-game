@@ -1,5 +1,5 @@
 import window from '../../images/items/window.png';
-import arrowDown from '../../images/items/arrowDown.png';
+import arrowRight from '../../images/items/arrowRight.png';
 import { AppContext } from "../../AppContext";
 import { useContext } from "react";
 
@@ -9,15 +9,15 @@ export const Window = () => {
   const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
 
   const clickWindow = () => {
-    hasRock ? setIsWindowBroken(!isWindowBroken) : setLogs([...logs, <p> A nigh indestructible window </p>])
+    if(hasRock) { 
+      setIsWindowBroken(!isWindowBroken) 
+      console.log(isWindowBroken)
+    } else {
+    setLogs([...logs, <p> A nigh indestructible window </p>]) 
+    }
   }
-  return ( isWindowBroken ? 
-    <div>
-       <img id="arrow-outside" className="item" src={arrowDown}  />
-    </div>
-    : 
-    <div>
-       <img id="window-border" className="item" src={window} onClick={clickWindow} />
-    </div>
-  )
+  return isWindowBroken ? 
+    ( <img id="arrow-outside" className="item" src={arrowRight} /> )
+   : 
+    ( <img id="window-border" className="item" src={window} onClick={clickWindow} /> )
 }

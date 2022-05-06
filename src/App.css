@@ -230,14 +230,20 @@ input[type="text"] {
   left: 150px;
 }
 
-#window-border {
-  height: 130px;
+
+.broken-glass {
+  height: 100px;
   position: absolute;
-  bottom: 300px;
+  bottom: 1px;
   right: 50px;
-  outline: 2px dashed blue;
 }
 
+#arrow-outside {
+  height: 100px;
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+}
 /* input[type="submit"] {
   width: 10px;
 } */

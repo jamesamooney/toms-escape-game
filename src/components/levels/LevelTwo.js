@@ -66,7 +66,7 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
       {isSafeClicked && <SafeForm />}
       {(isSafeSolved && !hasRock)&& <Rock />}
       <div className="item-border" id='window-border'></div>
-      {!isWindowBroken && <Window/>}
+      {<Window/>}
       {isWindowBroken && <BrokenGlass />}
       <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
     </div>

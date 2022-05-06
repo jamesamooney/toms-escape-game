@@ -10,7 +10,7 @@ export const BrokenGlass = () => {
   }
   return (
     <div>
-      <img src={brokenGlass} onClick={clickBrokenGlass} />
+      <img className="broken-glass"  src={brokenGlass} onClick={clickBrokenGlass} />
     </div>
   )
 }
