@@ -11,12 +11,11 @@ export const LightSwitch1 = () => {
   const switchLight = () => {
     
     if (!hasTurnedOnPower) {
-    setLogs([...logs, <p>There seems to not be any power</p>])
+    setLogs([...logs, { type:"inform", text: "There seems to not be any power"}])
       
     } else {
       setLight1(light1 + 1)
       if (light1 === 2) { setLight1(0) }
-      console.log(light1)
     }
     
     

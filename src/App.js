@@ -42,20 +42,12 @@ function App() {
 
   return (
     <div className= "whole-screen">
-      <AppContext.Provider value={{pouch, setPouch, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5}} >
+      <AppContext.Provider value={{pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5}} >
         <div className='game-window'>
           <div className='game-background'>
             <MyStopwatch />
-            {playerLocation === 1 && <LevelOne
-              setPlayerLocation={setPlayerLocation}
-              logs={logs}
-              setLogs={setLogs}
-              />}
-            {playerLocation === 2 && <LevelTwo
-              setPlayerLocation={setPlayerLocation}
-              logs={logs}
-              setLogs={setLogs}
-            />}
+            {playerLocation === 1 && <LevelOne />}
+            {playerLocation === 2 && <LevelTwo />}
           </div>
           <div className='bottom-ui'>
             <div className = "text-interface">

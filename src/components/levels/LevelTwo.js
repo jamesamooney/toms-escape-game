@@ -1,4 +1,3 @@
-import downArrow from  "../../images/items/arrowDown.png"
 import { Light } from "../level-items/Light"
 import { LightSwitch1 } from "../level-items/LightSwitch1"
 import { LightSwitch2 } from "../level-items/LightSwitch2"
@@ -11,9 +10,10 @@ import { Paper3 } from "../level-items/Paper3"
 import { Broom } from "../level-items/Broom"
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
+import { ArrowDown } from "../level-items/ArrowDown"
 
 
-export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
+export const LevelTwo = () => {
   
   //lights colours are: 0 = Yellow, 1 = Red, 2 = Green
   const { light1, setLight1 } = useContext(AppContext)
@@ -30,17 +30,11 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
       setSafeAppears(true)
-      console.log("safe open")
       }
-    console.log("function running")
-    console.log(light1)
   },[light1, light2, light3]) 
   
 
-  const goToBasement = () => {
-    setPlayerLocation(1)
-    setLogs([...logs, <p>Running back to the basement? Coward...</p>])
-  }
+  
 
   
 
@@ -57,7 +51,7 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
       {!hasBroom &&<Broom /> }
       {safeAppears && <Safe setSafeClicked={setSafeClicked} isSafeClicked={isSafeClicked}/>}
       {isSafeClicked && <SafeForm />}
-      <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
+      <ArrowDown />
     </div>
   )
 }

@@ -9,7 +9,7 @@ export const LightSwitch3 = ({checkLightPuzzle}) => {
 
   const switchLight = () => {
     if (!hasTurnedOnPower) {
-      setLogs([...logs, <p>There seems to not be any power</p>])
+      setLogs([...logs, { type:"inform", text: "There seems to not be any power"}])
         
     } else {
       setLight3(light3 + 1)

@@ -6,7 +6,8 @@ export const PouchPaper5 = () => {
 
   const { logs, setLogs } = useContext(AppContext)
   const paperClue = () => {
-    setLogs([...logs, <p>G</p>])
+    setLogs([...logs, { type:"pouch-item", text: "Scribbled on the note is the letter: G"}])
+
   }
 
   return (

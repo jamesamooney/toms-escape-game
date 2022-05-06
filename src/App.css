@@ -50,11 +50,19 @@
 
 /* Log types to set different colours */
 .inform {
-  color: greenyellow;
+  color: white;
+}
+
+.success {
+  color: rgb(0, 159, 0);
 }
 
 .warning {
   color: red;
+}
+
+.pouch-item {
+  color: yellow;
 }
 
 p {
@@ -69,7 +77,7 @@ p {
 
 }
 
-.down-arrow {
+#down-arrow {
   height: 70px;
   position: absolute;
   bottom: 10px;
