@@ -1,21 +1,63 @@
-.App {
-  text-align: center;
+/* Game Screen */
+.whole-screen {
+  background-image: url("./images/items/tomandjerry.jpeg");
+  height: 100%;
+  overflow: hidden;
+  cursor: url(./images/items/cursorIdle.png), auto;
+  
+}
+
+.level-one {
   background-image: url("./images/backgrounds/basement_better.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  position: relative;
   height: 600px;
   width: 1200px;
   outline: solid black;
   margin: 0 100px 0 100px;
+  position: relative;
+  
 }
 .level-two {
   background-image: url("./images/backgrounds/kitchen.jpg");
-  height: 600px;
-  width: 1200px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
   position: relative;
+}
+
+.bottom-ui {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  background-color: rgb(188, 110, 8);
+  height: 150px;
+  width: 1200px;
+  border:1px solid black;
+  margin: 0 100px 20px 100px;
+}
+
+.text-interface {
+  outline: solid black;
+  display: inline-block;
+  overflow: auto;
+  background-color: black;
+  color: white;
+}
+
+p {
+  margin-bottom: -5px; /* between paragraphs */
+  }
+
+.pouch {
+  outline: solid black;
+  display: inline-block;
+  height: 150px;
+  width: 400px;
+
 }
 
 .down-arrow {
@@ -91,6 +133,7 @@
 
 .item:hover {
   box-shadow: 0 0 5px rgb(249, 249, 78);
+  cursor: url(./images/items/cursorPoint.png), auto;
 }
 
 #broom {
@@ -126,15 +169,7 @@ input[type="text"] {
   width: 80px;
 }
 
-.text-interface {
-  outline: solid black;
-  margin: 0 100px 20px 100px;
-  height: 150px;
-  width: 1200px;
-  overflow: auto;
-  background-color: black;
-  color: white;
-}
+
 
 #light-1 {
   height: 130px;
@@ -239,11 +274,20 @@ input[type="text"] {
 }
 
 #arrow-outside {
-  height: 100px;
+  height: 50px;
   position: absolute;
-  bottom: 100px;
-  right: 50px;
+  bottom: 340px;
+  right: 100px;
 }
+
+#window-border {
+  height: 160px;
+  position: absolute;
+  bottom: 280px;
+  right: 40px;
+}
+
+
 /* input[type="submit"] {
   width: 10px;
 } */

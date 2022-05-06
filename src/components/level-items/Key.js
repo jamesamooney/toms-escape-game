@@ -9,7 +9,7 @@ export const Key = ( { setHasKeyOne } ) => {
 
   const grabKey = () => {
     setHasKeyOne(true)
-    setPouch([...pouch, <PouchKey />])
+    setPouch([...pouch, <PouchKey key={key}/>])
     setLogs([...logs, <p>You picked up the key, want to bet it opens that lovely door?</p>])
   }
   return (
