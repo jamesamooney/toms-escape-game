@@ -26,16 +26,24 @@ function App() {
   })
 
   
-  // const url = 'http://localhost:3030/scores'
+  const url = 'http://localhost:3030/scores'
+  
 
-  // const getData = async () => {
-  //   const response = await fetch(url)
-  //   const resolvedPromise = await response.json()
-  //   console.log(resolvedPromise.name);
-  //   console.log(resolvedPromise.time);
-  // }
-
-  // getData();
+  const sendData = async () => {
+    const data = {
+      name: "CAP",
+      time: "1:00",
+    }
+    console.log(data)
+    await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+  }
+  // const data = {name: 'CAP', time: '1:00' }
+  sendData();
+  
   return (
     <div className= "center">
       <AppContext.Provider value={{pouch, setPouch, logs, setLogs}} >
