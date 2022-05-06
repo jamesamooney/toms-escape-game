@@ -48,6 +48,15 @@
   color: white;
 }
 
+/* Log types to set different colours */
+.inform {
+  color: greenyellow;
+}
+
+.warning {
+  color: red;
+}
+
 p {
   margin-bottom: -5px; /* between paragraphs */
   }
