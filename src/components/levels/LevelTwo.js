@@ -26,6 +26,11 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   const { hasPaper1, setHasPaper1 } = useContext(AppContext)
   const { hasPaper2, setHasPaper2 } = useContext(AppContext)
   const { hasPaper3, setHasPaper3 } = useContext(AppContext)
+  const { finalTime, setFinalTime } = useContext(AppContext)
+  const { minutes, setMinutes } = useContext(AppContext)
+  const { seconds, setSeconds } = useContext(AppContext)
+
+
   
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
@@ -42,7 +47,26 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
     setLogs([...logs, <p>Running back to the basement? Coward...</p>])
   }
 
+  const setTime = () => {
+    setFinalTime({minutes: minutes, seconds: seconds})
+    sendScore("James", finalTime)
+  }
   
+  const sendScore = async (name, time) => {
+    const url = 'http://localhost:3030/scores'
+
+    const data = {
+      name: name,
+      minutes: time.minutes,
+      seconds: time.seconds
+    }
+
+    await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+  }
 
 
   return (
@@ -58,6 +82,8 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
       {safeAppears && <Safe setSafeClicked={setSafeClicked} isSafeClicked={isSafeClicked}/>}
       {isSafeClicked && <SafeForm />}
       <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
+
+      <button onClick={setTime}>Complete Game</button>
     </div>
   )
 }

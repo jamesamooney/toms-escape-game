@@ -5,7 +5,6 @@ import lightGreen from "../../images/items/lightGreen.png"
 export const Light = ({light1, light2, light3}) => {
   
   const checkLight = (lightState) => {
-    console.log(lightState)
     if (lightState === 0) {
       return lightYellow
     } else if (lightState === 1) {
