@@ -3,12 +3,13 @@ import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import { PouchKey } from "../pouch-items/PouchKey"
 
-export const Key = ( { setHasKeyOne, logs, setLogs }) => {
+export const Key = ( { setHasKeyOne } ) => {
   const { pouch, setPouch } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
 
   const grabKey = () => {
     setHasKeyOne(true)
-    setPouch([...pouch, <PouchKey />])
+    setPouch([...pouch, <PouchKey key={key}/>])
     setLogs([...logs, <p>You picked up the key, want to bet it opens that lovely door?</p>])
   }
   return (

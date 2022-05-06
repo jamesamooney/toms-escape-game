@@ -1,8 +1,11 @@
 import doorOneClosedImg from "../../images/items/closedDoor.png"
 import arrowForward from  "../../images/items/arrowForward.png"
+import { AppContext } from "../../AppContext"
+import { useContext } from "react"
 
+export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation}) => {
 
-export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation, logs, setLogs }) => {
+  const { logs, setLogs } = useContext(AppContext)
   
   const openDoor = () => {
     if(hasKeyOne) {
@@ -16,7 +19,7 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation
   
   const levelComplete = () => {
     if(doorOneOpen) {
-      setLogs([...logs, <p>Room 1 IS COMPLETE</p>])
+      setLogs([...logs, <p>You tip toe into the kitchen... these rich folk probably got bare munch</p>])
       setPlayerLocation(2)
     }
   }
