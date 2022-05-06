@@ -9,6 +9,10 @@ import { Paper1 } from "../level-items/Paper1"
 import { Paper2 } from "../level-items/Paper2"
 import { Paper3 } from "../level-items/Paper3"
 import { Broom } from "../level-items/Broom"
+import { Rock } from "../level-items/Rock"
+import { Window } from "../level-items/Window"
+import { BrokenGlass } from "../level-items/BrokenGlass"
+// import { BrokenGlass } from "../level-items/BrokenGlass" 
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 
@@ -21,11 +25,13 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   const { light3, setLight3 } = useContext(AppContext)
   const { hasBroom, setHasBroom } = useContext(AppContext)
   const { isSafeSolved, setSafeSolved } = useContext(AppContext)
-  const [safeAppears, setSafeAppears] = useState(false)
-  const [isSafeClicked, setSafeClicked] = useState(false)
+  const { safeAppears, setSafeAppears } = useContext(AppContext)
+  const { isSafeClicked, setSafeClicked } = useContext(AppContext)
   const { hasPaper1, setHasPaper1 } = useContext(AppContext)
   const { hasPaper2, setHasPaper2 } = useContext(AppContext)
   const { hasPaper3, setHasPaper3 } = useContext(AppContext)
+  const { hasRock, setHasRock } = useContext(AppContext)
+  const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
   const { minutes, setMinutes } = useContext(AppContext)
   const { seconds, setSeconds } = useContext(AppContext)
@@ -79,8 +85,12 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
       {!hasPaper2 && <Paper2  />}
       {!hasPaper3 && <Paper3  />}
       {!hasBroom &&<Broom /> }
-      {safeAppears && <Safe setSafeClicked={setSafeClicked} isSafeClicked={isSafeClicked}/>}
+      {safeAppears && <Safe />}
       {isSafeClicked && <SafeForm />}
+      {(isSafeSolved && !hasRock)&& <Rock />}
+      <div className="item-border" id='window-border'></div>
+      {<Window/>}
+      {isWindowBroken && <BrokenGlass />}
       <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
 
       <button onClick={setTime}>Complete Game</button>
