@@ -25,7 +25,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const { hasPaper5, setHasPaper5 } = useContext(AppContext)
   
   return (
-    <div className="App">
+    <div className="level-one">
         {(passwordCorrect && !hasKeyOne) && <Key
         setHasKeyOne={setHasKeyOne}
         />}
