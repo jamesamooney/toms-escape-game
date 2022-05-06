@@ -31,6 +31,9 @@ function App() {
   const [hasPaper3, setHasPaper3] = useState(false)
   const [hasPaper4, setHasPaper4] = useState(false)
   const [hasPaper5, setHasPaper5] = useState(false)
+  const [minutes, setMinutes] = useState()
+  const [seconds, setSeconds] = useState()
+  const [finalTime, setFinalTime] = useState()
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
   const [playerLocation, setPlayerLocation] = useState(1)
@@ -42,15 +45,15 @@ function App() {
   
   const url = 'http://localhost:3030/scores'
 
-  const getData = async() => {
-    await fetch(url)
-    .then(response => response.json())
-    .then(data => data.forEach((score) => {
-      console.log(score)
-    }))
-  }
+  // const getData = async() => {
+  //   await fetch(url)
+  //   .then(response => response.json())
+  //   .then(data => data.forEach((score) => {
+  //     console.log(score)
+  //   }))
+  // }
 
-  getData();
+  // getData();
   
 
   // const sendData = async () => {
@@ -70,10 +73,10 @@ function App() {
   
   return (
     <div className= "whole-screen">
-      <AppContext.Provider value={{pouch, setPouch, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5}} >
+      <AppContext.Provider value={{pouch, setPouch, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, minutes, seconds, setFinalTime, finalTime}} >
         <div className='game-window'>
           <div className='game-background'>
-            <MyStopwatch />
+            <MyStopwatch setSeconds={setSeconds} setMinutes={setMinutes}/>
             {playerLocation === 1 && <LevelOne
               setPlayerLocation={setPlayerLocation}
               logs={logs}
