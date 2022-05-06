@@ -226,8 +226,15 @@ input[type="text"] {
   right: 220px;
 }
 
-#safe {
+#closed-safe {
   height: 90px;
+  position: absolute;
+  bottom: 160px;
+  left: 120px;
+}
+
+#open-safe {
+  height: 120px;
   position: absolute;
   bottom: 160px;
   left: 120px;
@@ -268,3 +275,36 @@ input[type="text"] {
   left: 300px;
 }
 
+.rock {
+  height: 30px;
+  position: absolute;
+  bottom: 200px;
+  left: 150px;
+}
+
+
+#broken-glass {
+  height: 100px;
+  position: absolute;
+  bottom: 1px;
+  right: 50px;
+}
+
+#arrow-outside {
+  height: 50px;
+  position: absolute;
+  bottom: 340px;
+  right: 100px;
+}
+
+#window-border {
+  height: 160px;
+  position: absolute;
+  bottom: 280px;
+  right: 40px;
+}
+
+
+/* input[type="submit"] {
+  width: 10px;
+} */
