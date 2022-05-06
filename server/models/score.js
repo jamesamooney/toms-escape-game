@@ -4,8 +4,9 @@ const ScoreSchema = new mongoose.Schema({
   name: String,
   time: String
 });
-export const Score = mongoose.model("Score", ScoreSchema);
 
+const Score = mongoose.model("Score", ScoreSchema);
 
+export default Score;
 
 

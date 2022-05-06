@@ -1,32 +1,28 @@
-import {Score} from "../models/score.js"
+import Score from "../models/score.js"
 
 export const ScoresController = {
   Index: (req, res) => {
-    const data = {
-      name: "ARH",
-      time: "1:00"
-    }
-    res.status(200).json(data)
+    Score.find((err, scores) => {
+      if (err) {
+        throw err;
+      } 
+      res.status(200).json(scores);
+    });
   },
 
   Create: (req, res) => {
     // // we are gonna receive some data in req
-    const data = {
-      name: 'fake name',
-      time: '1:00'
-    }
+    const scoreData = req.body
     // // we want to create a Score object using model schema
-    let score = new Score()
-    score.name = req.body.name;
-    score.time = req.body.time;
+    const score = new Score(scoreData)
     // // // we want to save it to the mongo db
     score.save((err) => {
       if(err) {
         throw err;
       }
-    })
+    }),
 
-    res.status(201).send(req.body)
-
+    res.status(201).send(scoreData)
   }
+
 }
