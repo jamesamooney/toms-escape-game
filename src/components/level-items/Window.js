@@ -11,9 +11,10 @@ export const Window = () => {
   const clickWindow = () => {
     if(hasRock) { 
       setIsWindowBroken(!isWindowBroken) 
-      console.log(isWindowBroken)
+      setLogs([...logs, { type:"success", text: "You lob the hefty rock and smash the window to pieces!"}])
     } else {
-    setLogs([...logs, <p> A nigh indestructible window </p>]) 
+      setLogs([...logs, { type:"inform", text: "A nigh indestructible window"}])
+      
     }
   }
   return isWindowBroken ? 

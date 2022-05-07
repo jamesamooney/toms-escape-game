@@ -8,7 +8,7 @@ export const Padlock = ({  setPadlockClicked, isPadlockClicked}) => {
 
   const padlockClicked = () => {
     setPadlockClicked(!isPadlockClicked)
-    setLogs([...logs, <p>You need to insert the correct combination of numbers to open this padlock</p>])
+    setLogs([...logs, { type: "inform", text: "You need to insert the correct combination of numbers to open this padlock"}])
 
   }
 

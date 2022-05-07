@@ -48,6 +48,23 @@
   color: white;
 }
 
+/* Log types to set different colours */
+.inform {
+  color: white;
+}
+
+.success {
+  color: rgb(0, 159, 0);
+}
+
+.warning {
+  color: red;
+}
+
+.pouch-item {
+  color: yellow;
+}
+
 p {
   margin-bottom: -5px; /* between paragraphs */
   }
@@ -60,7 +77,7 @@ p {
 
 }
 
-.down-arrow {
+#down-arrow {
   height: 70px;
   position: absolute;
   bottom: 10px;
@@ -266,7 +283,7 @@ input[type="text"] {
 }
 
 
-.broken-glass {
+#broken-glass {
   height: 100px;
   position: absolute;
   bottom: 1px;

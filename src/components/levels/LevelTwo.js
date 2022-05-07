@@ -1,4 +1,3 @@
-import downArrow from  "../../images/items/arrowDown.png"
 import { Light } from "../level-items/Light"
 import { LightSwitch1 } from "../level-items/LightSwitch1"
 import { LightSwitch2 } from "../level-items/LightSwitch2"
@@ -15,9 +14,10 @@ import { BrokenGlass } from "../level-items/BrokenGlass"
 // import { BrokenGlass } from "../level-items/BrokenGlass" 
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
+import { ArrowDown } from "../level-items/ArrowDown"
 
 
-export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
+export const LevelTwo = () => {
   
   //lights colours are: 0 = Yellow, 1 = Red, 2 = Green
   const { light1, setLight1 } = useContext(AppContext)
@@ -41,17 +41,11 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
       setSafeAppears(true)
-      console.log("safe open")
       }
-    console.log("function running")
-    console.log(light1)
   },[light1, light2, light3]) 
   
 
-  const goToBasement = () => {
-    setPlayerLocation(1)
-    setLogs([...logs, <p>Running back to the basement? Coward...</p>])
-  }
+  
 
   const setTime = () => {
     setFinalTime({minutes: minutes, seconds: seconds})
@@ -87,11 +81,11 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
       {!hasBroom &&<Broom /> }
       {safeAppears && <Safe />}
       {isSafeClicked && <SafeForm />}
+      <ArrowDown />
       {(isSafeSolved && !hasRock)&& <Rock />}
       <div className="item-border" id='window-border'></div>
-      {<Window/>}
+      {<Window />}
       {isWindowBroken && <BrokenGlass />}
-      <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
 
       <button onClick={setTime}>Complete Game</button>
     </div>

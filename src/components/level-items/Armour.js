@@ -14,7 +14,7 @@ export const Armour = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const armourClicked = () => {
-    setLogs([...logs, <p>Looks like this angry fella won't let you pass</p>])
+    setLogs([...logs, {type:"warning", text: "Looks like this angry fella won't let you pass"}])
     playAudio()
     
   }

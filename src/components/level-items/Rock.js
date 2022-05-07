@@ -10,8 +10,9 @@ export const Rock = () => {
 
   const grabRock = () => {
     setHasRock(!hasRock);
-    setLogs([...logs, <p>Ohh... A special window breaking rock!</p>])
-    setPouch([...pouch, <PouchRock />])
+    setLogs([...logs, { type:"inform", text: "Ohh... A special window breaking rock!"}])
+
+    setPouch([...pouch, <PouchRock key="rock"/>])
   }
   return (
     <div>

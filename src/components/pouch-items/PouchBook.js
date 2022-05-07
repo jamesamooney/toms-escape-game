@@ -7,7 +7,7 @@ export const PouchBook = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const clickPouchBook = () => {
-    setLogs([...logs, <p>This is placeholder for the spike clue</p>])
+    setLogs([...logs, { type:"pouch-item", text: "This is placeholder for the spike clue"}])
     
   }
   return (

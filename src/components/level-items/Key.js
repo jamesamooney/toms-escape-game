@@ -9,8 +9,8 @@ export const Key = ( { setHasKeyOne } ) => {
 
   const grabKey = () => {
     setHasKeyOne(true)
-    setPouch([...pouch, <PouchKey key={key}/>])
-    setLogs([...logs, <p>You picked up the key, want to bet it opens that lovely door?</p>])
+    setPouch([...pouch, <PouchKey key="key"/>])
+    setLogs([...logs, { type:"inform", text: "You picked up the key, want to bet it opens that lovely door?"}])
   }
   return (
     <img className='item' id="key" onClick={grabKey} src={key} style={{ height: '60px'}}/>

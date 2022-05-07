@@ -8,7 +8,8 @@ export const PouchPaper1 = () => {
 
 
   const paperClue = () => {
-    setLogs([...logs, <p>I</p>])
+    setLogs([...logs, { type:"pouch-item", text: "Scribbled on the note is the letter: I"}])
+    
   }
 
   return (

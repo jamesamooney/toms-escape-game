@@ -10,8 +10,7 @@ export const Safe = () => {
 
   const safeClicked = () => {
     setSafeClicked(!isSafeClicked)
-    setLogs([...logs, <p>Looks like you need to insert a 5 lettered word..</p>])
-    console.log("clicking safe")
+    setLogs([...logs, { type:"inform", text: "Looks like you need to insert a 5 lettered word.."}])
   }
 
   return isSafeSolved ?
