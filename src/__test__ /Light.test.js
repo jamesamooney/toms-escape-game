@@ -5,7 +5,7 @@ afterEach(cleanup)
 
 it('renders on the page', () => {
   render(<Light />);
-  expect(screen.getByRole('light-image')).toBeInTheDocument()
-  expect(screen.getByRole('light-image-2')).toBeInTheDocument()
-  expect(screen.getByRole('light-image-3')).toBeInTheDocument()
+  expect(screen.getByTestId('light-1')).toBeInTheDocument()
+  expect(screen.getByTestId('light-2')).toBeInTheDocument()
+  expect(screen.getByTestId('light-3')).toBeInTheDocument()
 })

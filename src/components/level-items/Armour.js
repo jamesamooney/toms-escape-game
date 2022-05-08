@@ -23,7 +23,7 @@ export const Armour = () => {
       <img src={armour}
         alt="Suit of armour"
         id="armour"
-        role="armour-image"
+        data-testid="armour"
         className="item"
         onClick={armourClicked}
       />

@@ -5,5 +5,5 @@ afterEach(cleanup)
 
 it('renders on the page', () => {
   render(<Padlock />);
-  expect(screen.getByRole('padlock-image')).toBeInTheDocument()
+  expect(screen.getByTestId('padlock')).toBeInTheDocument()
 })

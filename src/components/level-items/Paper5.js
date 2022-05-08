@@ -18,7 +18,7 @@ export const Paper5 = () => {
 
   return (
     <div>
-      <img src={crumpled} className="item" id="paper-5" onClick={grabPaper5}/>
+      <img data-testid="paper-5" src={crumpled} className="item" id="paper-5" onClick={grabPaper5}/>
     </div>
   )
 }

@@ -9,6 +9,7 @@ export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockC
   const [passwordGuess, setPasswordGuess] = useState("")
   const checkPassword = (e) => {
     if(passwordGuess === password) {
+      console.log('here');
       setPasswordCorrect(true)
       setPadlockClicked(!isPadlockClicked)
       setPadlockSolved(true)
@@ -20,9 +21,9 @@ export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockC
   }
 
   return (
-    <form className="padlock-form">
+    <form className="padlock-form" data-testid="padlock-form">
         <input type="text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
-        <input type="submit" onClick={checkPassword} />
+        <button type="submit" onClick={checkPassword} />
     </form>
   )
 }

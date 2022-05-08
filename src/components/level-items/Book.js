@@ -15,7 +15,7 @@ export const Book = ({ setHasBook }) => {
 
   return (
     <div>
-      <img className='item' id="book" role="book-image" src={book} onClick={grabBook} style={{ height: '60px'}}/>
+      <img className='item' id="book" data-testid="book" src={book} onClick={grabBook} style={{ height: '60px'}}/>
     </div>
   )
 }

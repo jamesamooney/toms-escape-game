@@ -17,6 +17,7 @@ function App() {
   
   const [logs, setLogs] = useState([<p>Oh no! You've been locked in the dungeon with Tom! Look around you to find something that might help you escape!</p>])
   const [pouch, setPouch] = useState([])
+  console.log(pouch)
   const [hasBook, setHasBook] = useState(false)
   const [hasBroom, setHasBroom] = useState(false)
   const [isPadlockSolved, setPadlockSolved] = useState(false)
@@ -37,8 +38,7 @@ function App() {
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
-  })
-  
+  }, [logs]); // Run again if `logs` change - see useEffect dependencies
 
   return (
     <div className= "center">

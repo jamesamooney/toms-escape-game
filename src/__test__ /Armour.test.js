@@ -5,5 +5,5 @@ afterEach(cleanup)
 
 it('is rendered on the page', () => {
   render(<Armour />);
-  expect(screen.getByRole('armour-image')).toBeInTheDocument()
+  expect(screen.getByTestId('armour')).toBeInTheDocument()
 })

@@ -5,6 +5,6 @@ afterEach(cleanup)
 
 it('first appears on the page closed', () => {
   render(<Door />);
-  expect(screen.getByRole('door-closed-image')).toBeInTheDocument()
+  expect(screen.getByTestId('door')).toBeInTheDocument()
 })
 

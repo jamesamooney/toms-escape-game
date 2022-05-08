@@ -5,5 +5,5 @@ afterEach(cleanup)
 
 it('is rendered on the page', () => {
   render(<Broom />);
-  expect(screen.getByRole('broom-image')).toBeInTheDocument()
+  expect(screen.getByTestId('broom')).toBeInTheDocument()
 })

@@ -25,6 +25,6 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen, setPlayerLocation
   }
 
   return doorOneOpen ? (
-    <img src={arrowForward} className="item" id='arrow-forward' role="door-open-image" onClick={levelComplete} />)
-    : (<img src={doorOneClosedImg} onClick={openDoor} id='door' role="door-closed-image" className="item" />)
+    <img src={arrowForward} className="item" id='arrow-forward' data-testid="arrow-forward" onClick={levelComplete} />)
+    : (<img src={doorOneClosedImg} onClick={openDoor} id='door' data-testid="door" className="item" />)
 }

@@ -5,5 +5,5 @@ afterEach(cleanup)
 
 it('renders on the page', () => {
   render(<Key />);
-  expect(screen.getByRole('key-image')).toBeInTheDocument()
+  expect(screen.getByTestId('key')).toBeInTheDocument()
 })

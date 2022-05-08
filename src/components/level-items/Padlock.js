@@ -17,7 +17,7 @@ export const Padlock = ({  setPadlockClicked, isPadlockClicked}) => {
       
       <img src={padlock}
         id="padlock"
-        role="padlock-image"
+        data-testid="padlock"
         className="item"
         onClick={padlockClicked}
       />

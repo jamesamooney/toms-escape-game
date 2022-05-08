@@ -12,7 +12,16 @@ export const Key = ( { setHasKeyOne } ) => {
     setPouch([...pouch, <PouchKey />])
     setLogs([...logs, <p>You picked up the key, want to bet it opens that lovely door?</p>])
   }
+
+  // Note, key-image isn't an aria role, see https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
   return (
-    <img className='item' id="key" role="key-image" onClick={grabKey} src={key} style={{ height: '60px'}}/>
+    <img 
+      className='item'
+      data-testid="key"
+      id="key"
+      onClick={grabKey} 
+      src={key} 
+      style={{ height: '60px'}}
+    />
   )
 }

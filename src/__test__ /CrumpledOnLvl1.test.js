@@ -5,6 +5,6 @@ afterEach(cleanup)
 
 it('is rendered on the page', () => {
   render(<CrumpledOnLvl1 />);
-  expect(screen.getByRole('crumpled-image')).toBeInTheDocument()
-  expect(screen.getByRole('crumpled-image-2')).toBeInTheDocument()
+  expect(screen.getByTestId('crumpled-4')).toBeInTheDocument()
+  expect(screen.getByTestId('crumpled-5')).toBeInTheDocument()
 })

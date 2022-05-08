@@ -19,6 +19,6 @@ export const LightSwitch3 = ({checkLightPuzzle}) => {
   }
 
   return (
-    <img src={lightSwitch3} className="item" id="light-switch-3" role="light-switch-3-image" onClick={switchLight}/>
+    <img src={lightSwitch3} className="item" id="light-switch-3" data-testid="light-switch-3" onClick={switchLight}/>
   )
 }
