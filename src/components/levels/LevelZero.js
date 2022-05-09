@@ -11,9 +11,9 @@ export const LevelZero = () => {
   return (
     <div className='level-zero'>
       <Logo />
-      {showPlayButton &&<PlayButton />}
-      {showPlayButton &&<Album />}
-      {!showPlayButton && <TomsEscape/>}
+      <TomsEscape/>
+      {showPlayButton && <Album />}
+
 
     
       
