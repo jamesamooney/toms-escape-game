@@ -3,10 +3,12 @@
 import { useState, useRef, useEffect, } from 'react'
 import { AppContext } from './AppContext'
 import { MyStopwatch } from './components/Stopwatch'
+import { LevelZero } from './components/levels/LevelZero'
 import { LevelOne } from './components/levels/LevelOne'
 import { LevelTwo } from './components/levels/LevelTwo'
 import { TextInterface } from './components/TextInterface'
 import { Pouch } from './components/Pouch'
+
 
 
 
@@ -41,7 +43,7 @@ function App() {
   const [ hasShovel, setHasShovel] = useState(false)
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
-  const [playerLocation, setPlayerLocation] = useState(1)
+  const [playerLocation, setPlayerLocation] = useState(0)
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
@@ -82,6 +84,7 @@ function App() {
         <div className='game-window'>
           <div className='game-background'>
             <MyStopwatch />
+            {playerLocation === 0 && <LevelZero />}
             {playerLocation === 1 && <LevelOne />}
             {playerLocation === 2 && <LevelTwo />}
           </div>
