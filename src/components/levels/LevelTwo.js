@@ -16,6 +16,7 @@ import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
 import { CigarPhoto } from "../level-items/CigarPhoto"
+import { ChestKey } from "../level-items/ChestKey"
 
 
 export const LevelTwo = () => {
@@ -37,6 +38,7 @@ export const LevelTwo = () => {
   const { savedMinutes, setSavedMinutes } = useContext(AppContext)
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
+  const { hasChestKey, setHasChestKey } = useContext(AppContext)
 
 
   
@@ -92,6 +94,7 @@ export const LevelTwo = () => {
       {isWindowBroken && <BrokenGlass />}
       <RadioOne />
       <CigarPhoto />
+      {!hasChestKey && <ChestKey />}
       <button onClick={setTime}>Complete Game</button>
     </div>
   )

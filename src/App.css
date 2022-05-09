@@ -345,6 +345,13 @@ input[type="text"] {
   right: 250px;
 }
 
+#chest-key {
+  height: 40px;
+  position: absolute;
+  top: 210px;
+  left: 430px;
+}
+
 /* input[type="submit"] {
   width: 10px;
 } */
