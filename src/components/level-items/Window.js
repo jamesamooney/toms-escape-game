@@ -2,12 +2,14 @@ import window from '../../images/items/window.png';
 import arrowRight from '../../images/items/arrowRight.png';
 import { AppContext } from "../../AppContext";
 import { useContext } from "react";
+import { RadioOneAudio } from "./RadioOneAudio";
 
 export const Window = () => {
   const { logs, setLogs } = useContext(AppContext)
   const { hasRock, setHasRock } = useContext(AppContext)
   const { isWindowBroken, setIsWindowBroken } = useContext(AppContext)
   const { playerLocation, setPlayerLocation } = useContext(AppContext)
+  const { radioPlaying, setRadioPlaying} = useContext(AppContext)
   
 
   const clickWindow = () => {
@@ -23,6 +25,8 @@ export const Window = () => {
   const moveToLevel3 = () => {
     setLogs([...logs, { type:"inform", text: "You feel the fresh air as you hop into the garden, you are one step closer to freedom.."}])
     setPlayerLocation(3)
+    setRadioPlaying(false)
+    RadioOneAudio.pause()
   }
 
   return isWindowBroken ? 
