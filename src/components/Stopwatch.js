@@ -1,15 +1,20 @@
 import React from 'react';
 import { useStopwatch } from 'react-timer-hook';
+import { AppContext } from "../AppContext"
+import { useContext } from "react"
 
-export const MyStopwatch = ({setSeconds, setMinutes}) => {
+export const MyStopwatch = () => {
+
+  const { savedMinutes, setSavedMinutes} = useContext(AppContext)
+  const { savedSeconds, setSavedSeconds} = useContext(AppContext)
   const {
     seconds,
     minutes
   } = useStopwatch({ autoStart: true });
 
   const updateTime = () => {
-    setSeconds(seconds);
-    setMinutes(minutes);
+    setSavedSeconds(seconds);
+    setSavedMinutes(minutes);
   }
 
   return (

@@ -33,8 +33,8 @@ export const LevelTwo = () => {
   const { hasRock, setHasRock } = useContext(AppContext)
   const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
-  const { minutes, setMinutes } = useContext(AppContext)
-  const { seconds, setSeconds } = useContext(AppContext)
+  const { savedMinutes, setSavedMinutes } = useContext(AppContext)
+  const { savedSeconds, setSavedSeconds } = useContext(AppContext)
 
 
   
@@ -48,7 +48,7 @@ export const LevelTwo = () => {
   
 
   const setTime = () => {
-    setFinalTime({minutes: minutes, seconds: seconds})
+    setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
     sendScore("James", finalTime)
   }
   
