@@ -18,7 +18,7 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen }) => {
     
   }
   
-  const levelComplete = () => {
+  const moveToLevel2 = () => {
     if(doorOneOpen) {
       setLogs([...logs, { type:"inform", text: "You tip toe into the kitchen... these rich folk probably got bare munch"}])
       setPlayerLocation(2)
@@ -26,6 +26,6 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen }) => {
   }
 
   return doorOneOpen ? (
-    <img src={arrowForward} className="item" id='arrow-forward' onClick={levelComplete} />)
+    <img src={arrowForward} className="item" id='arrow-forward' onClick={moveToLevel2} />)
     : (<img src={doorOneClosedImg} onClick={openDoor} id='door' className="item" />)
 }

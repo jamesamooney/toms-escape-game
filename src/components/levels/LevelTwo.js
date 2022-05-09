@@ -11,7 +11,6 @@ import { Broom } from "../level-items/Broom"
 import { Rock } from "../level-items/Rock"
 import { Window } from "../level-items/Window"
 import { BrokenGlass } from "../level-items/BrokenGlass"
-// import { BrokenGlass } from "../level-items/BrokenGlass" 
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
@@ -81,7 +80,7 @@ export const LevelTwo = () => {
       {!hasPaper3 && <Paper3  />}
       {!hasBroom &&<Broom /> }
       {safeAppears && <Safe />}
-      {isSafeClicked && <SafeForm />}
+      {(isSafeClicked && !isSafeSolved) && <SafeForm />}
       <ArrowDown />
       {(isSafeSolved && !hasRock)&& <Rock />}
       <div className="item-border" id='window-border'></div>

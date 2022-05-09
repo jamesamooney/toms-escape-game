@@ -311,6 +311,12 @@ input[type="text"] {
   right: 396px;
 }
 
+.safe-form {
+  position: absolute;
+  bottom: 270px;
+  left: 90px;
+}
+
 
 /* input[type="submit"] {
   width: 10px;
