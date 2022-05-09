@@ -1,5 +1,3 @@
-import tom from "../../images/items/tom-depressed.png"
-import cage from "../../images/items/cage-2.png"
 import { Key } from '../level-items/Key'
 import { Door } from '../level-items/Door'
 import { Padlock } from '../level-items/Padlock'
@@ -16,6 +14,7 @@ import { Chest } from "../level-items/Chest"
 import { Tnt } from "../level-items/Tnt"
 import { Detonator } from "../level-items/Detonator"
 import { Shovel } from '../level-items/Shovel'
+
 
 
 import '../../App.css';
