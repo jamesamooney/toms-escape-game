@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
-import play from "../../images/items/play.png"
+import album from "../../images/items/album.png"
 
 
 
@@ -10,7 +10,7 @@ export const Album = () => {
 
   return (
     <div>
-      <img id="play-button" className="item" src={play} onClick={goToBasement}/>
+      <img id="album" className="item" src={album} />
     </div>
   )
 }
