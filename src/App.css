@@ -159,6 +159,20 @@ p {
   height: 200px;  
 }
 
+#tnt {
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+  height: 100px;  
+}
+
+#detonator {
+  position: absolute;
+  bottom: 0px;
+  right: 200px;
+  height: 100px;  
+}
+
 .item:hover {
   box-shadow: 0 0 5px rgb(249, 249, 78);
   cursor: url(./images/items/cursorPoint.png), auto;
@@ -178,6 +192,19 @@ p {
   height: 80px;
 }
 
+#tom-caged {
+  position: absolute;
+  top: 123px;
+  right: 157px;
+  height: 190px;
+}
+
+#cage {
+  position: absolute;
+  top: 101px;
+  right: 187px;
+  height: 200px;
+}
 
 #key {
   position: absolute;
@@ -191,6 +218,13 @@ p {
   bottom: 140px;
   left: 270px;
   height: 150px;
+}
+
+#chest {
+  height: 130px;
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
 }
 
 input[type="text"] {
@@ -276,7 +310,7 @@ input[type="text"] {
   height: 30px;
   position: absolute;
   bottom: 50px;
-  right: 80px;
+  right: 280px;
 }
 
 #paper-5 {
@@ -368,6 +402,33 @@ input[type="text"] {
 }
 
 
+#cigar-photo {
+  height: 50px;
+  position: absolute;
+  top: 170px;
+  right: 260px;
+}
+
+#tape {
+  height: 20px;
+  position: absolute;
+  top: 160px;
+  right: 335px;
+}
+
+#tape2 {
+  height: 20px;
+  position: absolute;
+  top: 160px;
+  right: 250px;
+}
+
+#chest-key {
+  height: 40px;
+  position: absolute;
+  top: 210px;
+  left: 430px;
+}
 
 /* input[type="submit"] {
   width: 10px;

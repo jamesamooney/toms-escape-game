@@ -15,6 +15,9 @@ import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
+import { CigarPhoto } from "../level-items/CigarPhoto"
+import { ChestKey } from "../level-items/ChestKey"
+import { GameComplete } from '../levels/GameComplete'
 
 
 export const LevelTwo = () => {
@@ -35,12 +38,16 @@ export const LevelTwo = () => {
   const { finalTime, setFinalTime } = useContext(AppContext)
   const { savedMinutes, setSavedMinutes } = useContext(AppContext)
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
+  const { hasChestKey, setHasChestKey } = useContext(AppContext)
 
 
   
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
       setSafeAppears(true)
+      setLogs([...logs, { type:"success", text: "A secret compartment slides open and a safe is revealed!"}])
+
       }
   },[light1, light2, light3]) 
   
@@ -49,25 +56,10 @@ export const LevelTwo = () => {
 
   const setTime = () => {
     setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
-    sendScore("James", finalTime)
+    // sendScore("James", finalTime)
   }
   
-  const sendScore = async (name, time) => {
-    const url = 'http://localhost:3030/scores'
-
-    const data = {
-      name: name,
-      minutes: time.minutes,
-      seconds: time.seconds
-    }
-
-    await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    })
-  }
-
+  
 
   return (
     <div className="level-two">
@@ -87,8 +79,10 @@ export const LevelTwo = () => {
       {<Window />}
       {isWindowBroken && <BrokenGlass />}
       <RadioOne />
-
+      <CigarPhoto />
+      {!hasChestKey && <ChestKey />}
       <button onClick={setTime}>Complete Game</button>
+      <GameComplete />
     </div>
   )
 }
