@@ -11,10 +11,12 @@ import { Broom } from "../level-items/Broom"
 import { Rock } from "../level-items/Rock"
 import { Window } from "../level-items/Window"
 import { BrokenGlass } from "../level-items/BrokenGlass"
-// import { BrokenGlass } from "../level-items/BrokenGlass" 
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
+import { RadioOne } from "../level-items/RadioOne"
+import { CigarPhoto } from "../level-items/CigarPhoto"
+import { ChestKey } from "../level-items/ChestKey"
 
 
 export const LevelTwo = () => {
@@ -33,14 +35,18 @@ export const LevelTwo = () => {
   const { hasRock, setHasRock } = useContext(AppContext)
   const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
-  const { minutes, setMinutes } = useContext(AppContext)
-  const { seconds, setSeconds } = useContext(AppContext)
+  const { savedMinutes, setSavedMinutes } = useContext(AppContext)
+  const { savedSeconds, setSavedSeconds } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
+  const { hasChestKey, setHasChestKey } = useContext(AppContext)
 
 
   
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
       setSafeAppears(true)
+      setLogs([...logs, { type:"success", text: "A secret compartment slides open and a safe is revealed!"}])
+
       }
   },[light1, light2, light3]) 
   
@@ -48,7 +54,7 @@ export const LevelTwo = () => {
   
 
   const setTime = () => {
-    setFinalTime({minutes: minutes, seconds: seconds})
+    setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
     sendScore("James", finalTime)
   }
   
@@ -80,13 +86,15 @@ export const LevelTwo = () => {
       {!hasPaper3 && <Paper3  />}
       {!hasBroom &&<Broom /> }
       {safeAppears && <Safe />}
-      {isSafeClicked && <SafeForm />}
+      {(isSafeClicked && !isSafeSolved) && <SafeForm />}
       <ArrowDown />
       {(isSafeSolved && !hasRock)&& <Rock />}
       <div className="item-border" id='window-border'></div>
       {<Window />}
       {isWindowBroken && <BrokenGlass />}
-
+      <RadioOne />
+      <CigarPhoto />
+      {!hasChestKey && <ChestKey />}
       <button onClick={setTime}>Complete Game</button>
     </div>
   )
