@@ -45,7 +45,7 @@ function App() {
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
-  })
+  },[logs])
 
   
   const url = 'http://localhost:3030/scores'
