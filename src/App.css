@@ -155,6 +155,13 @@ p {
   height: 100px;  
 }
 
+#detonator {
+  position: absolute;
+  bottom: 0px;
+  right: 200px;
+  height: 100px;  
+}
+
 .item:hover {
   box-shadow: 0 0 5px rgb(249, 249, 78);
   cursor: url(./images/items/cursorPoint.png), auto;

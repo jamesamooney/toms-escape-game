@@ -8,7 +8,6 @@ export const Tnt = ( { setHasTnt } ) => {
   const { logs, setLogs } = useContext(AppContext)
 
   const grabTnt = () => {
-    console.log("Dynamite")
     setHasTnt(true)
     setPouch([...pouch, <PouchTnt key="tnt"/>])
     setLogs([...logs, { type:"inform", text: "Dynamite! Careful now."}])
