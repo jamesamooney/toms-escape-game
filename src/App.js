@@ -46,13 +46,10 @@ function App() {
   const [hasChestKey, setHasChestKey] = useState(false)
   const [chestUnlocked, setChestUnlocked] = useState(false)
   const [chestOpen, setChestOpen] = useState(false)
-<<<<<<< HEAD
   const [hasBone, setHasBone] = useState(false)
   const [isTrapLaid, setIsTrapLaid] = useState(false)
  
-=======
   const [userName, setUserName] = useState("")
->>>>>>> 96b4b9ce72b31634473ce326424a42a84e7daa32
 
 
 
