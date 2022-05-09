@@ -356,6 +356,13 @@ input[type="text"] {
   left: 50px;
 }
 
+#kennel {
+  height: 200px;
+  position: absolute;
+  bottom: 210px;
+  right: 0px;
+}
+
 .killer-guarding {
   height: 200px;
   position: absolute;
@@ -363,6 +370,26 @@ input[type="text"] {
   right: 0px;
 }
 
+.killer-sleeping {
+  height: 300px;
+  position: absolute;
+  bottom: 195px;
+  right: -140px;
+}
+
+#hole-undug {
+  height: 70px;
+  position: absolute;
+  bottom: 180px;
+  left: 25px;
+}
+
+#hole-dug {
+  height: 120px;
+  position: absolute;
+  bottom: 180px;
+  left: 0px;
+}
 
 #radio-one {
   height: 60px;
@@ -412,6 +439,12 @@ input[type="text"] {
   left: 430px;
 }
 
+#bone {
+  height: 30px;
+  position: absolute;
+  bottom: 170px;
+  left: 30px;
+}
 /* input[type="submit"] {
   width: 10px;
 } */
