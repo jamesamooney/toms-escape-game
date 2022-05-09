@@ -29,6 +29,17 @@
   position: relative;
 }
 
+.level-three {
+  background-image: url("./images/backgrounds/garden.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+
 .bottom-ui {
   display: flex;
   flex-wrap: nowrap;
@@ -303,6 +314,21 @@ input[type="text"] {
   bottom: 280px;
   right: 40px;
 }
+
+.empty-dog-bowl {
+  height: 50px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+.killer-guarding {
+  height: 200px;
+  position: absolute;
+  bottom: 210px;
+  right: 0px;
+}
+
 
 
 /* input[type="submit"] {
