@@ -393,14 +393,21 @@ input[type="text"] {
   position: absolute;
 }
 
+#or-link-to {
+  height: 35px;
+  bottom: 95px;
+  width: 190px;
+  left: 507px;
+  position: absolute;
+}
+
 #album {
   height: 70px;
-  bottom: 80px;
+  bottom: 30px;
   width: 300px;
   left: 450px;
   position: absolute;
 }
-
 
 #cigar-photo {
   height: 50px;

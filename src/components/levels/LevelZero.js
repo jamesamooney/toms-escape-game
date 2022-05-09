@@ -4,6 +4,7 @@ import { TomsEscape } from '../level-items/TomsEscape';
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import { Album } from '../level-items/Album';
+import { OrLinkTo } from '../level-items/OrLinkTo';
 
 export const LevelZero = () => {
   const { showPlayButton, setShowPlayButton } = useContext(AppContext)
@@ -12,6 +13,7 @@ export const LevelZero = () => {
     <div className='level-zero'>
       <Logo />
       <TomsEscape/>
+      {showPlayButton && <OrLinkTo />}
       {showPlayButton && <Album />}
 
 
