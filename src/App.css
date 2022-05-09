@@ -304,6 +304,13 @@ input[type="text"] {
   right: 40px;
 }
 
+#radio-one {
+  height: 60px;
+  position: absolute;
+  bottom: 314px;
+  right: 396px;
+}
+
 
 /* input[type="submit"] {
   width: 10px;

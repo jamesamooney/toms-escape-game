@@ -15,6 +15,7 @@ import { BrokenGlass } from "../level-items/BrokenGlass"
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
+import { RadioOne } from "../level-items/RadioOne"
 
 
 export const LevelTwo = () => {
@@ -86,6 +87,7 @@ export const LevelTwo = () => {
       <div className="item-border" id='window-border'></div>
       {<Window />}
       {isWindowBroken && <BrokenGlass />}
+      <RadioOne />
 
       <button onClick={setTime}>Complete Game</button>
     </div>
