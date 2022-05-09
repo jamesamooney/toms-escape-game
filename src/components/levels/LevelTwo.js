@@ -17,6 +17,7 @@ import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
 import { CigarPhoto } from "../level-items/CigarPhoto"
 import { ChestKey } from "../level-items/ChestKey"
+import { GameComplete } from '../levels/GameComplete'
 
 
 export const LevelTwo = () => {
@@ -55,25 +56,10 @@ export const LevelTwo = () => {
 
   const setTime = () => {
     setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
-    sendScore("James", finalTime)
+    // sendScore("James", finalTime)
   }
   
-  const sendScore = async (name, time) => {
-    const url = 'http://localhost:3030/scores'
-
-    const data = {
-      name: name,
-      minutes: time.minutes,
-      seconds: time.seconds
-    }
-
-    await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    })
-  }
-
+  
 
   return (
     <div className="level-two">
@@ -96,6 +82,7 @@ export const LevelTwo = () => {
       <CigarPhoto />
       {!hasChestKey && <ChestKey />}
       <button onClick={setTime}>Complete Game</button>
+      <GameComplete />
     </div>
   )
 }
