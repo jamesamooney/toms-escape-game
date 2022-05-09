@@ -38,6 +38,7 @@ function App() {
   const [minutes, setMinutes] = useState()
   const [seconds, setSeconds] = useState()
   const [finalTime, setFinalTime] = useState()
+  const [chestOpen, setChestOpen] = useState(false)
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
   const [playerLocation, setPlayerLocation] = useState(1)
@@ -77,7 +78,7 @@ function App() {
   
   return (
     <div className= "whole-screen">
-      <AppContext.Provider value={{pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, hasRock, setHasRock, safeAppears, setSafeAppears, isSafeClicked, setSafeClicked, isWindowBroken, setIsWindowBroken, minutes, seconds, setFinalTime, finalTime}} >
+      <AppContext.Provider value={{pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, hasRock, setHasRock, safeAppears, setSafeAppears, isSafeClicked, setSafeClicked, isWindowBroken, setIsWindowBroken, minutes, seconds, setFinalTime, finalTime, chestOpen, setChestOpen}} >
         <div className='game-window'>
           <div className='game-background'>
             <MyStopwatch setSeconds={setSeconds} setMinutes={setMinutes}/>

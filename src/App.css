@@ -167,6 +167,19 @@ p {
   height: 80px;
 }
 
+#tom-caged {
+  position: absolute;
+  top: 123px;
+  right: 157px;
+  height: 190px;
+}
+
+#cage {
+  position: absolute;
+  top: 101px;
+  right: 187px;
+  height: 200px;
+}
 
 #key {
   position: absolute;
@@ -180,6 +193,13 @@ p {
   bottom: 140px;
   left: 270px;
   height: 150px;
+}
+
+#chest {
+  height: 130px;
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
 }
 
 input[type="text"] {
@@ -265,7 +285,7 @@ input[type="text"] {
   height: 30px;
   position: absolute;
   bottom: 50px;
-  right: 80px;
+  right: 280px;
 }
 
 #paper-5 {

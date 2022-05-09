@@ -1,3 +1,5 @@
+import tom from "../../images/items/tom-depressed.png"
+import cage from "../../images/items/cage-2.png"
 import { Key } from '../level-items/Key'
 import { Door } from '../level-items/Door'
 import { Padlock } from '../level-items/Padlock'
@@ -8,12 +10,14 @@ import { useContext, useState } from 'react'
 import { AppContext } from '../../AppContext'
 import { Paper4 } from "../level-items/Paper4"
 import { Paper5 } from "../level-items/Paper5"
-
+import { TomCaged } from "../level-items/TomCaged"
+import { Cage } from "../level-items/Cage"
+import { Chest } from "../level-items/Chest"
 
 import '../../App.css';
 import { Armour } from '../level-items/Armour'
 
-export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
+export const LevelOne = ({ setPlayerLocation }) => {
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [passwordCorrect, setPasswordCorrect] = useState(false)
@@ -21,8 +25,10 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const { hasBook, setHasBook } = useContext(AppContext)
   const { isPadlockSolved, setPadlockSolved } = useContext(AppContext)
   const { doorOneOpen, setDoorOneOpen } = useContext(AppContext)
+  const { chestOpen, setChestOpen } = useContext(AppContext)
   const { hasPaper4, setHasPaper4 } = useContext(AppContext)
   const { hasPaper5, setHasPaper5 } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
   
   return (
     <div className="level-one">
@@ -39,8 +45,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
       <Armour/>
         {!hasBook && <Book 
         setHasBook={setHasBook}
-        logs={logs}
-        setLogs={setLogs}/>}
+        />}
         {!isPadlockSolved && <Padlock isPadlockClicked={isPadlockClicked} setPadlockClicked={setPadlockClicked}/>}
         {isPadlockClicked && <PadlockForm
           setPasswordCorrect={setPasswordCorrect}
@@ -50,6 +55,9 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
         />}
       {!hasPaper4 && <Paper4  />}
       {!hasPaper5 && <Paper5  />}
+      <TomCaged />
+      <Cage />
+      <Chest />
     </div>
   );
 }
