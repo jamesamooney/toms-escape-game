@@ -9,6 +9,6 @@ export const TomCaged = () => {
     setLogs([...logs, { type:"inform", text: "Tom's pretty fucked mate"}])
   }
   return (
-    <img className='item' id="tom-caged" onClick={clickTomCaged} src={tomCaged} />
+    <img id="tom-caged" onClick={clickTomCaged} src={tomCaged} />
   )
 }
