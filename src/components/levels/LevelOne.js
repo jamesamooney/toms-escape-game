@@ -14,7 +14,7 @@ import { Shovel } from '../level-items/Shovel'
 import '../../App.css';
 import { Armour } from '../level-items/Armour'
 
-export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
+export const LevelOne = () => {
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [passwordCorrect, setPasswordCorrect] = useState(false)
@@ -25,6 +25,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const { hasPaper4, setHasPaper4 } = useContext(AppContext)
   const { hasPaper5, setHasPaper5 } = useContext(AppContext)
   const { hasShovel, setHasShovel } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
   
   return (
     <div className="level-one">

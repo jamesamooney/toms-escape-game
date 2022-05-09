@@ -13,6 +13,7 @@ export const Shovel = () => {
     setLogs([...logs, { type:"inform", text: "Wonder what you could dig up this this..?"}])
     setPouch([...pouch, <PouchShovel key="Shovel"/>])
   }
+  
   return (
     <div>
       <img className="item" id="shovel" src={shovel} onClick={grabShovel} />
