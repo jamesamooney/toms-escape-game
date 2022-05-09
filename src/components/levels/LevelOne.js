@@ -13,6 +13,7 @@ import { Paper5 } from "../level-items/Paper5"
 import { TomCaged } from "../level-items/TomCaged"
 import { Cage } from "../level-items/Cage"
 import { Chest } from "../level-items/Chest"
+import { Tnt } from "../level-items/Tnt"
 
 import '../../App.css';
 import { Armour } from '../level-items/Armour'
@@ -29,6 +30,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
   const { hasPaper4, setHasPaper4 } = useContext(AppContext)
   const { hasPaper5, setHasPaper5 } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
+  const { hasTnt, setHasTnt } = useContext(AppContext)
   
   return (
     <div className="level-one">
@@ -58,6 +60,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
       <TomCaged />
       <Cage />
       <Chest />
+      {(chestOpen && !hasTnt) && <Tnt setHasTnt={setHasTnt}/>}
     </div>
   );
 }
