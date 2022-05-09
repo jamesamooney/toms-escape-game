@@ -7,8 +7,8 @@ export const Chest = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const { chestUnlocked, setChestUnlocked, setChestOpen } = useContext(AppContext)
-
-  const hasChestKey = true
+  const { hasChestKey, setHasChestKey } = useContext(AppContext)
+  
 
   const clickChest = () => {
     if (hasChestKey === true) {
