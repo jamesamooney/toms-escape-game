@@ -16,7 +16,7 @@ export const Rock = () => {
   }
   return (
     <div>
-      <img className="rock" src={rock} onClick={grabRock} />
+      <img className="item" id="rock" src={rock} onClick={grabRock} />
     </div>
   )
 }

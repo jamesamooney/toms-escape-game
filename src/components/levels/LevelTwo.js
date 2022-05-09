@@ -11,10 +11,10 @@ import { Broom } from "../level-items/Broom"
 import { Rock } from "../level-items/Rock"
 import { Window } from "../level-items/Window"
 import { BrokenGlass } from "../level-items/BrokenGlass"
-// import { BrokenGlass } from "../level-items/BrokenGlass" 
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
+import { RadioOne } from "../level-items/RadioOne"
 
 
 export const LevelTwo = () => {
@@ -33,8 +33,8 @@ export const LevelTwo = () => {
   const { hasRock, setHasRock } = useContext(AppContext)
   const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
-  const { minutes, setMinutes } = useContext(AppContext)
-  const { seconds, setSeconds } = useContext(AppContext)
+  const { savedMinutes, setSavedMinutes } = useContext(AppContext)
+  const { savedSeconds, setSavedSeconds } = useContext(AppContext)
 
 
   
@@ -48,7 +48,7 @@ export const LevelTwo = () => {
   
 
   const setTime = () => {
-    setFinalTime({minutes: minutes, seconds: seconds})
+    setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
     sendScore("James", finalTime)
   }
   
@@ -80,12 +80,13 @@ export const LevelTwo = () => {
       {!hasPaper3 && <Paper3  />}
       {!hasBroom &&<Broom /> }
       {safeAppears && <Safe />}
-      {isSafeClicked && <SafeForm />}
+      {(isSafeClicked && !isSafeSolved) && <SafeForm />}
       <ArrowDown />
       {(isSafeSolved && !hasRock)&& <Rock />}
       <div className="item-border" id='window-border'></div>
       {<Window />}
       {isWindowBroken && <BrokenGlass />}
+      <RadioOne />
 
       <button onClick={setTime}>Complete Game</button>
     </div>

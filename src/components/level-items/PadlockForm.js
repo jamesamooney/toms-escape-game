@@ -5,7 +5,7 @@ import { AppContext } from "../../AppContext"
 export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockClicked, setPadlockSolved }) => {
 
   const { logs, setLogs } = useContext(AppContext)
-  const password = 'spike'
+  const password = '1940'
   const [passwordGuess, setPasswordGuess] = useState("")
   const checkPassword = (e) => {
     if(passwordGuess === password) {
