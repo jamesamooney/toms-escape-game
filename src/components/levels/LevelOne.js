@@ -37,7 +37,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
   const { hasTnt, setHasTnt } = useContext(AppContext)
   const { hasDetonator, setHasDetonator } = useContext(AppContext)
   const { hasShovel, setHasShovel } = useContext(AppContext)
-  const { logs, setLogs } = useContext(AppContext)
+
 
   
   return (

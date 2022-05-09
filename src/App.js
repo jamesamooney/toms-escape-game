@@ -44,7 +44,7 @@ function App() {
   const [hasChestKey, setHasChestKey] = useState(false)
   const [chestUnlocked, setChestUnlocked] = useState(false)
   const [chestOpen, setChestOpen] = useState(false)
-  const [ hasShovel, setHasShovel] = useState(false)
+ 
 
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
