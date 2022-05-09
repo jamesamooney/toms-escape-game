@@ -5,6 +5,7 @@ import { AppContext } from './AppContext'
 import { MyStopwatch } from './components/Stopwatch'
 import { LevelOne } from './components/levels/LevelOne'
 import { LevelTwo } from './components/levels/LevelTwo'
+import { LevelThree } from './components/levels/LevelThree'
 import { TextInterface } from './components/TextInterface'
 import { Pouch } from './components/Pouch'
 
@@ -83,6 +84,7 @@ function App() {
             <MyStopwatch setSeconds={setSeconds} setMinutes={setMinutes}/>
             {playerLocation === 1 && <LevelOne />}
             {playerLocation === 2 && <LevelTwo />}
+            {playerLocation === 3 && <LevelThree />}
           </div>
           <div className='bottom-ui'>
             <div className = "text-interface">
