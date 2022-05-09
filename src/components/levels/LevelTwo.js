@@ -36,12 +36,15 @@ export const LevelTwo = () => {
   const { finalTime, setFinalTime } = useContext(AppContext)
   const { savedMinutes, setSavedMinutes } = useContext(AppContext)
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
 
 
   
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
       setSafeAppears(true)
+      setLogs([...logs, { type:"success", text: "A secret compartment slides open and a safe is revealed!"}])
+
       }
   },[light1, light2, light3]) 
   
