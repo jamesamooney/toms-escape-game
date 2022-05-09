@@ -62,7 +62,7 @@ export const LevelTwo = () => {
     // sendScore("James", finalTime)
   }
   
-  
+  const background = isTrapLaid ? ("level-two-trail") : ("level-two")
 
   return (
     <div className={background}>
