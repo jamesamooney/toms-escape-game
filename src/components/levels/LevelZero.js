@@ -1,29 +1,20 @@
 import { PlayButton } from '../level-items/PlayButton'
-import themeTune from '../audio/AppThemeTune.wav'
-import { useEffect } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
-import { Sound } from 'react';
+import { Logo } from '../level-items/Logo'
+import { TomsEscape } from '../level-items/TomsEscape';
+import { useContext } from "react"
+import { AppContext } from "../../AppContext"
 
 export const LevelZero = () => {
-
-  useEffect(() => {
-    new Audio(themeTune).play();
-  },[])
-
-  // const playAudio = () => {
-  //   new Audio(themeTune).play();
-  // }
-  // useEffect(
-  //   () => { playAudio() }, []);
-
+  const { showPlayButton, setShowPlayButton } = useContext(AppContext)
 
   return (
     <div className='level-zero'>
+      <Logo />
+      {showPlayButton &&<PlayButton />}
+      {!showPlayButton && <TomsEscape/>}
 
-      <PlayButton />
-   
+    
       
-
     </div>
   )
 }
