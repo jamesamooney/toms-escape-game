@@ -358,6 +358,33 @@ input[type="text"] {
   left: 151px;
 }
 
+#cigar-photo {
+  height: 50px;
+  position: absolute;
+  top: 170px;
+  right: 260px;
+}
+
+#tape {
+  height: 20px;
+  position: absolute;
+  top: 160px;
+  right: 335px;
+}
+
+#tape2 {
+  height: 20px;
+  position: absolute;
+  top: 160px;
+  right: 250px;
+}
+
+#chest-key {
+  height: 40px;
+  position: absolute;
+  top: 210px;
+  left: 430px;
+}
 
 /* input[type="submit"] {
   width: 10px;

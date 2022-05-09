@@ -1,4 +1,4 @@
-import paper from "../../images/items/paper.jpeg"
+import noteG from "../../images/items/note-G.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 
@@ -11,6 +11,9 @@ export const PouchPaper5 = () => {
   }
 
   return (
-      <img className='item' id="pouch-paper-5" src={paper} onClick={paperClue} style={{ height: '40px'}}/>
+ 
+      <img className='item' id="pouch-paper-5" src={noteG} onClick={paperClue} style={{ height: '40px' }} />
+
+    
   )
 }
