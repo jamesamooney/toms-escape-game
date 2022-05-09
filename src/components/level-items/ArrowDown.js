@@ -8,7 +8,7 @@ export const ArrowDown = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const goToBasement = () => {
-    setPlayerLocation(1)
+    setPlayerLocation(playerLocation -1)
     setLogs([...logs, { type:"inform", text: "Running back to the basement? Coward..."}])
 
   }

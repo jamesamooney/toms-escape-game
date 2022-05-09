@@ -29,8 +29,29 @@
   position: relative;
 }
 
+.level-two-trail {
+  background-image: url("./images/backgrounds/kitchenWithTrail.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+
 .level-three {
   background-image: url("./images/backgrounds/garden.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+.level-three-trail {
+  background-image: url("./images/backgrounds/gardenWithTrail.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 600px;
@@ -170,6 +191,13 @@ p {
   position: absolute;
   bottom: 0px;
   right: 200px;
+  height: 100px;  
+}
+
+#detonator-set {
+  position: absolute;
+  bottom: 30px;
+  left: 290px;
   height: 100px;  
 }
 
@@ -349,8 +377,15 @@ input[type="text"] {
   right: 40px;
 }
 
-.empty-dog-bowl {
-  height: 50px;
+#empty-bowl {
+  height: 60px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+#bowl-with-bone {
+  height: 60px;
   position: absolute;
   bottom: 50px;
   left: 50px;

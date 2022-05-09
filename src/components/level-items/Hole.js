@@ -20,7 +20,7 @@ export const Hole = () => {
   }
 
   return  isHoleDug ?
-  (<img className="item" id="hole-dug"  src={hole}  />)
+  (<img className="item" id="hole-dug"  src={hole}/>)
     :
-  (<img className="item" id="hole-undug" src={mound}  onClick={digHole}/>)
+  (<img className="item" id="hole-undug" src={mound} onClick={digHole} />)
 }

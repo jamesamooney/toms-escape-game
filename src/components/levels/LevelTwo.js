@@ -17,6 +17,8 @@ import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
 import { CigarPhoto } from "../level-items/CigarPhoto"
 import { ChestKey } from "../level-items/ChestKey"
+import { Detonator } from "../level-items/Detonator"
+
 
 
 export const LevelTwo = () => {
@@ -39,6 +41,7 @@ export const LevelTwo = () => {
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
   const { hasChestKey, setHasChestKey } = useContext(AppContext)
+  const { isTrapLaid, setIsTrapLaid } = useContext(AppContext);
 
 
   
@@ -74,9 +77,11 @@ export const LevelTwo = () => {
     })
   }
 
+  const background = isTrapLaid ? ("level-two-trail") : ("level-two")
+
 
   return (
-    <div className="level-two">
+    <div className={background}>
       <Light light1={light1} light2={light2} light3={light3} />
       <LightSwitch1 />
       <LightSwitch2 />
@@ -95,6 +100,7 @@ export const LevelTwo = () => {
       <RadioOne />
       <CigarPhoto />
       {!hasChestKey && <ChestKey />}
+      {isTrapLaid && <Detonator/>}
       <button onClick={setTime}>Complete Game</button>
     </div>
   )
