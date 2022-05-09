@@ -15,6 +15,7 @@ import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
+import { CigarPhoto } from "../level-items/CigarPhoto"
 
 
 export const LevelTwo = () => {
@@ -87,7 +88,7 @@ export const LevelTwo = () => {
       {<Window />}
       {isWindowBroken && <BrokenGlass />}
       <RadioOne />
-
+      <CigarPhoto />
       <button onClick={setTime}>Complete Game</button>
     </div>
   )
