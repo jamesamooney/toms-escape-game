@@ -8,6 +8,7 @@ import { useContext, useState } from 'react'
 import { AppContext } from '../../AppContext'
 import { Paper4 } from "../level-items/Paper4"
 import { Paper5 } from "../level-items/Paper5"
+import { Shovel } from '../level-items/Shovel'
 
 
 import '../../App.css';
@@ -23,6 +24,7 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
   const { doorOneOpen, setDoorOneOpen } = useContext(AppContext)
   const { hasPaper4, setHasPaper4 } = useContext(AppContext)
   const { hasPaper5, setHasPaper5 } = useContext(AppContext)
+  const { hasShovel, setHasShovel } = useContext(AppContext)
   
   return (
     <div className="level-one">
@@ -49,7 +51,8 @@ export const LevelOne = ({ setPlayerLocation, logs, setLogs }) => {
           setPadlockSolved={setPadlockSolved}
         />}
       {!hasPaper4 && <Paper4  />}
-      {!hasPaper5 && <Paper5  />}
+      {!hasPaper5 && <Paper5 />}
+      {!hasShovel && <Shovel />}
     </div>
   );
 }

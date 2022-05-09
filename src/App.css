@@ -138,7 +138,7 @@ p {
 .padlock-form {
   position: absolute;
   bottom: 160px;
-  left: 30px;
+  left: 10px;
 }
 
 #book {
@@ -315,6 +315,13 @@ input[type="text"] {
   position: absolute;
   bottom: 270px;
   left: 90px;
+}
+
+#shovel {
+  height: 110px;
+  position: absolute;
+  bottom: 80px;
+  left: 151px;
 }
 
 
