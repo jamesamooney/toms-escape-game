@@ -19,11 +19,9 @@ export const SafeForm = () => {
   }
 
   return (
-    <div className='div-safe'>
       <form className="safe-form">
           <input type="text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
-          <input type="submit" onClick={checkPassword} />
+          <input type="submit" value="Crack it!" onClick={checkPassword} />
       </form>
-    </div>
   )
 }

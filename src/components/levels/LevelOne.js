@@ -15,11 +15,14 @@ import { Cage } from "../level-items/Cage"
 import { Chest } from "../level-items/Chest"
 import { Tnt } from "../level-items/Tnt"
 import { Detonator } from "../level-items/Detonator"
+import { Shovel } from '../level-items/Shovel'
+
 
 import '../../App.css';
 import { Armour } from '../level-items/Armour'
 
 export const LevelOne = ({ setPlayerLocation }) => {
+
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [passwordCorrect, setPasswordCorrect] = useState(false)
@@ -33,6 +36,9 @@ export const LevelOne = ({ setPlayerLocation }) => {
   const { logs, setLogs } = useContext(AppContext)
   const { hasTnt, setHasTnt } = useContext(AppContext)
   const { hasDetonator, setHasDetonator } = useContext(AppContext)
+  const { hasShovel, setHasShovel } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
+
   
   return (
     <div className="level-one">
@@ -64,6 +70,8 @@ export const LevelOne = ({ setPlayerLocation }) => {
       <Chest />
       {(chestOpen && !hasTnt) && <Tnt setHasTnt={setHasTnt}/>}
       {(chestOpen && !hasDetonator) && <Detonator setHasDetonator={setHasDetonator}/>}
+      {!hasPaper5 && <Paper5 />}
+      {!hasShovel && <Shovel />}
     </div>
   );
 }
