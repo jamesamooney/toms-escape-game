@@ -29,7 +29,7 @@ export const Window = () => {
   }
   
   return isWindowBroken ? 
-    ( <img id="arrow-outside" className="item" src={arrowRight} onClick={levelComplete}/> )
+    ( <img id="arrow-right-kitchen" className="item" src={arrowRight} onClick={levelComplete}/> )
    : 
     ( <img id="window-border" className="item" src={window} onClick={clickWindow} /> )
 }

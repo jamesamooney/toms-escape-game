@@ -389,6 +389,13 @@ span {
 #arrow-outside {
   height: 50px;
   position: absolute;
+  bottom: 140px;
+  right: 30px;
+}
+
+#arrow-right-kitchen {
+  height: 50px;
+  position: absolute;
   bottom: 340px;
   right: 100px;
 }
