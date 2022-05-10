@@ -1,6 +1,4 @@
 import React from 'react'
-import { useContext } from "react"
-import { AppContext } from "../../AppContext"
 import album from "../../images/items/album.png"
 
 
