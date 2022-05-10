@@ -6,6 +6,7 @@ import { Hole } from "../level-items/Hole"
 import { Bone } from "../level-items/Bone"
 import { ArrowDown } from "../level-items/ArrowDown"
 import arrowRight from '../../images/items/arrowRight.png';
+import { TomsKey } from "../level-items/TomsKey"
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 
@@ -39,6 +40,7 @@ export const LevelThree = () => {
       <Hole/>
       {(isHoleDug && !hasBone) && <Bone/>}
       <img id="arrow-outside" className="item" src={arrowRight} onClick={gameComplete}/>
+      <TomsKey/>
     </div>
   )
   }

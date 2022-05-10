@@ -544,6 +544,15 @@ span {
   left: 30px;
 }
 
+#toms-key {
+  height: 30px;
+  position: absolute;
+  bottom: 210px;
+  right: 90px;
+}
+
+
+
 #timer-logo {
   height: 60px;
   position: relative;
@@ -558,8 +567,16 @@ span {
   top: 180px;
 }
 
-/* #submit-name {
-  width: 200px;
+
+#sticky-note {
+  height: 50px;
+  position: absolute;
+  right: 284px;
+  bottom: 325px;
+}
+
+/* input[type="submit"] {
+  width: 10px;
 } */
 
 
