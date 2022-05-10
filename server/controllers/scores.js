@@ -7,7 +7,7 @@ export const ScoresController = {
         throw err;
       } 
       res.status(200).json(scores);
-    }).limit(10);
+    }).sort({time: 1}).limit(10);
   },
 
   Create: (req, res) => {
@@ -24,5 +24,4 @@ export const ScoresController = {
 
     res.status(201).send(scoreData)
   }
-
 }

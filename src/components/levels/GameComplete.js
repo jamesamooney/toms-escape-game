@@ -16,8 +16,7 @@ export const GameComplete = ({ }) => {
 
     const data = {
       name: name,
-      minutes: time.minutes,
-      seconds: time.seconds
+      time: time
     }
 
     await fetch(url, {
@@ -25,6 +24,7 @@ export const GameComplete = ({ }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
+    getData()
   }
 
   const url = 'http://localhost:3030/scores'
@@ -35,6 +35,8 @@ export const GameComplete = ({ }) => {
       .then(data => {
         setLeaderboard(data)
       })
+
+      setPlayerLocation(5)
     }
   
     
@@ -43,8 +45,6 @@ export const GameComplete = ({ }) => {
     console.log(userName)
     sendScore(userName, finalTime)
     e.preventDefault()
-    setPlayerLocation(5)
-    getData()
     // setLeaderboard(getData());
   }
 
@@ -53,7 +53,8 @@ export const GameComplete = ({ }) => {
   return (
     <div className="game-complete">
       <div className="game-complete-message">
-        <h1>You freed Tom in {finalTime.minutes}:{finalTime.seconds < 10 && 0}{finalTime.seconds}!</h1>
+        {/* <h1>You freed Tom in {finalTime.minutes}:{finalTime.seconds < 10 && 0}{finalTime.seconds}!</h1> */}
+        <h1>You freed Tom in {finalTime}!</h1>
         <h2>Enter your name and see if </h2>
         <h2>you made it onto the leaderboard</h2>
       
