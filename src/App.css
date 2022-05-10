@@ -543,6 +543,13 @@ input[type="text"] {
   left: 10px;
 }
 
+#sticky-note {
+  height: 50px;
+  position: absolute;
+  right: 284px;
+  bottom: 325px;
+}
+
 /* input[type="submit"] {
   width: 10px;
 } */
