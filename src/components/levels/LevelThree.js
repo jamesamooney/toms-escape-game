@@ -8,10 +8,11 @@ import { ArrowDown } from "../level-items/ArrowDown"
 import arrowRight from '../../images/items/arrowRight.png';
 import { TomsKey } from "../level-items/TomsKey"
 import { Dinnerbell } from "../level-items/Dinnerbell"
-
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
 import { KillerDefeated } from '../level-items/KillerDefeated'
+import { HappyTom } from "../level-items/HappyTom"
+
 
 export const LevelThree = () => {
   const { isHoleDug, setIsHoleDug } = useContext(AppContext);
@@ -23,6 +24,8 @@ export const LevelThree = () => {
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
   const { hasTomsKey, setHasTomsKey } = useContext(AppContext)
+  const { tomIsFree, setTomIsFree } = useContext(AppContext)
+
 
   const background = isTrapLaid ? ("level-three-trail") : ("level-three")
 
@@ -47,7 +50,9 @@ export const LevelThree = () => {
       <img id="arrow-outside" className="item" src={arrowRight} onClick={gameComplete}/>
       {!hasTomsKey && <TomsKey/>}
       <Dinnerbell/>
-      {isKillerDefeated && <KillerDefeated/>}
+      {isKillerDefeated && <KillerDefeated />}
+      {tomIsFree && <HappyTom />}
+      
     </div>
   )
   }

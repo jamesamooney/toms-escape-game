@@ -652,3 +652,28 @@ span {
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
 }
+
+#happy-tom-1 {
+  position: absolute;
+  height: 200px;
+  right: 540px;
+  bottom: 20px;
+}
+
+#happy-tom-2 {
+  position: absolute;
+  height: 200px;
+  left: 400px;
+  bottom: 120px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#happy-tom-3 {
+  position: absolute;
+  height: 200px;
+  right: 200px;
+  bottom: 140px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

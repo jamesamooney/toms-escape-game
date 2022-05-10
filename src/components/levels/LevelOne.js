@@ -14,6 +14,8 @@ import { Chest } from "../level-items/Chest"
 import { Tnt } from "../level-items/Tnt"
 import { Detonator } from "../level-items/Detonator"
 import { Shovel } from '../level-items/Shovel'
+import { HappyTom } from "../level-items/HappyTom"
+
 
 
 
@@ -72,6 +74,9 @@ export const LevelOne = ({ setPlayerLocation }) => {
       {(chestOpen && !hasDetonator) && <Detonator setHasDetonator={setHasDetonator}/>}
       {!hasPaper5 && <Paper5 />}
       {!hasShovel && <Shovel />}
+      {tomIsFree && <HappyTom />}
+
+
     </div>
   );
 }

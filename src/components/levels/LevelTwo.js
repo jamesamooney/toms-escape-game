@@ -21,6 +21,7 @@ import { DetonatorSet } from "../level-items/DetonatorSet"
 import { Detonator } from "../level-items/Detonator"
 import { StickyNote } from "../level-items/StickyNote"
 import { GameComplete } from '../levels/GameComplete'
+import { HappyTom } from "../level-items/HappyTom"
 
 
 export const LevelTwo = () => {
@@ -44,6 +45,7 @@ export const LevelTwo = () => {
   const { logs, setLogs } = useContext(AppContext)
   const { hasChestKey, setHasChestKey } = useContext(AppContext)
   const { isTrapLaid, setIsTrapLaid } = useContext(AppContext);
+  const { tomIsFree, setTomIsFree } = useContext(AppContext)
 
 
   
@@ -86,7 +88,8 @@ export const LevelTwo = () => {
       <CigarPhoto />
       <StickyNote />
       {!hasChestKey && <ChestKey />}
-      {isTrapLaid && <DetonatorSet/>}
+      {isTrapLaid && <DetonatorSet />}
+      {tomIsFree && <HappyTom />}
 
     </div>
   )
