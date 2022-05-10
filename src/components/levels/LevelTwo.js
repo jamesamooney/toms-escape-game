@@ -17,8 +17,9 @@ import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
 import { CigarPhoto } from "../level-items/CigarPhoto"
 import { ChestKey } from "../level-items/ChestKey"
+import { DetonatorSet } from "../level-items/DetonatorSet"
 import { Detonator } from "../level-items/Detonator"
-
+import { StickyNote } from "../level-items/StickyNote"
 import { GameComplete } from '../levels/GameComplete'
 
 
@@ -83,10 +84,10 @@ export const LevelTwo = () => {
       {isWindowBroken && <BrokenGlass />}
       <RadioOne />
       <CigarPhoto />
+      <StickyNote />
       {!hasChestKey && <ChestKey />}
-      {isTrapLaid && <Detonator/>}
-      <button onClick={setTime}>Complete Game</button>
-      <GameComplete />
+      {isTrapLaid && <DetonatorSet/>}
+
     </div>
   )
 }

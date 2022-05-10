@@ -5,9 +5,10 @@ import { useContext } from "react"
 import React from 'react'
 
 export const PouchBone = () => {
-  return (
-    <img className="item" id="pouch-bone" src={bone} style={{ height: '40px'}} />
-  )
-}
+  const { isTrapLaid, setIsTrapLaid } = useContext(AppContext)
 
-export default PouchBone
+  return isTrapLaid ?
+    (<></>)
+    :
+    (<img className="item" id="pouch-bone" src={bone} style={{ height: '20px'}} />)
+}
