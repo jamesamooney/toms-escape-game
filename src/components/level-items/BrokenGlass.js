@@ -6,7 +6,7 @@ export const BrokenGlass = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const clickBrokenGlass = () => {
-    setLogs([...logs, { type:"inform", text: "The remnants of the broken window"}])
+    setLogs([...logs, { type:"inform", text: "Smashed it"}])
 
   }
   return (

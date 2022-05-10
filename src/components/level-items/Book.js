@@ -10,7 +10,7 @@ export const Book = ({ setHasBook }) => {
   const grabBook = () => {
     setHasBook(true)
     setPouch([...pouch, <PouchBook key={book}/>])
-    setLogs([...logs,{ type: "inform", text: "You picked a dusty ol' book, what could possibly be written inside?"}])
+    setLogs([...logs,{ type: "inform", text: "You picked up a dusty old book. What could be written inside?"}])
   }
 
   return (

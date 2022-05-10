@@ -11,10 +11,10 @@ export const Dinnerbell = () => {
 
   const clickBell = () => {
     if (isTrapLaid) {
-      setLogs([...logs, { type:"success", text: "Nice one, spikes coming over. You had better get ready to DETONATE!"}])
+      setLogs([...logs, { type:"success", text: "Good work, Spike's coming over. Get ready to detonate!"}])
       setHasBellRung(true)
     } else{
-      setLogs([...logs, { type:"inform", text: "That's spikes dinnerbell, you better make sure you have some food ready before you ring it"}])
+      setLogs([...logs, { type:"inform", text: "That's Spike's dinner bell, you better have some food ready before you ring it..."}])
     }
   }
 

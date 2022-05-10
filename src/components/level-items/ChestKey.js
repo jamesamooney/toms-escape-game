@@ -11,7 +11,7 @@ export const ChestKey = () => {
 
 
   const clickChestKey = () => {
-    setLogs([...logs, { type:"inform", text: "You find a rusty old key"}])
+    setLogs([...logs, { type:"inform", text: "You found a rusty old key!"}])
     setHasChestKey(true)
     setPouch([...pouch, <PouchChestKey key="chestKey"/>])
 

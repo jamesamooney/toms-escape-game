@@ -15,7 +15,7 @@ export const Chest = () => {
       setChestUnlocked(true)
       setChestOpen(true)
     }
-    setLogs([...logs, { type:"inform", text: !hasChestKey ? "A treasure chest! It's locked though, so you'll never know what treasures it holds." : "You unlocked the chest!"}])
+    setLogs([...logs, { type:"inform", text: !hasChestKey ? "A treasure chest! Seems to be locked..." : "You unlocked the chest!"}])
   }
   return chestUnlocked ? (
     <img className='item' id="chest" onClick={clickChest} src={openChest} />

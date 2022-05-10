@@ -10,11 +10,11 @@ export const Killer = () => {
   const { hasBellRung, setHasBellRung } = useContext(AppContext)
 
   const snore = () => {  
-    setLogs([...logs, { type:"inform", text: "He's clearly in a deep sleep, look around for something to distract him"}])
+    setLogs([...logs, { type:"inform", text: "Spike's in a deep sleep. How can you distract him?"}])
   }
 
   const awake = () => {
-    setLogs([...logs, { type:"warning", text: "He's awake now and he's coming over, better get outta here!"}])
+    setLogs([...logs, { type:"warning", text: "He's awake now and heading your way. Better scram!"}])
   }
 
   return hasBellRung ? 

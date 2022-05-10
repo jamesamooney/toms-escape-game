@@ -11,9 +11,9 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen }) => {
   const openDoor = () => {
     if(hasKeyOne) {
       setDoorOneOpen(true)
-      setLogs([...logs, { type:"success", text: "You insert the key, and it magically opens the door!"}])
+      setLogs([...logs, { type:"success", text: "You insert the key and it magically opens the door!"}])
     } else {
-      setLogs([...logs, { type:"warning", text: "You really expected the door to open? It's LOCKED! Can't blame you for trying though. Have a look around to see if you find a key!"}])
+      setLogs([...logs, { type:"warning", text: "You really expected the door to open? It's LOCKED! Some sort of key would be in order..."}])
     }
     
   }
