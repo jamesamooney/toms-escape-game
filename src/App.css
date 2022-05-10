@@ -639,3 +639,17 @@ span {
   background: rgba(0, 0, 0, .08);
   color: rgba(0, 0, 0, .3);
 }
+
+.leaderboard-score {
+  position: relative;
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+}
+
+#score-text {
+  padding-top: 10px;
+  top: 3px;
+}

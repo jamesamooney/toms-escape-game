@@ -8,6 +8,7 @@ export const GameComplete = ({ }) => {
   const { userName, setUserName } = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
   const { playerLocation, setPlayerLocation } = useContext(AppContext);
+  const { leaderboard, setLeaderboard } = useContext(AppContext);
 
   const sendScore = async (name, time) => {
     
@@ -26,12 +27,25 @@ export const GameComplete = ({ }) => {
     })
   }
 
+  const url = 'http://localhost:3030/scores'
+
+  const getData = async() => {
+      await fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        setLeaderboard(data)
+      })
+    }
+  
+    
 
   const submitName = (e) => {
     console.log(userName)
     sendScore(userName, finalTime)
     e.preventDefault()
     setPlayerLocation(5)
+    getData()
+    // setLeaderboard(getData());
   }
 
   

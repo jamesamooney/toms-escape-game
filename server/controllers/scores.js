@@ -7,7 +7,7 @@ export const ScoresController = {
         throw err;
       } 
       res.status(200).json(scores);
-    });
+    }).limit(10);
   },
 
   Create: (req, res) => {
