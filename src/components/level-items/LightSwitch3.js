@@ -1,13 +1,19 @@
 import lightSwitch3 from "../../images/items/lightSwitchRight.png" 
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
+import lightSwitchSFX from "../audio/lightSwitch.wav"
 
 export const LightSwitch3 = () => {
   const { hasTurnedOnPower, setHasTurnedOnPower } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
   const { light3, setLight3 } = useContext(AppContext)
 
+  const playAudioLightSwitchSFX = () => {
+    new Audio(lightSwitchSFX).play();
+  }
+
   const switchLight = () => {
+    playAudioLightSwitchSFX()
     if (!hasTurnedOnPower) {
       setLogs([...logs, { type:"inform", text: "There seems to not be any power"}])
         
