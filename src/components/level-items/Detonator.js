@@ -8,6 +8,7 @@ export const Detonator = ( { setHasDetonator } ) => {
   const { logs, setLogs } = useContext(AppContext)
   const { isTrapLaid, setIsTrapLaid } = useContext(AppContext);
 
+
   const grabDetonator = () => {
     setHasDetonator(true)
     setPouch([...pouch, <PouchDetonator key="detonator"/>])
