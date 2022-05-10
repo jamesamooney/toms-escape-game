@@ -23,7 +23,6 @@ function App() {
   
   const [logs, setLogs] = useState([ { type: "inform", text: "Oh no! You've been locked in the dungeon with Tom! Look around you to find something that might help you escape!"}])
   const [pouch, setPouch] = useState([])
-  console.log(pouch)
   const [hasBook, setHasBook] = useState(false)
   const [hasBroom, setHasBroom] = useState(false)
   const [hasKeyOne, setHasKeyOne] = useState(false)
