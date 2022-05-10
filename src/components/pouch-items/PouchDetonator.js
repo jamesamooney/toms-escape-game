@@ -5,6 +5,7 @@ import { useContext } from "react"
 export const PouchDetonator = () => {
 
   const { logs, setLogs } = useContext(AppContext)
+  const { isTrapLaid, setIsTrapLaid } = useContext(AppContext)
 
   const detonatorClue = () => {
     
@@ -12,7 +13,8 @@ export const PouchDetonator = () => {
 
   }
 
-  return (
-      <img className='item' id="pouch-detonator" src={detonator} onClick={detonatorClue} style={{ height: '40px'}}/>
-  )
+  return isTrapLaid ?
+    (<></>)
+    :
+    (<img className='item' id="pouch-detonator" src={detonator} onClick={detonatorClue} style={{ height: '40px'}}/>)
 }

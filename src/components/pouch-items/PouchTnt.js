@@ -5,6 +5,7 @@ import { useContext } from "react"
 export const PouchTnt = () => {
 
   const { logs, setLogs } = useContext(AppContext)
+  const { isTrapLaid, setIsTrapLaid } = useContext(AppContext)
 
   const tntInfo = () => {
     
@@ -12,8 +13,10 @@ export const PouchTnt = () => {
 
   }
 
-  return (
-      <img className='item' id="pouch-tnt" src={tnt} onClick={tntInfo} style={{ height: '40px'}}/>
-  )
+  return isTrapLaid ? (
+    (<></>)
+    )
+    :
+    <img className='item' id="pouch-tnt" src={tnt} onClick={tntInfo} style={{ height: '40px'}}/>
 }
 
