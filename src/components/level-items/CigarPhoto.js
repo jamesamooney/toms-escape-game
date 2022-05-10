@@ -10,7 +10,6 @@ export const CigarPhoto = () => {
 
   const PhotoClick = () => {
     setLogs([...logs, { type:"inform", text: "The good old days, Tom really enjoyed smoking those"}])
-
   }
 
   return (
