@@ -12,8 +12,8 @@ export const Paper1 = () => {
 
   const grabPaper1 = () => {
     setHasPaper1(true)
-    setPouch([...pouch, <PouchPaper1 />])
-    setLogs([...logs, <p>Maybe you should uncrumple the paper mouse boy</p>])
+    setPouch([...pouch, <PouchPaper1 key="paper-1"/>])
+    setLogs([...logs, { type:"inform", text: "Maybe you should uncrumple the paper mouse boy"}])
   }
 
   return (

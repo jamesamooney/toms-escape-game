@@ -1,4 +1,3 @@
-import downArrow from  "../../images/items/arrowDown.png"
 import { Light } from "../level-items/Light"
 import { LightSwitch1 } from "../level-items/LightSwitch1"
 import { LightSwitch2 } from "../level-items/LightSwitch2"
@@ -9,11 +8,21 @@ import { Paper1 } from "../level-items/Paper1"
 import { Paper2 } from "../level-items/Paper2"
 import { Paper3 } from "../level-items/Paper3"
 import { Broom } from "../level-items/Broom"
+import { Rock } from "../level-items/Rock"
+import { Window } from "../level-items/Window"
+import { BrokenGlass } from "../level-items/BrokenGlass"
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
+import { ArrowDown } from "../level-items/ArrowDown"
+import { RadioOne } from "../level-items/RadioOne"
+import { CigarPhoto } from "../level-items/CigarPhoto"
+import { ChestKey } from "../level-items/ChestKey"
+import { Detonator } from "../level-items/Detonator"
+
+import { GameComplete } from '../levels/GameComplete'
 
 
-export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
+export const LevelTwo = () => {
   
   //lights colours are: 0 = Yellow, 1 = Red, 2 = Green
   const { light1, setLight1 } = useContext(AppContext)
@@ -21,32 +30,42 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
   const { light3, setLight3 } = useContext(AppContext)
   const { hasBroom, setHasBroom } = useContext(AppContext)
   const { isSafeSolved, setSafeSolved } = useContext(AppContext)
-  const [safeAppears, setSafeAppears] = useState(false)
-  const [isSafeClicked, setSafeClicked] = useState(false)
+  const { safeAppears, setSafeAppears } = useContext(AppContext)
+  const { isSafeClicked, setSafeClicked } = useContext(AppContext)
   const { hasPaper1, setHasPaper1 } = useContext(AppContext)
   const { hasPaper2, setHasPaper2 } = useContext(AppContext)
   const { hasPaper3, setHasPaper3 } = useContext(AppContext)
+  const { hasRock, setHasRock } = useContext(AppContext)
+  const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
+  const { finalTime, setFinalTime } = useContext(AppContext)
+  const { savedMinutes, setSavedMinutes } = useContext(AppContext)
+  const { savedSeconds, setSavedSeconds } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
+  const { hasChestKey, setHasChestKey } = useContext(AppContext)
+  const { isTrapLaid, setIsTrapLaid } = useContext(AppContext);
+
+
   
   useEffect(() => {
     if (light1 === 0 && light2 === 1 && light3 === 2) {
       setSafeAppears(true)
-      console.log("safe open")
+      setLogs([...logs, { type:"success", text: "A secret compartment slides open and a safe is revealed!"}])
+
       }
-    console.log("function running")
-    console.log(light1)
   },[light1, light2, light3]) 
   
 
-  const goToBasement = () => {
-    setPlayerLocation(1)
-    setLogs([...logs, <p>Running back to the basement? Coward...</p>])
-  }
-
   
 
+  const setTime = () => {
+    setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
+    // sendScore("James", finalTime)
+  }
+  
+  const background = isTrapLaid ? ("level-two-trail") : ("level-two")
 
   return (
-    <div className="level-two">
+    <div className={background}>
       <Light light1={light1} light2={light2} light3={light3} />
       <LightSwitch1 />
       <LightSwitch2 />
@@ -55,9 +74,19 @@ export const LevelTwo = ({ setPlayerLocation, logs, setLogs }) => {
       {!hasPaper2 && <Paper2  />}
       {!hasPaper3 && <Paper3  />}
       {!hasBroom &&<Broom /> }
-      {safeAppears && <Safe setSafeClicked={setSafeClicked} isSafeClicked={isSafeClicked}/>}
-      {isSafeClicked && <SafeForm />}
-      <img className="down-arrow" src={downArrow} onClick={goToBasement}/>
+      {safeAppears && <Safe />}
+      {(isSafeClicked && !isSafeSolved) && <SafeForm />}
+      <ArrowDown />
+      {(isSafeSolved && !hasRock)&& <Rock />}
+      <div className="item-border" id='window-border'></div>
+      {<Window />}
+      {isWindowBroken && <BrokenGlass />}
+      <RadioOne />
+      <CigarPhoto />
+      {!hasChestKey && <ChestKey />}
+      {isTrapLaid && <Detonator/>}
+      <button onClick={setTime}>Complete Game</button>
+      <GameComplete />
     </div>
   )
 }

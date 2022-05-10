@@ -7,7 +7,7 @@ export const PouchBook = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const clickPouchBook = () => {
-    setLogs([...logs, <p>This is placeholder for the spike clue</p>])
+    setLogs([...logs, { type:"pouch-item", text: "Diary Entry 01/01/1950: My darling Spike, I can't believe he's 10 years old today... the YEAR he was born was simply magical... My boy is the strongest pup I could ever wish for... after all, he is the keeper of this darn Cat's key.."}])
     
   }
   return (

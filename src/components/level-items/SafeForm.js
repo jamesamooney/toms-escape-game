@@ -11,19 +11,17 @@ export const SafeForm = () => {
   const checkPassword = (e) => {
     if(passwordGuess === password) {
       setSafeSolved(true)
-      setLogs([...logs, <p>You cracked it open! looks like the all powerful window smashing rock was kept inside!</p>])
+      setLogs([...logs, { type:"success", text: "You cracked it open! looks like the all powerful window smashing rock was kept inside!"}])
     } else {
-      setLogs([...logs, <p>Wrong combination</p>])
+      setLogs([...logs, { type:"warning", text: "Wrong combination"}])
     }
     e.preventDefault()
   }
 
   return (
-    <div className='div-safe'>
       <form className="safe-form">
           <input type="text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
-          <input type="submit" onClick={checkPassword} />
+          <input type="submit" value="Crack it!" onClick={checkPassword} />
       </form>
-    </div>
   )
 }

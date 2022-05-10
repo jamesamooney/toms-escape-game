@@ -11,10 +11,10 @@ export const PowerSwitch = () => {
   const turnPowerOn = () => {
     if (hasBroom) {
       setHasTurnedOnPower(true)
-      setLogs([...logs, <p>ZAP! Power is back on babeeh!</p>])
+      setLogs([...logs, { type: "success", text: "You reach with the broom and.. ZAP! Power is back on babeeh!"}])
       
     } else {
-      setLogs([...logs, <p>Its out of reach! Maybe you should look for something long and sturdy</p>])
+      setLogs([...logs, { type: "warning", text: "Its out of reach! Maybe you should look for something long and sturdy"}])
 
     }
   }

@@ -1,24 +1,129 @@
-.App {
-  text-align: center;
+/* Game Screen */
+.whole-screen {
+  background-image: url("./images/items/tomandjerry.jpeg");
+  height: 100%;
+  overflow: hidden;
+  cursor: url(./images/items/cursorIdle.png), auto;
+  
+}
+
+.level-one {
   background-image: url("./images/backgrounds/basement_better.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  position: relative;
   height: 600px;
   width: 1200px;
   outline: solid black;
   margin: 0 100px 0 100px;
+  position: relative;
+  
 }
 .level-two {
   background-image: url("./images/backgrounds/kitchen.jpg");
-  height: 600px;
-  width: 1200px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
   position: relative;
 }
 
-.down-arrow {
+.level-two-trail {
+  background-image: url("./images/backgrounds/kitchenWithTrail.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+
+.level-three {
+  background-image: url("./images/backgrounds/garden.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+
+.level-three-trail {
+  background-image: url("./images/backgrounds/gardenWithTrail.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 600px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+
+.level-zero {
+  background-image: url("./images/backgrounds/circles.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 772px;
+  width: 1200px;
+  outline: solid black;
+  margin: 0 100px 0 100px;
+  position: relative;
+}
+
+.bottom-ui {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  background-color: rgb(188, 110, 8);
+  height: 150px;
+  width: 1200px;
+  border:1px solid black;
+  margin: 0 100px 20px 100px;
+}
+
+.text-interface {
+  outline: solid black;
+  display: inline-block;
+  overflow: auto;
+  background-color: black;
+  color: white;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/* Log types to set different colours */
+.inform {
+  color: white;
+}
+
+.success {
+  color: rgb(0, 159, 0);
+}
+
+.warning {
+  color: red;
+}
+
+.pouch-item {
+  color: yellow;
+}
+
+p {
+  margin-bottom: -5px; /* between paragraphs */
+  }
+
+.pouch {
+  outline: solid black;
+  display: inline-block;
+  height: 150px;
+  width: 400px;
+
+}
+
+#down-arrow {
   height: 70px;
   position: absolute;
   bottom: 10px;
@@ -42,28 +147,20 @@
 }
 
 .stopwatch {
-  background-color: white;
-  position: absolute;
-  width: 100px;
-  padding: 2px;
-  right: 150px;
-  top: 10px;
-  z-index: 1;
-  font-size: 50px;
+  background-color: black;
+  outline: solid black;
+  height: 150px;
+  text-align: center;
+  width: 160px;
 }
 
-.stopwatch-title {
-  background-color: white;
-  position: absolute;
-  right: 150px;
-  top: 65px;
-  z-index: 1;
-  font-size: 23px;
-  width: 100px;
-  padding: 2px;
+span {
+  font-size: 60px;
+  color: white;
 }
 
-.padlock-div {
+
+ .padlock-div {
   position: absolute;
   bottom: 50px;
   left: 50px;
@@ -79,7 +176,7 @@
 .padlock-form {
   position: absolute;
   bottom: 160px;
-  left: 30px;
+  left: 10px;
 }
 
 #book {
@@ -89,8 +186,30 @@
   height: 200px;  
 }
 
+#tnt {
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+  height: 100px;  
+}
+
+#detonator {
+  position: absolute;
+  bottom: 0px;
+  right: 200px;
+  height: 100px;  
+}
+
+#detonator-set {
+  position: absolute;
+  bottom: 30px;
+  left: 290px;
+  height: 100px;  
+}
+
 .item:hover {
   box-shadow: 0 0 5px rgb(249, 249, 78);
+  cursor: url(./images/items/cursorPoint.png), auto;
 }
 
 #broom {
@@ -107,6 +226,19 @@
   height: 80px;
 }
 
+#tom-caged {
+  position: absolute;
+  top: 123px;
+  right: 157px;
+  height: 190px;
+}
+
+#cage {
+  position: absolute;
+  top: 101px;
+  right: 187px;
+  height: 200px;
+}
 
 #key {
   position: absolute;
@@ -122,19 +254,18 @@
   height: 150px;
 }
 
+#chest {
+  height: 130px;
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}
+
 input[type="text"] {
   width: 80px;
 }
 
-.text-interface {
-  outline: solid black;
-  margin: 0 100px 20px 100px;
-  height: 150px;
-  width: 1200px;
-  overflow: auto;
-  background-color: black;
-  color: white;
-}
+
 
 #light-1 {
   height: 130px;
@@ -174,11 +305,18 @@ input[type="text"] {
   right: 220px;
 }
 
-#safe {
-  height: 90px;
+#closed-safe {
+  height: 120px;
   position: absolute;
-  bottom: 160px;
-  left: 120px;
+  bottom: 140px;
+  left: 105px;
+}
+
+#open-safe {
+  height: 170px;
+  position: absolute;
+  bottom: 110px;
+  left: 77px;
 }
 
 #paper-1 {
@@ -206,7 +344,7 @@ input[type="text"] {
   height: 30px;
   position: absolute;
   bottom: 50px;
-  right: 80px;
+  right: 280px;
 }
 
 #paper-5 {
@@ -215,6 +353,187 @@ input[type="text"] {
   bottom: 10px;
   left: 300px;
 }
+
+#rock {
+  height: 40px;
+  position: absolute;
+  bottom: 100px;
+  left: 200px;
+}
+
+
+#broken-glass {
+  height: 100px;
+  position: absolute;
+  bottom: 1px;
+  right: 50px;
+}
+
+#arrow-outside {
+  height: 50px;
+  position: absolute;
+  bottom: 340px;
+  right: 100px;
+}
+
+#window-border {
+  height: 160px;
+  position: absolute;
+  bottom: 280px;
+  right: 40px;
+}
+
+#empty-bowl {
+  height: 60px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+#bowl-with-bone {
+  height: 60px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+#kennel {
+  height: 200px;
+  position: absolute;
+  bottom: 210px;
+  right: 0px;
+}
+
+.killer-guarding {
+  height: 200px;
+  position: absolute;
+  bottom: 210px;
+  right: 0px;
+}
+
+.killer-sleeping {
+  height: 300px;
+  position: absolute;
+  bottom: 195px;
+  right: -140px;
+}
+
+#hole-undug {
+  height: 70px;
+  position: absolute;
+  bottom: 180px;
+  left: 25px;
+}
+
+#hole-dug {
+  height: 120px;
+  position: absolute;
+  bottom: 180px;
+  left: 0px;
+}
+
+#radio-one {
+  height: 60px;
+  position: absolute;
+  bottom: 314px;
+  right: 396px;
+}
+
+.safe-form {
+  position: absolute;
+  bottom: 270px;
+  left: 90px;
+}
+
+#shovel {
+  height: 110px;
+  position: absolute;
+  bottom: 80px;
+  left: 151px;
+}
+
+#play-button {
+  height: 100px;
+  bottom: 250px;
+  width: 700px;
+  left: 250px;
+  position: absolute;
+}
+
+.logo {
+  height: 200px;
+  width: 700px;
+  position: absolute;
+  bottom: 400px;
+  left: 250px;
+}
+
+#title-logo {
+  height: 100px;
+  bottom: 250px;
+  width: 500px;
+  left: 350px;
+  position: absolute;
+}
+
+#or-link-to {
+  height: 35px;
+  bottom: 120px;
+  width: 190px;
+  left: 507px;
+  position: absolute;
+}
+
+#album {
+  height: 70px;
+  bottom: 55px;
+  width: 300px;
+  left: 450px;
+  position: absolute;
+}
+
+#cigar-photo {
+  height: 50px;
+  position: absolute;
+  top: 170px;
+  right: 260px;
+}
+
+#tape {
+  height: 20px;
+  position: absolute;
+  top: 160px;
+  right: 335px;
+}
+
+#tape2 {
+  height: 20px;
+  position: absolute;
+  top: 160px;
+  right: 250px;
+}
+
+#chest-key {
+  height: 40px;
+  position: absolute;
+  top: 210px;
+  left: 430px;
+}
+
+#bone {
+  height: 30px;
+  position: absolute;
+  bottom: 170px;
+  left: 30px;
+}
+
+#timer-logo {
+  height: 60px;
+  position: relative;
+  bottom: 65px;
+  left: 10px;
+}
+
 /* input[type="submit"] {
   width: 10px;
 } */

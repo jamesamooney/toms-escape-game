@@ -1,4 +1,15 @@
-export const TextInterface = ({logs}) => {
+import { Log } from "./level-items/Log"
 
-  return logs.map((log) => <p>{log}</p>)
+export const TextInterface = ({ logs }) => {
+
+  return (
+    <>
+      {logs.map((log, index) =>  
+      <Log key={index} log={log} /> 
+    )}
+    </>
+    
+
+
+  )
 }
