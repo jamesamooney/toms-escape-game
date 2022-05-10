@@ -7,6 +7,8 @@ import { LevelZero } from './components/levels/LevelZero'
 import { LevelOne } from './components/levels/LevelOne'
 import { LevelTwo } from './components/levels/LevelTwo'
 import { LevelThree } from './components/levels/LevelThree'
+import { GameComplete } from './components/levels/GameComplete'
+import { Leaderboard } from './components/levels/Leaderboard'
 import { TextInterface } from './components/TextInterface'
 import { Pouch } from './components/Pouch'
 import { TimerLogo } from './components/level-items/TimerLogo'
@@ -104,8 +106,10 @@ function App() {
             {playerLocation === 1 && <LevelOne />}
             {playerLocation === 2 && <LevelTwo />}
             {playerLocation === 3 && <LevelThree />}
+            {playerLocation === 4 && <GameComplete />}
+            {playerLocation === 5 && <Leaderboard />}
           </div>
-          {playerLocation != 0 && <div className='bottom-ui'>
+          {(playerLocation === 1 || playerLocation === 2 || playerLocation === 3 ) && <div className='bottom-ui'>
             <div>
               <MyStopwatch />
               <TimerLogo />

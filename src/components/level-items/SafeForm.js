@@ -20,7 +20,7 @@ export const SafeForm = () => {
 
   return (
       <form className="safe-form">
-          <input type="text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
+          <input type="text" id="safe-text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
           <input type="submit" value="Crack it!" onClick={checkPassword} />
       </form>
   )
