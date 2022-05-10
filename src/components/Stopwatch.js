@@ -18,14 +18,9 @@ export const MyStopwatch = () => {
   }
 
   return (
-    <div>
       <div className='stopwatch'>
-        <span>{minutes}</span>:<span>{seconds < 10 && 0}</span><span>{seconds}</span>
+        <span>{minutes}</span><span>:</span><span>{seconds < 10 && 0}</span><span>{seconds}</span>
         {updateTime()}
       </div>
-      <div className='stopwatch-title'>
-        Your Time
-      </div>
-    </div>
   );
 }
