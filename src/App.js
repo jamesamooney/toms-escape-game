@@ -64,7 +64,7 @@ function App() {
 
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
-  const [playerLocation, setPlayerLocation] = useState(3)
+  const [playerLocation, setPlayerLocation] = useState(0)
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
