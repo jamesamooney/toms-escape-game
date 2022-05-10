@@ -5,6 +5,7 @@ import { Kennel } from '../level-items/Kennel'
 import { Hole } from "../level-items/Hole"
 import { Bone } from "../level-items/Bone"
 import { ArrowDown } from "../level-items/ArrowDown"
+import { TomsKey } from "../level-items/TomsKey"
 
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../../AppContext'
@@ -24,6 +25,7 @@ export const LevelThree = () => {
       <Killer/>
       <Hole/>
       {(isHoleDug && !hasBone) && <Bone/>}
+      <TomsKey/>
     </div>
   )
   }
