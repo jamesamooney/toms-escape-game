@@ -57,6 +57,8 @@
   overflow: auto;
   background-color: black;
   color: white;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 /* Log types to set different colours */
@@ -112,28 +114,20 @@ p {
 }
 
 .stopwatch {
-  background-color: white;
-  position: absolute;
-  width: 100px;
-  padding: 2px;
-  right: 150px;
-  top: 10px;
-  z-index: 1;
-  font-size: 50px;
+  background-color: black;
+  outline: solid black;
+  height: 150px;
+  text-align: center;
+  width: 160px;
 }
 
-.stopwatch-title {
-  background-color: white;
-  position: absolute;
-  right: 150px;
-  top: 65px;
-  z-index: 1;
-  font-size: 23px;
-  width: 100px;
-  padding: 2px;
+span {
+  font-size: 60px;
+  color: white;
 }
 
-.padlock-div {
+
+ .padlock-div {
   position: absolute;
   bottom: 50px;
   left: 50px;
@@ -435,6 +429,13 @@ input[type="text"] {
   position: absolute;
   top: 210px;
   left: 430px;
+}
+
+#timer-logo {
+  height: 60px;
+  position: relative;
+  bottom: 65px;
+  left: 10px;
 }
 
 /* input[type="submit"] {
