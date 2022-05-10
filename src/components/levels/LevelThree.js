@@ -22,6 +22,7 @@ export const LevelThree = () => {
   const { savedMinutes, setSavedMinutes } = useContext(AppContext)
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
   const { finalTime, setFinalTime } = useContext(AppContext)
+  const { hasTomsKey, setHasTomsKey } = useContext(AppContext)
 
   const background = isTrapLaid ? ("level-three-trail") : ("level-three")
 
@@ -44,7 +45,7 @@ export const LevelThree = () => {
       <Hole/>
       {(isHoleDug && !hasBone) && <Bone/>}
       <img id="arrow-outside" className="item" src={arrowRight} onClick={gameComplete}/>
-      <TomsKey/>
+      {!hasTomsKey && <TomsKey/>}
       <Dinnerbell/>
       {isKillerDefeated && <KillerDefeated/>}
     </div>

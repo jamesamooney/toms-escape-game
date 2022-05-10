@@ -11,6 +11,6 @@ export const PouchTomsKey = () => {
     
   }
   return (
-      <img className='item' id="pouch-toms-key" onClick={clickPouchTomsKey} src={tomsKey} style={{ height: '40px'}}/>
+      <img className='item' id="pouch-toms-key" onClick={clickPouchTomsKey} src={tomsKey} style={{ height: '30px'}}/>
   )
 }
