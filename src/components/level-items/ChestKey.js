@@ -2,6 +2,7 @@ import chestKey from "../../images/items/chestKey.png"
 import { AppContext } from "../../AppContext";
 import { useContext } from "react";
 import { PouchChestKey } from "../pouch-items/PouchChestKey";
+import keysJingle from "../audio/keysJingle.mp3"
 
 export const ChestKey = () => {
 
@@ -9,12 +10,15 @@ export const ChestKey = () => {
   const { hasChestKey, setHasChestKey } = useContext(AppContext)
   const { pouch, setPouch } = useContext(AppContext)
 
+  const playAudioKeysJingle = () => {
+    new Audio(keysJingle).play();
+  }
 
   const clickChestKey = () => {
-    setLogs([...logs, { type:"inform", text: "You find a rusty old key"}])
-    setHasChestKey(true)
-    setPouch([...pouch, <PouchChestKey key="chestKey"/>])
-
+    playAudioKeysJingle();
+    setLogs([...logs, { type:"inform", text: "You find a rusty old key"}]);
+    setHasChestKey(true);
+    setPouch([...pouch, <PouchChestKey key="chestKey"/>]);
   }
 
   return (

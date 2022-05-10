@@ -13,7 +13,7 @@ export const Key = ( { setHasKeyOne } ) => {
   }
 
   const grabKey = () => {
-    playAudioKeysJingle()
+    playAudioKeysJingle();
     setHasKeyOne(true)
     setPouch([...pouch, <PouchKey key="key"/>])
     setLogs([...logs, { type:"inform", text: "You picked up the key, want to bet it opens that lovely door?"}])
