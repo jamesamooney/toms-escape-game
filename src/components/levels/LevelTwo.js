@@ -17,7 +17,7 @@ import { ArrowDown } from "../level-items/ArrowDown"
 import { RadioOne } from "../level-items/RadioOne"
 import { CigarPhoto } from "../level-items/CigarPhoto"
 import { ChestKey } from "../level-items/ChestKey"
-import { Detonator } from "../level-items/Detonator"
+import { DetonatorSet } from "../level-items/DetonatorSet"
 
 import { GameComplete } from '../levels/GameComplete'
 
@@ -84,7 +84,7 @@ export const LevelTwo = () => {
       <RadioOne />
       <CigarPhoto />
       {!hasChestKey && <ChestKey />}
-      {isTrapLaid && <Detonator/>}
+      {isTrapLaid && <DetonatorSet/>}
       <button onClick={setTime}>Complete Game</button>
       <GameComplete />
     </div>
