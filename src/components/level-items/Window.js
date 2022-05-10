@@ -5,13 +5,12 @@ import { useContext } from "react";
 import { RadioOneAudio } from "./RadioOneAudio";
 
 export const Window = () => {
-  const { logs, setLogs } = useContext(AppContext)
-  const { hasRock, setHasRock } = useContext(AppContext)
-  const { isWindowBroken, setIsWindowBroken } = useContext(AppContext)
-  const { playerLocation, setPlayerLocation } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext);
+  const { hasRock, setHasRock } = useContext(AppContext);
+  const { isWindowBroken, setIsWindowBroken } = useContext(AppContext);
+  const { playerLocation, setPlayerLocation } = useContext(AppContext);
   const { radioPlaying, setRadioPlaying} = useContext(AppContext)
   
-
   const clickWindow = () => {
     if(hasRock) { 
       setIsWindowBroken(!isWindowBroken) 
@@ -21,16 +20,16 @@ export const Window = () => {
       
     }
   }
-
-  const moveToLevel3 = () => {
-    setLogs([...logs, { type:"inform", text: "You feel the fresh air as you hop into the garden, you are one step closer to freedom.."}])
+  
+  const levelComplete = () => {
+    setLogs([...logs, { type:"inform", text: "You carefully tiptoe over the glass and jump out the window"}])
     setPlayerLocation(3)
     setRadioPlaying(false)
     RadioOneAudio.pause()
   }
-
+  
   return isWindowBroken ? 
-    ( <img id="arrow-outside" className="item" src={arrowRight} onClick={moveToLevel3}/> )
+    ( <img id="arrow-outside" className="item" src={arrowRight} onClick={levelComplete}/> )
    : 
     ( <img id="window-border" className="item" src={window} onClick={clickWindow} /> )
 }

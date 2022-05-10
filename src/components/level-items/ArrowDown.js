@@ -11,7 +11,7 @@ export const ArrowDown = () => {
 
 
   const goToBasement = () => {
-    setPlayerLocation(1)
+    setPlayerLocation(playerLocation -1)
     setLogs([...logs, { type:"inform", text: "Running back to the basement? Coward..."}])
     setRadioPlaying(false)
     RadioOneAudio.pause()
