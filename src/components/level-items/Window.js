@@ -3,6 +3,7 @@ import arrowRight from '../../images/items/arrowRight.png';
 import { AppContext } from "../../AppContext";
 import { useContext } from "react";
 import { RadioOneAudio } from "./RadioOneAudio";
+import windowBreaking from "../audio/windowBreaking.mp3"
 
 export const Window = () => {
   const { logs, setLogs } = useContext(AppContext);
@@ -10,9 +11,14 @@ export const Window = () => {
   const { isWindowBroken, setIsWindowBroken } = useContext(AppContext);
   const { playerLocation, setPlayerLocation } = useContext(AppContext);
   const { radioPlaying, setRadioPlaying} = useContext(AppContext)
+
+  const playAudioWindowBreaking = () => {
+    new Audio(windowBreaking).play();
+  }
   
   const clickWindow = () => {
     if(hasRock) { 
+      playAudioWindowBreaking()
       setIsWindowBroken(!isWindowBroken) 
       setLogs([...logs, { type:"success", text: "You lob the hefty rock and smash the window to pieces!"}])
     } else {
