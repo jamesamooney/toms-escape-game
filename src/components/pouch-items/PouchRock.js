@@ -10,7 +10,7 @@ export const PouchRock = () => {
   }
   return (
     <div>
-      <img id="pouch-rock" className="item" src={rock} style={{ height: '30px'}} onClick={clickPouchRock}/>
+      <img id="pouch-rock" className="item" src={rock} style={{ height: '28px'}} onClick={clickPouchRock}/>
     </div>
   )
 }

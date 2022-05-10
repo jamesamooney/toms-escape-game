@@ -10,5 +10,5 @@ export const PouchBone = () => {
   return isTrapLaid ?
     (<></>)
     :
-    (<img className="item" id="pouch-bone" src={bone} style={{ height: '30px'}} />)
+    (<img className="item" id="pouch-bone" src={bone} style={{ height: '20px'}} />)
 }
