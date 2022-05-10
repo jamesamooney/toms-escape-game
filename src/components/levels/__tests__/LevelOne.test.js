@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 import { LevelOne } from '../LevelOne';
@@ -14,6 +15,8 @@ describe('LevelOne', () => {
   const setHasPaper5 = jest.fn();
   const setPadlockSolved = jest.fn();
   const setLogs = jest.fn();
+  const setDoorOneOpen = jest.fn();
+  const setPlayerLocation = jest.fn();
   const pouch = [];
   const logs = [];
   
@@ -52,7 +55,6 @@ describe('LevelOne', () => {
 
       fireEvent.click(paper4);
 
-      // expect(screen.queryByTestId('paper-4')).not.toBeInTheDocument();
       expect(setHasPaper4).toHaveBeenCalledTimes(1);
       expect(setHasPaper4).toHaveBeenCalledWith(true);
       expect(setPouch).toHaveBeenCalledTimes(1);
@@ -99,7 +101,6 @@ describe('LevelOne', () => {
 
       fireEvent.click(paper5);
 
-      // expect(screen.queryByTestId('paper-4')).not.toBeInTheDocument();
       expect(setHasPaper5).toHaveBeenCalledTimes(1);
       expect(setHasPaper5).toHaveBeenCalledWith(true);
       expect(setPouch).toHaveBeenCalledTimes(1);
@@ -113,7 +114,7 @@ describe('LevelOne', () => {
   });
 
   describe('book', () => {
-    it('puts the book in the pouch when we click on it', () => {
+    it('removes the book from the game interface when we click on it', () => {
       render(
         <AppContext.Provider
           value={{
@@ -135,19 +136,35 @@ describe('LevelOne', () => {
 
       expect(setHasBook).toHaveBeenCalledTimes(1);
       expect(setHasBook).toHaveBeenCalledWith(true);
-      expect(setPouch).toHaveBeenCalledTimes(1);
-
-      const pouchBook = setPouch.mock.calls[0][0][0];
-
-      expect(pouchBook.type).toEqual(PouchBook);
-
       expect(setLogs).toHaveBeenCalledTimes(1);
-      // expect(setLogs).toHaveBeenCalledWith([
-      //   "You picked a dusty ol' book, what could possibly be written inside?"
-      // ]);
+      expect(setLogs).toHaveBeenCalledWith([
+        { type: "inform", text: "You picked a dusty ol' book, what could possibly be written inside?" }
+      ]);
+
+      expect(setPouch).toHaveBeenCalledTimes(1);
+      const mockPouchBook = setPouch.mock.calls[0][0][0];
+      expect(mockPouchBook.type).toEqual(PouchBook);
+
+    });
+    it('book is not on the game interface when hasBook is true', () => {
+      render(
+        <AppContext.Provider
+          value={{
+            hasBook: true,
+            setHasBook,
+            setPouch,
+            pouch,
+            logs,
+            setLogs,
+          }}
+        >
+          <LevelOne />
+        </AppContext.Provider>
+      );
+
       
-      // fireEvent.click(pouchBook);
-      // expect(setLogs).toHaveBeenCalledTimes(1);
+      expect(screen.queryByTestId('book')).not.toBeInTheDocument();
+      
     });
   });
 
@@ -178,12 +195,14 @@ describe('LevelOne', () => {
       const textInput = within(padlockForm).getByRole('textbox');
       const submitButton = within(padlockForm).getByRole('button');
 
-      fireEvent.change(textInput, { target: { value: 'spike' }})
+      fireEvent.change(textInput, { target: { value: '1940' }})
       fireEvent.click(submitButton);
 
       expect(screen.getByTestId('key')).toBeInTheDocument();
     });
   });
+
+  
 
   describe('key', () => {
     it('is not on the page until the padlock is solved', () => {
@@ -205,36 +224,161 @@ describe('LevelOne', () => {
       expect(screen.queryByTestId('key')).not.toBeInTheDocument();
     });
 
-    it('moves to the pouch when you click it', () => {
+    it('shows key when the padlock is solved', () => {
       render(
         <AppContext.Provider
           value={{
+            hasKeyOne: false,
+            setHasKeyOne,
+            setPouch,
             setPadlockSolved,
+            pouch,
             logs,
             setLogs,
-            pouch,
-            setPouch
           }}
         >
           <LevelOne />
         </AppContext.Provider>
       );
-  
+
       const padlock = screen.getByTestId('padlock');
-
+      
       fireEvent.click(padlock);
-
+      
       const padlockForm = screen.getByTestId('padlock-form');
       const textInput = within(padlockForm).getByRole('textbox');
       const submitButton = within(padlockForm).getByRole('button');
-
-      fireEvent.change(textInput, { target: { value: 'spike' }});
+      
+      fireEvent.change(textInput, { target: { value: '1940' }});
       fireEvent.click(submitButton);
 
-      const key = screen.getByTestId('key')
-      fireEvent.click(key);
+      expect(screen.getByTestId('key')).toBeInTheDocument();
 
-      expect(setPouch).toHaveBeenCalledTimes(1);
+    });
+    
+    it('removes it from game interface when you click it', () => {
+      render(
+        <AppContext.Provider
+        value={{
+            setPadlockSolved,
+            setHasKeyOne,
+          logs,
+          setLogs,
+          pouch,
+          setPouch
+        }}
+        >
+          <LevelOne />
+        </AppContext.Provider>
+      );
+      
+      const padlock = screen.getByTestId('padlock');
+      
+      fireEvent.click(padlock);
+      
+      const padlockForm = screen.getByTestId('padlock-form');
+      const textInput = within(padlockForm).getByRole('textbox');
+      const submitButton = within(padlockForm).getByRole('button');
+      
+      fireEvent.change(textInput, { target: { value: '1940' }});
+      fireEvent.click(submitButton);
+      
+      const key = screen.getByTestId('key')
+      expect(key).toBeInTheDocument();
+      fireEvent.click(key);
+      
+      expect(setHasKeyOne).toHaveBeenCalledTimes(1);
+      expect(setHasKeyOne).toHaveBeenCalledWith(true);
     });
   });
+
+  describe('door', () => {
+    it('returns a warning message when clicked without the key', () => {
+      render(
+        <AppContext.Provider
+          value={{
+            hasKeyOne: false,
+            logs,
+            setLogs,
+          }}
+        >
+          <LevelOne />
+        </AppContext.Provider>
+      );
+
+      const door = screen.getByTestId('door');
+
+
+      fireEvent.click(door);
+
+
+      expect(door).toBeInTheDocument();
+
+      expect(setLogs).toHaveBeenCalledTimes(1);
+      expect(setLogs).toHaveBeenCalledWith([
+        { type:"warning", text: "You really expected the door to open? It's LOCKED! Can't blame you for trying though. Have a look around to see if you find a key!" }
+      ]);
+    });
+
+    it('opens the door and reveals the arrow when clicked with key', () => {
+      render(
+        <AppContext.Provider
+          value={{
+          hasKeyOne: true,
+          setDoorOneOpen,
+          logs,
+          setLogs,
+          }}
+        >
+          <LevelOne />
+        </AppContext.Provider>
+      );
+      
+      const door = screen.getByTestId('door');
+      fireEvent.click(door);
+
+      expect(setLogs).toHaveBeenCalledTimes(1);
+      expect(setLogs).toHaveBeenCalledWith([
+        { type:"success", text: "You insert the key, and it magically opens the door!" }
+      ]);
+      expect(setDoorOneOpen).toHaveBeenCalledTimes(1);
+      expect(setDoorOneOpen).toHaveBeenCalledWith(true);
+
+
+
+    });
+
+    it('shows the arrow when door is opened', () => {
+      render(
+        <AppContext.Provider
+          value={{
+          hasKeyOne: true,
+          doorOneOpen: true,
+          setPlayerLocation,
+          logs,
+          setLogs,
+          }}
+        >
+          <LevelOne />
+        </AppContext.Provider>
+      );
+      
+      
+      const arrow = screen.getByTestId('arrow-forward')
+      expect(arrow).toBeInTheDocument();
+      fireEvent.click(arrow);
+      expect(setLogs).toHaveBeenCalledTimes(1);
+      expect(setLogs).toHaveBeenCalledWith([
+        { type:"inform", text: "You tip toe into the kitchen... these rich folk probably got bare munch"}
+      ]);
+      expect(setPlayerLocation).toHaveBeenCalledTimes(1);
+      expect(setPlayerLocation).toHaveBeenCalledWith(2);
+
+    });
+  });
+
+
+
+
+
 });
