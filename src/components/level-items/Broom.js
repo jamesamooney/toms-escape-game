@@ -19,6 +19,7 @@ export const Broom = () => {
     <div>
       <img src={broom}
       id="broom" 
+      data-testid="broom"
       className="item"
       onClick={grabBroom}
       />

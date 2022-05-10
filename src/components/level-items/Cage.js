@@ -9,10 +9,15 @@ export const Cage = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const clickCage = () => {
+    if (!hasBlueprint) {
     setPouch([...pouch, <PouchBlueprint/>])
     setHasBlueprint(true)
-    setLogs([...logs, { type:"inform", text: "Look in your Pouch, I've given you a blueprint. You have to find the KEY to my cage, Killer that old grumpy dog is guarding it... read the blueprint it has a trap to deal with him. You'll have to pick up some items for this to work"}])
+    setLogs([...logs, { type:"inform", text: "Tom: Look in your Pouch, I've given you a blueprint. You have to find the KEY to my cage. Spike.. or as he prefers to be known.. Killer, that old, grumpy dog is guarding it.. The blueprint should give you some clues!"}])
+   } else {
+    setLogs([...logs, { type:"inform", text: "Tom: Look in your Pouch, I've given you a blueprint. You have to find the KEY to my cage. Spike.. or as he prefers to be known.. Killer, that old, grumpy dog is guarding it.. The blueprint should give you some clues!"}])
+   }
   }
+  
   return (
     <img className='item' id="cage" onClick={clickCage} src={cage} />
   )

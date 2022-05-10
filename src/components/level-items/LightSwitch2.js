@@ -18,6 +18,6 @@ export const LightSwitch2 = () => {
   }
 
   return (
-    <img src={lightSwitch2} className="item" id="light-switch-2" onClick={switchLight}/>
+    <img src={lightSwitch2} className="item" id="light-switch-2" data-testid="light-switch-2" onClick={switchLight}/>
   )
 }

@@ -25,7 +25,6 @@ export const LevelOne = ({ setPlayerLocation }) => {
 
   const [isPadlockClicked, setPadlockClicked] = useState(false)
   const [passwordCorrect, setPasswordCorrect] = useState(false)
-  const [hasKeyOne, setHasKeyOne] = useState(false)
   const { hasBook, setHasBook } = useContext(AppContext)
   const { isPadlockSolved, setPadlockSolved } = useContext(AppContext)
   const { doorOneOpen, setDoorOneOpen } = useContext(AppContext)
@@ -36,6 +35,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
   const { hasTnt, setHasTnt } = useContext(AppContext)
   const { hasDetonator, setHasDetonator } = useContext(AppContext)
   const { hasShovel, setHasShovel } = useContext(AppContext)
+  const { hasKeyOne, setHasKeyOne } = useContext(AppContext)
 
 
   
@@ -52,9 +52,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
       />
       <PowerSwitch />
       <Armour/>
-        {!hasBook && <Book 
-        setHasBook={setHasBook}
-        />}
+        {!hasBook && <Book />}
         {!isPadlockSolved && <Padlock isPadlockClicked={isPadlockClicked} setPadlockClicked={setPadlockClicked}/>}
         {isPadlockClicked && <PadlockForm
           setPasswordCorrect={setPasswordCorrect}
@@ -69,7 +67,6 @@ export const LevelOne = ({ setPlayerLocation }) => {
       <Chest />
       {(chestOpen && !hasTnt) && <Tnt setHasTnt={setHasTnt}/>}
       {(chestOpen && !hasDetonator) && <Detonator setHasDetonator={setHasDetonator}/>}
-      {!hasPaper5 && <Paper5 />}
       {!hasShovel && <Shovel />}
     </div>
   );

@@ -6,7 +6,7 @@ export const PouchBlueprint = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const clickPouchBlueprint = () => {
-    setLogs([...logs, { type:"pouch-item", text: "it specifies a trap for Killer the dog, you need Dynamite, a Detonator, a Bone and some way of atracting Killer to his bowl"}])
+    setLogs([...logs, { type:"pouch-item", text: "How to put the grumpy dog in his place: Get Dynamite, a Detonator, a Bone.. ring him over and watch him go KABOOM"}])
   }
 
   return (

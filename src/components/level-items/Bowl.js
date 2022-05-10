@@ -11,13 +11,15 @@ export const Bowl = () => {
   const { isTrapLaid, setIsTrapLaid } = useContext(AppContext);
   const { hasTnt, setHasTnt } = useContext(AppContext);
   const { hasDetonator, setHasDetonator } = useContext(AppContext);
-
   const { logs, setLogs } = useContext(AppContext)
+  const { detonatorAudioPlayed, setDetonatorAudioPlayed } = useContext(AppContext)
 
   const clickBowl = () => {
-    if (hasBone && hasTnt && hasDetonator) {
+    if (hasBone && hasTnt && hasDetonator && !detonatorAudioPlayed) {
       setIsTrapLaid(true)
       setLogs([...logs, { type:"success", text: "The trap is set, but spikes still asleep"}])
+    } else if (detonatorAudioPlayed) {
+      setLogs([...logs, { type:"inform", text: "Worked like a charm.."}])
     } else {
       setLogs([...logs, { type:"inform", text: "You don't have all the trap materials"}])
     }
