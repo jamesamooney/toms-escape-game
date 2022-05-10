@@ -86,8 +86,8 @@ export const LevelTwo = () => {
       <StickyNote />
       {!hasChestKey && <ChestKey />}
       {isTrapLaid && <Detonator/>}
-      <button onClick={setTime}>Complete Game</button>
-      <GameComplete />
+      {/* <button onClick={setTime}>Complete Game</button>
+      <GameComplete /> */}
     </div>
   )
 }
