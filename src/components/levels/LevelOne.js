@@ -36,6 +36,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
   const { hasTnt, setHasTnt } = useContext(AppContext)
   const { hasDetonator, setHasDetonator } = useContext(AppContext)
   const { hasShovel, setHasShovel } = useContext(AppContext)
+  const { tomIsFree, setTomIsFree } = useContext(AppContext)
 
 
   
@@ -64,7 +65,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
         />}
       {!hasPaper4 && <Paper4  />}
       {!hasPaper5 && <Paper5  />}
-      <TomCaged />
+      {!tomIsFree && <TomCaged />}
       <Cage />
       <Chest />
       {(chestOpen && !hasTnt) && <Tnt setHasTnt={setHasTnt}/>}
