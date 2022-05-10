@@ -421,11 +421,11 @@ span {
   right: 0px;
 }
 
-.killer-guarding {
+.killer-awake {
   height: 200px;
   position: absolute;
   bottom: 210px;
-  right: 0px;
+  right: 60px;
 }
 
 .killer-sleeping {
@@ -433,6 +433,13 @@ span {
   position: absolute;
   bottom: 195px;
   right: -140px;
+}
+
+.killer-defeated {
+  height: 200px;
+  position: absolute;
+  bottom: 0px;
+  left: 110px;
 }
 
 #hole-undug {
@@ -551,6 +558,12 @@ span {
   right: 90px;
 }
 
+#dinnerbell {
+  height: 30px;
+  position: absolute;
+  bottom: 215px;
+  left: 430px;
+}
 
 
 #timer-logo {
