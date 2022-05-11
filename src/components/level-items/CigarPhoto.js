@@ -9,8 +9,7 @@ export const CigarPhoto = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const PhotoClick = () => {
-    setLogs([...logs, { type:"inform", text: "The good old days, Tom really enjoyed smoking those"}])
-
+    setLogs([...logs, { type:"inform", text: "Tom loves smoking one of these..."}])
   }
 
   return (

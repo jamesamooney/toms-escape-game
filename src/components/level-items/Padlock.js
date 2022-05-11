@@ -8,7 +8,7 @@ export const Padlock = ({  setPadlockClicked, isPadlockClicked}) => {
 
   const padlockClicked = () => {
     setPadlockClicked(!isPadlockClicked)
-    setLogs([...logs, { type: "inform", text: "You need to insert the correct combination of numbers to open this padlock"}])
+    setLogs([...logs, { type: "inform", text: "You need to insert the correct combination of numbers to open this padlock..."}])
 
   }
 
@@ -17,6 +17,7 @@ export const Padlock = ({  setPadlockClicked, isPadlockClicked}) => {
       
       <img src={padlock}
         id="padlock"
+        data-testid="padlock"
         className="item"
         onClick={padlockClicked}
       />

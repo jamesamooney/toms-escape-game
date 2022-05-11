@@ -1,22 +1,29 @@
 import radio from "../../images/items/radio.png";
 import { AppContext } from "../../AppContext";
 import { useContext } from "react";
-import daddy from "../audio/hey.mp3"
+import { RadioOneAudio } from "./RadioOneAudio";
 
 export const RadioOne = () => {
   const { logs, setLogs } = useContext(AppContext)
+  const { radioPlaying, setRadioPlaying} = useContext(AppContext)
 
-  const playAudio = () => {
-    new Audio(daddy).play();
-  }
-
-  const clickRadio = () => {
+  const playRadio = () => {
     setLogs([...logs, { type:"inform", text: "The radio starts playing..."}])
-    playAudio()
+    setRadioPlaying(true)
+    RadioOneAudio.play()
   }
-  return (
+
+  const stopRadio = () => {
+    setRadioPlaying(false)
+    RadioOneAudio.pause()
+  }
+  return !radioPlaying? (
     <div>
-      <img className="item" id="radio-one" src={radio} onClick={clickRadio} />
+      <img className="item" id="radio-one" src={radio} onClick={playRadio} />
+    </div>
+  ) : (
+    <div>
+      <img className="item" id="radio-one" src={radio} onClick={stopRadio} />
     </div>
   )
 }

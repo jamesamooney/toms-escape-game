@@ -13,13 +13,13 @@ export const Paper5 = () => {
   const grabPaper5 = () => {
     setHasPaper5(true)
     setPouch([...pouch, <PouchPaper5 key="paper-5"/>])
-    setLogs([...logs, { type:"inform", text: "Maybe you should uncrumple the paper mouse boy"}])
+    setLogs([...logs, { type:"inform", text: "Give that crumpled paper a ruddy good uncrumpling!"}])
 
   }
 
   return (
     <div>
-      <img src={crumpled} className="item" id="paper-5" onClick={grabPaper5}/>
+      <img data-testid="paper-5" src={crumpled} className="item" id="paper-5" onClick={grabPaper5}/>
     </div>
   )
 }

@@ -10,7 +10,7 @@ export const Tnt = ( { setHasTnt } ) => {
   const grabTnt = () => {
     setHasTnt(true)
     setPouch([...pouch, <PouchTnt key="tnt"/>])
-    setLogs([...logs, { type:"inform", text: "Dynamite! Careful now."}])
+    setLogs([...logs, { type:"inform", text: "Dynamite! Careful now..."}])
   }
   return (
     <img className='item' id="tnt" onClick={grabTnt} src={tnt}/>
