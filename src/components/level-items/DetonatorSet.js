@@ -12,14 +12,14 @@ export const DetonatorSet = () => {
 
   const clickDetonator = () => {
     if (hasBellRung && !detonatorAudioPlayed) {
-      setLogs([...logs, { type:"success", text: "You hit the detonator, go and check if you got him" }])
+      setLogs([...logs, { type:"success", text: "You hit the detonator! Go and check if you got him..." }])
       setIsKillerDefeated(true)
       setDetonatorAudioPlayed(true)
       DetonateAudio.play()
     } else if (hasBellRung && detonatorAudioPlayed) {
-      setLogs([...logs, { type:"inform", text: "You've already detonated, you surely can't be thinking of blowin' up more stuff?!" }])
+      setLogs([...logs, { type:"inform", text: "You've already detonated! Surely you're not thinking of blowing up more stuff?!" }])
     } else {
-      setLogs([...logs, { type:"inform", text: "Theres no point hitting the detonator now, spikes not in position" }])
+      setLogs([...logs, { type:"inform", text: "No point hitting the detonator now, Spike's not in position..." }])
     }
   }
 
