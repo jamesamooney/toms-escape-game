@@ -7,7 +7,7 @@ export const StickyNote = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const stickyNoteClick = () => {
-    setLogs([...logs, { type:"inform", text: "If Spikey doesn't wake up for his food, you can always try ringing his bell!"}])
+    setLogs([...logs, { type:"inform", text: "If Spike doesn't wake up for his food, you could always try ringing his bell..."}])
   }
   
   return (

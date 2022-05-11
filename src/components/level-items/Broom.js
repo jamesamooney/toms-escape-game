@@ -11,7 +11,7 @@ export const Broom = () => {
   const grabBroom = () => {
     setHasBroom(true)
     setPouch([...pouch, <PouchBroom key="broom"/>])
-    setLogs([...logs, { type:"inform", text: "This broom is very long and hard... I betcha could reach anything with this!"}])
+    setLogs([...logs, { type:"inform", text: "You sure could extend your reach with this long broom. A power reach, you might say..."}])
 
   }
 

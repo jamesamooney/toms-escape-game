@@ -13,7 +13,7 @@ export const Paper4 = () => {
   const grabPaper4 = () => {
     setHasPaper4(true)
     setPouch([...pouch, <PouchPaper4 key="paper-4"/>])
-    setLogs([...logs, { type:"inform", text: "Maybe you should uncrumple the paper mouse boy"}])
+    setLogs([...logs, { type:"inform", text: "Give that crumpled paper a ruddy good uncrumpling!"}])
 
   }
 

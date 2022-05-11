@@ -13,9 +13,9 @@ export const Hole = () => {
   const digHole = () => {
     if(hasShovel) {
       setIsHoleDug(!isHoleDug)
-      setLogs([...logs, { type:"success", text: "You dig tirelessly for 2 whole minutes and find Spikes hidden treasure a Dog Bone!"}])
+      setLogs([...logs, { type:"success", text: "You dig tirelessly for two whole minutes and find Spike's hidden treasure: a dog bone!"}])
     } else {
-      setLogs([...logs, { type:"warning", text: "You can't dig up that much dirt yourself, you need some sort dirt mover or something"}])
+      setLogs([...logs, { type:"warning", text: "You can't dig up that much dirt yourself. You'll need some sort of implement..."}])
     }
   }
 

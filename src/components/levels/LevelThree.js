@@ -23,7 +23,22 @@ export const LevelThree = () => {
   const { tomIsFree, setTomIsFree } = useContext(AppContext)
 
 
+
   const background = isTrapLaid ? ("level-three-trail") : ("level-three")
+
+  const setTime = () => {
+    const formatSeconds = savedSeconds.toString().padStart(2, 0)
+    const stringTime = `${savedMinutes}.${formatSeconds}`
+    const floatTime = parseFloat(stringTime)
+    setFinalTime(floatTime)
+  }
+
+  const gameComplete = () => {
+    setPlayerLocation(4)
+    setTime()
+    console.log('Game complete')
+  }
+
 
   return (
     <div className ={background}>

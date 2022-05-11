@@ -17,11 +17,11 @@ export const Bowl = () => {
   const clickBowl = () => {
     if (hasBone && hasTnt && hasDetonator && !detonatorAudioPlayed) {
       setIsTrapLaid(true)
-      setLogs([...logs, { type:"success", text: "The trap is set, but spikes still asleep"}])
+      setLogs([...logs, { type:"success", text: "The trap is set, but Spike's still asleep..."}])
     } else if (detonatorAudioPlayed) {
-      setLogs([...logs, { type:"inform", text: "Worked like a charm.."}])
+      setLogs([...logs, { type:"inform", text: "Worked like a charm!"}])
     } else {
-      setLogs([...logs, { type:"inform", text: "You don't have all the trap materials"}])
+      setLogs([...logs, { type:"inform", text: "You don't yet have all of the trap materials"}])
     }
   }
 
