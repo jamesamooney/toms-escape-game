@@ -45,7 +45,8 @@ export const LevelTwo = () => {
 
   
   useEffect(() => {
-    if (light1 === 0 && light2 === 1 && light3 === 2) {
+    if (light1 === 0 && light2 === 1 && light3 === 2 && !safeAppears) {
+      
       setSafeAppears(true)
       setLogs([...logs, { type:"success", text: "A secret compartment slides open and a safe is revealed!"}])
 
