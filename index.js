@@ -18,7 +18,14 @@ const CONNECTION_URL = 'mongodb+srv://Abdul:Makers123@cluster0.gln4g.mongodb.net
 
 const PORT = process.env.PORT || 3030;
 
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
+mongoose.connect(process.env.MONGODB_URI || CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    if (process.env.NODE_ENV === 'production') {
+      app.use(express.static('client/build'))
+    }
+    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+  })
   .catch((error) => console.log(error.message))
+
+
   
