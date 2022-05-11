@@ -14,6 +14,8 @@ import { Chest } from "../level-items/Chest"
 import { Tnt } from "../level-items/Tnt"
 import { Detonator } from "../level-items/Detonator"
 import { Shovel } from '../level-items/Shovel'
+import { HappyTom } from "../level-items/HappyTom"
+
 
 
 
@@ -35,6 +37,7 @@ export const LevelOne = ({ setPlayerLocation }) => {
   const { hasTnt, setHasTnt } = useContext(AppContext)
   const { hasDetonator, setHasDetonator } = useContext(AppContext)
   const { hasShovel, setHasShovel } = useContext(AppContext)
+  const { tomIsFree, setTomIsFree } = useContext(AppContext)
   const { hasKeyOne, setHasKeyOne } = useContext(AppContext)
 
 
@@ -62,12 +65,15 @@ export const LevelOne = ({ setPlayerLocation }) => {
         />}
       {!hasPaper4 && <Paper4  />}
       {!hasPaper5 && <Paper5  />}
-      <TomCaged />
+      {!tomIsFree && <TomCaged />}
       <Cage />
       <Chest />
       {(chestOpen && !hasTnt) && <Tnt setHasTnt={setHasTnt}/>}
       {(chestOpen && !hasDetonator) && <Detonator setHasDetonator={setHasDetonator}/>}
       {!hasShovel && <Shovel />}
+      {tomIsFree && <HappyTom />}
+
+
     </div>
   );
 }

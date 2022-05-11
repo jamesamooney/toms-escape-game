@@ -404,6 +404,13 @@ span {
 #arrow-outside {
   height: 50px;
   position: absolute;
+  bottom: 140px;
+  right: 30px;
+}
+
+#arrow-right-kitchen {
+  height: 50px;
+  position: absolute;
   bottom: 340px;
   right: 100px;
 }
@@ -668,6 +675,41 @@ span {
   color: rgba(0, 0, 0, .3);
 }
 
+#happy-tom-1 {
+  position: absolute;
+  height: 200px;
+  right: 540px;
+  bottom: 20px;
+}
+
+#happy-tom-2 {
+  position: absolute;
+  height: 200px;
+  left: 400px;
+  bottom: 120px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#happy-tom-3 {
+  position: absolute;
+  height: 200px;
+  right: 200px;
+  bottom: 140px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.leaderboard-score {
+  position: relative;
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
 
 #score-text {
   padding-top: 10px;
@@ -741,4 +783,5 @@ span {
   width: 430px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+
 }
