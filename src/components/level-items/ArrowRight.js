@@ -11,6 +11,8 @@ export const ArrowRight = () => {
   const { savedMinutes, setSavedMinutes } = useContext(AppContext)
   const { savedSeconds, setSavedSeconds } = useContext(AppContext)
   const { playerLocation, setPlayerLocation } = useContext(AppContext);
+  const { tomIsFree, setTomIsFree } = useContext(AppContext)
+  const { logs, setLogs } = useContext(AppContext)
 
 
   const setTime = () => {
@@ -23,9 +25,14 @@ export const ArrowRight = () => {
     console.log('Game complete')
   }
 
+  const arrowClick = () => {
+    tomIsFree ? gameComplete() : setLogs([...logs, { type:"warning", text: "You can't just leave Tom behind!"}])
+
+  }
+
   return (
     <div>
-      <img id="arrow-outside" className="item" src={arrowRight} onClick={gameComplete}/>
+      <img id="arrow-outside" className="item" src={arrowRight} onClick={arrowClick}/>
     </div>
   )
 }
