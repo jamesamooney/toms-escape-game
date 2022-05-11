@@ -2,6 +2,7 @@ import cage from "../../images/items/cage-3.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import { PouchBlueprint } from "../pouch-items/PouchBlueprint"
+import cellDoorSFX from "../audio/cellDoor.mp3"
 import App from "../../App"
 
 export const Cage = () => {
@@ -10,6 +11,10 @@ export const Cage = () => {
   const { logs, setLogs } = useContext(AppContext)
   const { hasTomsKey, setHasTomsKey } = useContext(AppContext)
   const { tomIsFree, setTomIsFree } = useContext(AppContext)
+
+  const playAudioCellDoorSFX = () => {
+    new Audio(cellDoorSFX).play()
+  }
 
   const clickCage = () => {
     if (!hasBlueprint && !hasTomsKey) {
@@ -23,6 +28,7 @@ export const Cage = () => {
    } else if (tomIsFree) { 
     setLogs([...logs, { type:"inform", text: "Tom: I'm down here, stop looking at that cage, let's go!"}])
    } else {
+    playAudioCellDoorSFX()
     setLogs([...logs, { type:"inform", text: "Tom: Look in your pouch, I've given you a blueprint with some clues! You have to find the key to my cage, but that grumpy old dog Spike is guarding it."}])
    }
   }

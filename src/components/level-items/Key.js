@@ -2,6 +2,7 @@ import key from "../../images/items/key.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import { PouchKey } from "../pouch-items/PouchKey"
+import keysJingle from "../audio/keysJingle.mp3"
 
 export const Key = ( ) => {
   const { pouch, setPouch } = useContext(AppContext)
@@ -9,7 +10,12 @@ export const Key = ( ) => {
   const { hasKeyOne, setHasKeyOne } = useContext(AppContext)
 
 
+  const playAudioKeysJingle = () => {
+    new Audio(keysJingle).play();
+  }
+
   const grabKey = () => {
+    playAudioKeysJingle();
     setHasKeyOne(true)
     setPouch([...pouch, <PouchKey key="key"/>])
     setLogs([...logs, { type:"inform", text: "You picked up the key! Want to bet it opens that lovely door?"}])
