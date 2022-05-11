@@ -21,8 +21,8 @@
     "mongoose": "^6.3.2",
     "nodemon": "^2.0.16"
   },
-  "engines" : { 
-    "npm" : ">=7.0.0",
-    "node" : "16.x"
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": "16.x"
   }
 }
