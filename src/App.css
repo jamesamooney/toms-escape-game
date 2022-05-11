@@ -576,7 +576,7 @@ span {
 #bone {
   height: 30px;
   position: absolute;
-  bottom: 170px;
+  bottom: 150px;
   left: 30px;
 }
 
@@ -794,4 +794,25 @@ span {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 
+}
+
+.pauls-tongue {
+  height: 50px;
+  position: absolute;
+  bottom: 392px;
+  left: 294px;
+}
+
+.hey-joe {
+  height: 50px;
+  position: absolute;
+  bottom: 195px;
+  left: 35px;
+}
+
+#sun {
+  height: 200px;
+  position: absolute;
+  bottom: 400px;
+  right: 700px;
 }

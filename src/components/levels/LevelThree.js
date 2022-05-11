@@ -13,6 +13,8 @@ import { KillerDefeated } from '../level-items/KillerDefeated'
 import { HappyTom } from "../level-items/HappyTom"
 import { ArrowRight } from '../level-items/ArrowRight'
 import { Tnt } from '../level-items/Tnt'
+import { JoeEasterEgg } from '../level-items/JoeEasterEgg'
+import { GeorgeSun } from '../level-items/GeorgeSun'
 
 export const LevelThree = () => {
   const { isHoleDug, setIsHoleDug } = useContext(AppContext);
@@ -43,6 +45,8 @@ export const LevelThree = () => {
       {isKillerDefeated && <ArrowRight />}
       {tomIsFree && <HappyTom />}
       {(isTrapLaid && !detonatorAudioPlayed) && <Tnt />}
+      {isHoleDug && <JoeEasterEgg />}
+      {tomIsFree && <GeorgeSun />}
     </div>
   )
   }
