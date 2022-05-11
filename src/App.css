@@ -683,6 +683,7 @@ span {
   bottom: 140px;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
 
 .leaderboard-score {
   position: relative;
