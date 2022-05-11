@@ -26,6 +26,6 @@ export const PowerSwitch = () => {
     <img className='item' id="power-switch" src={PowerSwitchOn} />
     </>) :
     (<>
-    <img className='item' id="power-switch" src={PowerSwitchOff} onClick={turnPowerOn} />
+    <img className='item' id="power-switch" data-testid="power-switch" src={PowerSwitchOff} onClick={turnPowerOn} />
     </>)
 }
