@@ -16,7 +16,7 @@ export const Shovel = () => {
   const grabShovel = () => {
     playAudioShovel();
     setHasShovel(!hasShovel);
-    setLogs([...logs, { type:"inform", text: "Wonder what you could dig up this this...?"}])
+    setLogs([...logs, { type:"inform", text: "Wonder what you could dig up with this...?"}])
     setPouch([...pouch, <PouchShovel key="Shovel"/>])
   }
   

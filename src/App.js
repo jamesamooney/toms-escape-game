@@ -65,7 +65,9 @@ function App() {
   const [detonatorAudioPlayed, setDetonatorAudioPlayed] = useState(false)
   const [hasTomsKey, setHasTomsKey] = useState(false)
   const [tomIsFree, setTomIsFree] = useState(false)
-
+  const [joePlaying, setJoePlaying] = useState(false)
+  const [paulClicked, setPaulClicked] = useState(false)
+  const [paulPlaying, setPaulPlaying ] = useState(false)
 
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
@@ -80,7 +82,7 @@ function App() {
     <div className= "whole-screen">
 
 
-      <AppContext.Provider value={{leaderboard, setLeaderboard, userName, setUserName, pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, hasRock, setHasRock, safeAppears, setSafeAppears, isSafeClicked, setSafeClicked, isWindowBroken, setIsWindowBroken, savedMinutes, setSavedMinutes, savedSeconds, setSavedSeconds, setFinalTime, finalTime, hasShovel, setHasShovel, chestUnlocked, setChestUnlocked, chestOpen, setChestOpen, hasDetonator, setHasDetonator, hasTnt, setHasTnt, hasChestKey, setHasChestKey,  isHoleDug, setIsHoleDug, hasBone, setHasBone, isTrapLaid, setIsTrapLaid, radioPlaying, setRadioPlaying, showPlayButton, setShowPlayButton, hasBellRung, setHasBellRung, isKillerDefeated, setIsKillerDefeated, hasBlueprint, setHasBlueprint, detonatorAudioPlayed, setDetonatorAudioPlayed, hasTomsKey, setHasTomsKey, hasKeyOne, setHasKeyOne, passwordCorrect, setPasswordCorrect, tomIsFree, setTomIsFree}} >
+      <AppContext.Provider value={{leaderboard, setLeaderboard, userName, setUserName, pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, hasRock, setHasRock, safeAppears, setSafeAppears, isSafeClicked, setSafeClicked, isWindowBroken, setIsWindowBroken, savedMinutes, setSavedMinutes, savedSeconds, setSavedSeconds, setFinalTime, finalTime, hasShovel, setHasShovel, chestUnlocked, setChestUnlocked, chestOpen, setChestOpen, hasDetonator, setHasDetonator, hasTnt, setHasTnt, hasChestKey, setHasChestKey,  isHoleDug, setIsHoleDug, hasBone, setHasBone, isTrapLaid, setIsTrapLaid, radioPlaying, setRadioPlaying, showPlayButton, setShowPlayButton, hasBellRung, setHasBellRung, isKillerDefeated, setIsKillerDefeated, hasBlueprint, setHasBlueprint, detonatorAudioPlayed, setDetonatorAudioPlayed, hasTomsKey, setHasTomsKey, hasKeyOne, setHasKeyOne, passwordCorrect, setPasswordCorrect, tomIsFree, setTomIsFree, joePlaying, setJoePlaying, paulClicked, setPaulClicked, paulPlaying, setPaulPlaying }} >
 
  
         <div className='game-window'>
