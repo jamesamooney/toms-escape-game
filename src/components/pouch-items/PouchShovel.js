@@ -1,14 +1,19 @@
 import shovel from "../../images/items/shovel.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
+import shovelSound from "../audio/shovel.wav"
 
 export const PouchShovel = () => {
 
   const { logs, setLogs } = useContext(AppContext)
 
-  const shovelClue = () => {
-    setLogs([...logs, { type:"pouch-item", text: "Come on, figure this one out yourself.."}])
+  const playAudioShovel = () => {
+    new Audio(shovelSound).play();
+  }
 
+  const shovelClue = () => {
+    playAudioShovel();
+    setLogs([...logs, { type:"pouch-item", text: "Come on, figure this one out yourself.."}])
   }
 
   return (

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
+import ping from "../audio/ping.mp3"
+import padlockSound from "../audio/padlock.wav"
 
 export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockClicked, setPadlockSolved }) => {
 
@@ -8,14 +10,24 @@ export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockC
   const password = '1940'
   const [passwordGuess, setPasswordGuess] = useState("")
   const checkPassword = (e) => {
+
+    const playAudioPing = () => {
+      new Audio(ping).play();
+    }
+
+    const playAudioPadlock = () => {
+      new Audio(padlockSound).play();
+    }
+
     if(passwordGuess === password) {
-      console.log('here');
+      playAudioPing()
       setPasswordCorrect(true)
       setPadlockClicked(!isPadlockClicked)
       setPadlockSolved(true)
       setLogs([...logs, { type:"success", text: "Success! The padlock opens and you find a key!"}])
     } else {
-      setLogs([...logs, { type:"warning", text: "Nope, padlock won't budge..."}])
+      playAudioPadlock()
+      setLogs([...logs, { type:"warning", text: "Nope, padlock won't budge!"}])
     }
     e.preventDefault()
   }
