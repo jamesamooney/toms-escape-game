@@ -26,6 +26,6 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen }) => {
   }
 
   return doorOneOpen ? (
-    <img src={arrowForward} className="item" id='arrow-forward' onClick={moveToLevel2} />)
-    : (<img src={doorOneClosedImg} onClick={openDoor} id='door' className="item" />)
+    <img src={arrowForward} className="item" id='arrow-forward' data-testid="arrow-forward" onClick={moveToLevel2} />)
+    : (<img src={doorOneClosedImg} onClick={openDoor} id='door' data-testid="door" className="item" />)
 }

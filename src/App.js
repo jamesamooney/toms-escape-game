@@ -25,6 +25,8 @@ function App() {
   const [pouch, setPouch] = useState([])
   const [hasBook, setHasBook] = useState(false)
   const [hasBroom, setHasBroom] = useState(false)
+  const [hasKeyOne, setHasKeyOne] = useState(false)
+  const [passwordCorrect, setPasswordCorrect] = useState(false)
   const [isPadlockSolved, setPadlockSolved] = useState(false)
   const [isSafeSolved, setSafeSolved] = useState(false)
   const [doorOneOpen, setDoorOneOpen] = useState(false)
@@ -58,6 +60,7 @@ function App() {
   const [hasBellRung, setHasBellRung] = useState(false)
   const [isKillerDefeated, setIsKillerDefeated] = useState(false)
   const [hasBlueprint, setHasBlueprint] = useState(false)
+  const [leaderboard, setLeaderboard] = useState([])
   const [userName, setUserName] = useState("")
   const [detonatorAudioPlayed, setDetonatorAudioPlayed] = useState(false)
   const [hasTomsKey, setHasTomsKey] = useState(false)
@@ -72,7 +75,7 @@ function App() {
   },[logs])
 
   
-  const url = 'http://localhost:3030/scores'
+  // const url = 'http://localhost:3030/scores'
 
   // const getData = async() => {
   //   await fetch(url)
@@ -102,8 +105,7 @@ function App() {
   
   return (
     <div className= "whole-screen">
-
-      <AppContext.Provider value={{userName, setUserName, pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, hasRock, setHasRock, safeAppears, setSafeAppears, isSafeClicked, setSafeClicked, isWindowBroken, setIsWindowBroken, savedMinutes, setSavedMinutes, savedSeconds, setSavedSeconds, setFinalTime, finalTime, hasShovel, setHasShovel, chestUnlocked, setChestUnlocked, chestOpen, setChestOpen, hasDetonator, setHasDetonator, hasTnt, setHasTnt, hasChestKey, setHasChestKey,  isHoleDug, setIsHoleDug, hasBone, setHasBone, isTrapLaid, setIsTrapLaid, radioPlaying, setRadioPlaying, showPlayButton, setShowPlayButton, hasBellRung, setHasBellRung, isKillerDefeated, setIsKillerDefeated, hasBlueprint, setHasBlueprint, detonatorAudioPlayed, setDetonatorAudioPlayed, hasTomsKey, setHasTomsKey}} >
+      <AppContext.Provider value={{leaderboard, setLeaderboard, userName, setUserName, pouch, setPouch, playerLocation, setPlayerLocation, logs, setLogs, hasBook, setHasBook, isPadlockSolved, setPadlockSolved, doorOneOpen, setDoorOneOpen, hasBroom, setHasBroom, hasTurnedOnPower, setHasTurnedOnPower, light1, setLight1, light2, setLight2, light3, setLight3, isSafeSolved, setSafeSolved, hasPaper1, setHasPaper1, hasPaper2, setHasPaper2, hasPaper3, setHasPaper3, hasPaper4, setHasPaper4, hasPaper5, setHasPaper5, hasRock, setHasRock, safeAppears, setSafeAppears, isSafeClicked, setSafeClicked, isWindowBroken, setIsWindowBroken, savedMinutes, setSavedMinutes, savedSeconds, setSavedSeconds, setFinalTime, finalTime, hasShovel, setHasShovel, chestUnlocked, setChestUnlocked, chestOpen, setChestOpen, hasDetonator, setHasDetonator, hasTnt, setHasTnt, hasChestKey, setHasChestKey,  isHoleDug, setIsHoleDug, hasBone, setHasBone, isTrapLaid, setIsTrapLaid, radioPlaying, setRadioPlaying, showPlayButton, setShowPlayButton, hasBellRung, setHasBellRung, isKillerDefeated, setIsKillerDefeated, hasBlueprint, setHasBlueprint, detonatorAudioPlayed, setDetonatorAudioPlayed, hasTomsKey, setHasTomsKey, hasKeyOne, setHasKeyOne, passwordCorrect, setPasswordCorrect}} >
         <div className='game-window'>
           <div className='game-background'>
             {playerLocation === 0 && <LevelZero />}

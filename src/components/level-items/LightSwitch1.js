@@ -25,6 +25,7 @@ export const LightSwitch1 = () => {
     <img src={lightSwitch1}
       className="item"
       id="light-switch-1"
+      data-testid="light-switch-1"
       onClick={switchLight} />
   )
 }
