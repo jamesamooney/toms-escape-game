@@ -20,7 +20,7 @@ import { ChestKey } from "../level-items/ChestKey"
 import { DetonatorSet } from "../level-items/DetonatorSet"
 import { StickyNote } from "../level-items/StickyNote"
 import { HappyTom } from "../level-items/HappyTom"
-
+import safeAppearsSFX from "../audio/safeAppears.wav"
 
 export const LevelTwo = () => {
   
@@ -48,6 +48,7 @@ export const LevelTwo = () => {
     if (light1 === 0 && light2 === 1 && light3 === 2 && !safeAppears) {
       
       setSafeAppears(true)
+      new Audio(safeAppearsSFX).play()
       setLogs([...logs, { type:"success", text: "A secret compartment slides open and a safe is revealed!"}])
 
       }

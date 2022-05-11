@@ -2,6 +2,7 @@ import tnt from "../../images/items/dynamite.png"
 import { PouchTnt } from "../pouch-items/PouchTnt"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
+import pickUpSFX from "../audio/pickUp.wav"
 
 export const Tnt = ({ setHasTnt }) => {
   const { pouch, setPouch } = useContext(AppContext)
@@ -12,8 +13,11 @@ export const Tnt = ({ setHasTnt }) => {
   const grabTnt = () => {
     setHasTnt(true)
     setPouch([...pouch, <PouchTnt key="tnt"/>])
-    setLogs([...logs, { type:"inform", text: "Dynamite! Careful now..."}])
+    setLogs([...logs, { type: "inform", text: "Dynamite! Careful now..." }])
+    new Audio(pickUpSFX).play()
   }
+
+
   return (isTrapLaid && !detonatorAudioPlayed) ? 
   (<img className="item" id="tnt-outside" src={tnt} />)
     :
