@@ -72,7 +72,7 @@ function App() {
   const [playerLocation, setPlayerLocation] = useState(0)
 
   useEffect(() => {
-    messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
+    messagesEnd.current?.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'start'})
   },[logs])
 
   
