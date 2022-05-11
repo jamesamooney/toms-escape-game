@@ -2,6 +2,7 @@ import React from 'react'
 import { AppContext } from "../../AppContext"
 import { useContext } from "react"
 import arrowRight from '../../images/items/arrowRight.png';
+import endTheme from "../audio/TomAndJerryThemeAcapella.wav"
 
 
 
@@ -28,9 +29,13 @@ export const ArrowRight = () => {
     console.log('Game complete')
   }
 
+  const playAudio = () => {
+    new Audio(endTheme).play();
+  }
+
   const arrowClick = () => {
     tomIsFree ? gameComplete() : setLogs([...logs, { type:"warning", text: "You can't just leave Tom behind!"}])
-
+    playAudio()
   }
 
   return (
