@@ -9,7 +9,7 @@ export const PouchDetonator = () => {
 
   const detonatorClue = () => {
     
-    setLogs([...logs, { type:"pouch-item", text: "You could use this to blow up said shit"}])
+    setLogs([...logs, { type:"pouch-item", text: "You could trigger some kind of explosion with this..."}])
 
   }
 

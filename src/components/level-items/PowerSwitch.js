@@ -24,7 +24,7 @@ export const PowerSwitch = () => {
       playAudioPowerSwitchSFX()
       playAudioElectricHumSFX()
       setHasTurnedOnPower(true)
-      setLogs([...logs, { type: "success", text: "You reachup with the broom and...ZAP! You got the power!"}])
+      setLogs([...logs, { type: "success", text: "You reach up with the broom and...ZAP! You got the power!"}])
       
     } else if (!hasBroom && hasShovel) {
       playAudioPowerSwitchSFX()
