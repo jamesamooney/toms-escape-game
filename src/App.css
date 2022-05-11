@@ -224,8 +224,8 @@ span {
 
 #tnt-outside {
   position: absolute;
-  bottom: 0px;
-  left: 100px;
+  bottom: -5px;
+  left: 80px;
   height: 100px;  
 }
 
