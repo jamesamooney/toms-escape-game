@@ -1,12 +1,6 @@
 import '../../App.css';
 import { AppContext } from "../../AppContext"
 import { useContext } from "react"
-import express from "express"
-
-const app = express();
-
-const PORT = process.env.PORT || 3030;
-
 
 
 export const GameComplete = ({ }) => {
@@ -17,7 +11,7 @@ export const GameComplete = ({ }) => {
 
   const sendScore = async (name, time) => {
     
-    const url = `/scores`
+    const url = '/scores'
 
     const data = {
       name: name,
@@ -32,7 +26,7 @@ export const GameComplete = ({ }) => {
     getData()
   }
 
-  const url = `/scores`
+  const url = '/scores'
 
   const getData = async() => {
       await fetch(url)
