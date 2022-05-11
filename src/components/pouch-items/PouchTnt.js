@@ -9,7 +9,7 @@ export const PouchTnt = () => {
 
   const tntInfo = () => {
     
-    setLogs([...logs, { type:"pouch-item", text: "Let's blow some shit up"}])
+    setLogs([...logs, { type:"pouch-item", text: "Let's blow some stuff up"}])
 
   }
 
