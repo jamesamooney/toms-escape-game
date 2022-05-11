@@ -215,10 +215,17 @@ span {
   height: 200px;  
 }
 
-#tnt {
+#tnt-basement {
   position: absolute;
   bottom: 0px;
   right: 100px;
+  height: 100px;  
+}
+
+#tnt-outside {
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
   height: 100px;  
 }
 
