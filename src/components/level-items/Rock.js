@@ -16,7 +16,8 @@ export const Rock = () => {
   const grabRock = () => {
     playAudioRockSFX()
     setHasRock(!hasRock);
-    setLogs([...logs, { type:"inform", text: "Ohh... A special window breaking rock!"}])
+    setLogs([...logs, { type:"inform", text: "A rock? Smashing!"}])
+
     setPouch([...pouch, <PouchRock key="rock"/>])
   }
   return (

@@ -18,10 +18,10 @@ export const TomsKey = () => {
     if (isKillerDefeated) {
       playAudioKeysJingle()
       setPouch([...pouch, <PouchTomsKey key={tomsKey}/>])
-      setLogs([...logs, { type:"success", text: "You found Toms key Well Done"}])
+      setLogs([...logs, { type:"success", text: "You found Tom's key!"}])
       setHasTomsKey(true)
     } else {
-      setLogs([...logs, { type:"inform", text: "That's Toms key, but spike wont let you anywhere near it!"}])
+      setLogs([...logs, { type:"inform", text: "That's Tom's key, alright, but Spike won't let you anywhere near it..."}])
     }
   }
 

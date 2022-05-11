@@ -18,9 +18,8 @@ import { RadioOne } from "../level-items/RadioOne"
 import { CigarPhoto } from "../level-items/CigarPhoto"
 import { ChestKey } from "../level-items/ChestKey"
 import { DetonatorSet } from "../level-items/DetonatorSet"
-import { Detonator } from "../level-items/Detonator"
 import { StickyNote } from "../level-items/StickyNote"
-import { GameComplete } from '../levels/GameComplete'
+import { HappyTom } from "../level-items/HappyTom"
 
 
 export const LevelTwo = () => {
@@ -38,12 +37,10 @@ export const LevelTwo = () => {
   const { hasPaper3, setHasPaper3 } = useContext(AppContext)
   const { hasRock, setHasRock } = useContext(AppContext)
   const { isWindowBroken, setIsWindowBroken} = useContext(AppContext)
-  const { finalTime, setFinalTime } = useContext(AppContext)
-  const { savedMinutes, setSavedMinutes } = useContext(AppContext)
-  const { savedSeconds, setSavedSeconds } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
   const { hasChestKey, setHasChestKey } = useContext(AppContext)
   const { isTrapLaid, setIsTrapLaid } = useContext(AppContext);
+  const { tomIsFree, setTomIsFree } = useContext(AppContext)
 
 
   
@@ -56,12 +53,6 @@ export const LevelTwo = () => {
   },[light1, light2, light3]) 
   
 
-  
-
-  const setTime = () => {
-    setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
-    // sendScore("James", finalTime)
-  }
   
   const background = isTrapLaid ? ("level-two-trail") : ("level-two")
 
@@ -86,7 +77,8 @@ export const LevelTwo = () => {
       <CigarPhoto />
       <StickyNote />
       {!hasChestKey && <ChestKey />}
-      {isTrapLaid && <DetonatorSet/>}
+      {isTrapLaid && <DetonatorSet />}
+      {tomIsFree && <HappyTom />}
 
     </div>
   )

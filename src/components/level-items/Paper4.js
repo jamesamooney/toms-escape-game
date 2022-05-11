@@ -19,13 +19,13 @@ export const Paper4 = () => {
     playAudioPaperCrumpuling();
     setHasPaper4(true)
     setPouch([...pouch, <PouchPaper4 key="paper-4"/>])
-    setLogs([...logs, { type:"inform", text: "Maybe you should uncrumple the paper mouse boy"}])
+    setLogs([...logs, { type:"inform", text: "Give that crumpled paper a ruddy good uncrumpling!"}])
 
   }
 
   return (
     <div>
-      <img src={crumpled} className="item" id="paper-4" onClick={grabPaper4}/>
+      <img data-testid="paper-4" src={crumpled} className="item" id="paper-4" onClick={grabPaper4}/>
     </div>
   )
 }

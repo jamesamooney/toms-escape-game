@@ -21,7 +21,9 @@ export const Armour = () => {
   return (
     <div>
       <img src={armour}
+        alt="Suit of armour"
         id="armour"
+        data-testid="armour"
         className="item"
         onClick={armourClicked}
       />

@@ -16,7 +16,7 @@ export const Bone = () => {
 
   const pickUpBone = () => {
     playAudioBoneSFX()
-    setLogs([...logs, { type:"inform", text: "Wow, that bone looks irresistable"}]);
+    setLogs([...logs, { type:"inform", text: "Now that's a tasty-looking bone..."}]);
     setHasBone(true);
     setPouch([...pouch, <PouchBone key={bone} />]);
     

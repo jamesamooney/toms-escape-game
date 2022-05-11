@@ -20,9 +20,9 @@ export const Window = () => {
     if(hasRock) { 
       playAudioWindowBreaking()
       setIsWindowBroken(!isWindowBroken) 
-      setLogs([...logs, { type:"success", text: "You lob the hefty rock and smash the window to pieces!"}])
+      setLogs([...logs, { type:"success", text: "You lob your hefty rock and smash the window to pieces!"}])
     } else {
-      setLogs([...logs, { type:"inform", text: "A nigh indestructible window"}])
+      setLogs([...logs, { type:"inform", text: "A nigh-indestructible window! What a pane..."}])
       
     }
   }
@@ -35,7 +35,7 @@ export const Window = () => {
   }
   
   return isWindowBroken ? 
-    ( <img id="arrow-outside" className="item" src={arrowRight} onClick={levelComplete}/> )
+    ( <img id="arrow-right-kitchen" className="item" src={arrowRight} onClick={levelComplete}/> )
    : 
     ( <img id="window-border" className="item" src={window} onClick={clickWindow} /> )
 }

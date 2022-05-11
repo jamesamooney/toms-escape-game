@@ -24,7 +24,7 @@ export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockC
       setPasswordCorrect(true)
       setPadlockClicked(!isPadlockClicked)
       setPadlockSolved(true)
-      setLogs([...logs, { type:"success", text: "Success! the padlock opens and you see a key!"}])
+      setLogs([...logs, { type:"success", text: "Success! The padlock opens and you find a key!"}])
     } else {
       playAudioPadlock()
       setLogs([...logs, { type:"warning", text: "Nope, padlock won't budge!"}])

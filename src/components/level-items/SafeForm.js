@@ -23,7 +23,7 @@ export const SafeForm = () => {
     if(passwordGuess === password) {
       playAudioCorrectInputSFX()
       setSafeSolved(true)
-      setLogs([...logs, { type:"success", text: "You cracked it open! looks like the all powerful window smashing rock was kept inside!"}])
+      setLogs([...logs, { type:"success", text: "You cracked it open and found a smashing-looking rock inside. A window to success?"}])
     } else {
       playAudioWrongInputSFX()
       setLogs([...logs, { type:"warning", text: "Wrong combination"}])

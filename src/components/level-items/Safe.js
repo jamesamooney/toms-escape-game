@@ -18,7 +18,7 @@ export const Safe = () => {
   const safeClicked = () => {
     playAudioAccessSafeSFX()
     setSafeClicked(!isSafeClicked)
-    setLogs([...logs, { type:"inform", text: "Looks like you need to insert a 5 lettered word.."}])
+    setLogs([...logs, { type:"inform", text: "Looks like you need to insert a 5-letter word..."}])
   }
 
   return isSafeSolved ?

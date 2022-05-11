@@ -17,6 +17,6 @@ export const PouchBook = () => {
   }
   
   return (
-      <img className='item' id="pouch-book" onClick={clickPouchBook} src={book} style={{ height: '40px'}}/>
+      <img data-testid="pouch-book" className='item' id="pouch-book" onClick={clickPouchBook} src={book} style={{ height: '40px'}}/>
   )
 }

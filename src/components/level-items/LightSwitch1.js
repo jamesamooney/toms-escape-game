@@ -16,7 +16,7 @@ export const LightSwitch1 = () => {
   const switchLight = () => {
     playAudioLightSwitchSFX()
     if (!hasTurnedOnPower) {
-    setLogs([...logs, { type:"inform", text: "There seems to not be any power"}])  
+    setLogs([...logs, { type:"inform", text: "Looks like the power's off..."}])  
     } else {
       setLight1(light1 + 1)
       if (light1 === 2) { 
@@ -28,6 +28,7 @@ export const LightSwitch1 = () => {
     <img src={lightSwitch1}
       className="item"
       id="light-switch-1"
+      data-testid="light-switch-1"
       onClick={switchLight} />
   )
 }
