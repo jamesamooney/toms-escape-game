@@ -35,7 +35,9 @@ export const ArrowRight = () => {
 
   const arrowClick = () => {
     tomIsFree ? gameComplete() : setLogs([...logs, { type:"warning", text: "You can't just leave Tom behind!"}])
-    playAudio()
+    if (tomIsFree) {
+      playAudio()
+    }
   }
 
   return (
