@@ -68,40 +68,12 @@ function App() {
 
 
   // Locations are: 1 for basement, 2 for kitchen, 3 for garden
-  const [playerLocation, setPlayerLocation] = useState(4)
+  const [playerLocation, setPlayerLocation] = useState(0)
 
   useEffect(() => {
     messagesEnd.current?.scrollIntoView({ behavior: "smooth"})
   },[logs])
 
-  
-  // const url = 'http://localhost:3030/scores'
-
-  // const getData = async() => {
-  //   await fetch(url)
-  //   .then(response => response.json())
-  //   .then(data => data.forEach((score) => {
-  //     console.log(score)
-  //   }))
-  // }
-
-  // getData();
-  
-
-  // const sendData = async () => {
-  //   const data = {
-  //     name: "CAP",
-  //     time: "1:00",
-  //   }
-  //   console.log(data)
-  //   await fetch(url, {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify(data)
-  //   })
-  // }
-  // // const data = {name: 'CAP', time: '1:00' }
-  // sendData();
   
   return (
     <div className= "whole-screen">
