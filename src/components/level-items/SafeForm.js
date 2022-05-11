@@ -20,7 +20,7 @@ export const SafeForm = () => {
   }
   
   const checkPassword = (e) => {
-    if(passwordGuess === password) {
+    if(passwordGuess.toLowerCase() === password) { 
       playAudioCorrectInputSFX()
       setSafeSolved(true)
       setLogs([...logs, { type:"success", text: "You cracked it open and found a smashing-looking rock inside. A window to success?"}])
