@@ -9,7 +9,7 @@ export const SafeForm = () => {
   const [passwordGuess, setPasswordGuess] = useState("")
   
   const checkPassword = (e) => {
-    if(passwordGuess === password) {
+    if(passwordGuess.toLowerCase() === password) {
       setSafeSolved(true)
       setLogs([...logs, { type:"success", text: "You cracked it open and found a smashing-looking rock inside. A window to success?"}])
     } else {
