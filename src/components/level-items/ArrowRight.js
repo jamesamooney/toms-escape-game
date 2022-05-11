@@ -16,7 +16,10 @@ export const ArrowRight = () => {
 
 
   const setTime = () => {
-    setFinalTime({minutes: savedMinutes, seconds: savedSeconds})
+    const formatSeconds = savedSeconds.toString().padStart(2, 0)
+    const stringTime = `${savedMinutes}.${formatSeconds}`
+    const floatTime = parseFloat(stringTime)
+    setFinalTime(floatTime)
   }
 
   const gameComplete = () => {
