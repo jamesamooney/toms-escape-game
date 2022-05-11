@@ -42,5 +42,10 @@
   },
   "devDependencies": {
     "@testing-library/dom": "^8.13.0"
+  },
+
+  "engines" : { 
+    "npm" : ">=7.0.0",
+    "node" : ">=16.0.0"
   }
 }

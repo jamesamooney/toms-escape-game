@@ -16,7 +16,7 @@ app.use("/scores", scoresRouter);
 
 const CONNECTION_URL = 'mongodb+srv://Abdul:Makers123@cluster0.gln4g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT;
 
 mongoose.connect(process.env.MONGODB_URI || CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   // .then(() => {

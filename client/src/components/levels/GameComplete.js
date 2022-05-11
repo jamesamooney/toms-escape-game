@@ -1,12 +1,6 @@
 import '../../App.css';
 import { AppContext } from "../../AppContext"
 import { useContext } from "react"
-import express from "express"
-
-const app = express();
-
-const PORT = process.env.PORT || 3030;
-
 
 
 export const GameComplete = ({ }) => {
