@@ -4,11 +4,13 @@ import { AppContext } from "../../AppContext"
 import { useContext } from "react"
 import lockedDoorSound from "../audio/lockedDoor.mp3"
 import openDoorSound from "../audio/openDoor.mp3"
+import { PaulsTongueAudio } from "./PaulsTongueAudio";
 
 export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen }) => {
 
   const { logs, setLogs } = useContext(AppContext)
   const { playerLocation, setPlayerLocation } = useContext(AppContext)
+  const { paulPlaying, setPaulPlaying } = useContext(AppContext)
 
   const playAudioLockedDoor = () => {
     new Audio(lockedDoorSound).play();
@@ -34,6 +36,8 @@ export const Door = ({ setDoorOneOpen, hasKeyOne, doorOneOpen }) => {
     if(doorOneOpen) {
       setLogs([...logs, { type:"inform", text: "You tip toe into the kitchen... these rich folk probably got bare munch"}])
       setPlayerLocation(2)
+      setPaulPlaying(false)
+      PaulsTongueAudio.pause()
     }
   }
 

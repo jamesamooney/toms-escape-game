@@ -2,6 +2,8 @@ import downArrow from "../../images/items/arrowDown.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import { RadioOneAudio } from "./RadioOneAudio";
+import { JoeEasterEgg } from "./JoeEasterEgg"
+import { HeyJoeAudio } from "./HeyJoeAudio";
 
 export const ArrowDown = () => {
   
@@ -9,12 +11,16 @@ export const ArrowDown = () => {
   const { logs, setLogs } = useContext(AppContext)
   const { radioPlaying, setRadioPlaying} = useContext(AppContext)
   const { hasBellRung, setHasBellRung } = useContext(AppContext);
+  const { joePlaying, setJoePlaying } = useContext(AppContext)
 
 
   const goBackOneLevel = () => {
     setPlayerLocation(playerLocation -1)
     setRadioPlaying(false)
+    setJoePlaying(false)
     RadioOneAudio.pause()
+    HeyJoeAudio.pause()
+    
     if (playerLocation === 2) {
       setLogs([...logs, { type: "inform", text: "Running back to the basement... did you forget something?" }])
     } else if (playerLocation === 3 && !hasBellRung) {
