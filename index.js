@@ -19,9 +19,11 @@ const CONNECTION_URL = process.env.MONGODB_URI || 'mongodb+srv://Abdul:Makers123
 const PORT = process.env.PORT || 3030;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    app.use(express.static('client/build'));
-    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
-  })
-  .catch((error) => console.log(error.message))
+
+app.use(express.static('client/build'));
+app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+
+  // .then(() => {
+  // })
+  // .catch((error) => console.log(error.message))
   
