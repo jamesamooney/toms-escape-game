@@ -3,6 +3,7 @@ import { AppContext } from "../../AppContext"
 import { useContext } from "react"
 import arrowRight from '../../images/items/arrowRight.png';
 import endTheme from "../audio/TomAndJerryThemeAcapella.wav"
+import { HeyJoeAudio } from "./HeyJoeAudio";
 
 
 
@@ -14,6 +15,7 @@ export const ArrowRight = () => {
   const { playerLocation, setPlayerLocation } = useContext(AppContext);
   const { tomIsFree, setTomIsFree } = useContext(AppContext)
   const { logs, setLogs } = useContext(AppContext)
+  const { joePlaying, setJoePlaying } = useContext(AppContext)
 
 
   const setTime = () => {
@@ -27,6 +29,8 @@ export const ArrowRight = () => {
     setPlayerLocation(4)
     setTime()
     console.log('Game complete')
+    setJoePlaying(false)
+    HeyJoeAudio.pause()
   }
 
   const playAudio = () => {
