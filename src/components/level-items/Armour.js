@@ -1,23 +1,37 @@
 import armour from "../../images/items/armour.png"
 import { useContext } from "react"
 import { AppContext } from "../../AppContext"
-import daddy from "../audio/hey.mp3"
+import grunt1 from "../audio/grunt1.wav"
+import grunt2 from "../audio/grunt2.wav"
 
 
 
 export const Armour = () => {
 
-  const playAudio = () => {
-    new Audio(daddy).play();
+  const playGrunt1 = () => {
+    new Audio(grunt1).play();
+  }
+
+  const playGrunt2 = () => {
+    new Audio(grunt2).play()
   }
 
   const { logs, setLogs } = useContext(AppContext)
+  const { armourClicked, setArmourClicked } = useContext(AppContext)
 
-  const armourClicked = () => {
+  const clickArmour = () => {
+    if (armourClicked===false) {
     setLogs([...logs, {type:"warning", text: "Looks like this angry fella won't let you pass"}])
-    playAudio()
-    
+    playGrunt1()
+    setArmourClicked(true) 
+  } else {
+    setLogs([...logs, {type:"warning", text: "Looks like this angry fella won't let you pass"}])
+    playGrunt2()
+    setArmourClicked(false) 
   }
+}
+
+
   return (
     <div>
       <img src={armour}
@@ -25,7 +39,7 @@ export const Armour = () => {
         id="armour"
         data-testid="armour"
         className="item"
-        onClick={armourClicked}
+        onClick={clickArmour}
       />
     </div>
   )
