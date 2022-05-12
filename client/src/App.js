@@ -11,7 +11,43 @@ import { TextInterface } from './components/TextInterface'
 import { Pouch } from './components/Pouch'
 import { TimerLogo } from './components/level-items/TimerLogo'
 
-
+// SFX for preloading
+import accessSafe from "./components/audio/accessSafe.wav"
+import AppThemeTune from "./components/audio/AppThemeTune.wav"
+import boneSFX from "./components/audio/boneSFX.wav"
+import book from "./components/audio/book.wav"
+import broomSFX from "./components/audio/broomSFX.wav"
+import cellDoor from "./components/audio/cellDoor.mp3"
+import closedChest from "./components/audio/closedChest.wav"
+import correctInput from "./components/audio/correctInput.wav"
+import detonate from "./components/audio/detonate.wav"
+import diggingSFX from "./components/audio/diggingSFX.wav"
+import dinnerBellSFX from "./components/audio/dinnerBellSFX.wav"
+import dirtSFX from "./components/audio/dirtSFX.wav"
+import dogSnarlSFX from "./components/audio/dogSnarlSFX.wav"
+import electricHum from "./components/audio/electricHum.wav"
+import grab from "./components/audio/grab.mp3"
+import gulpSFX from "./components/audio/gulpSFX.wav"
+import hey from "./components/audio/hey.mp3"
+import HeyJoe from "./components/audio/HeyJoe.wav"
+import keysJingle from "./components/audio/keysJingle.mp3"
+import lightSwitch from "./components/audio/lightSwitch.wav"
+import lockedDoor from "./components/audio/lockedDoor.mp3"
+import openChest from "./components/audio/openChest.wav"
+import openDoor from "./components/audio/openDoor.mp3"
+import padlock from "./components/audio/padlock.wav"
+import paperCrumpuling from "./components/audio/paperCrumpuling.wav"
+import PaulsTongue from "./components/audio/PaulsTongue.wav"
+import ping from "./components/audio/ping.mp3"
+import powerSwitch from "./components/audio/powerSwitch.wav"
+import radioone from "./components/audio/radioone.wav"
+import rockSFX from "./components/audio/rockSFX.wav"
+import shovel from "./components/audio/shovel.wav"
+import snoringSFX from "./components/audio/snoringSFX.wav"
+import TomAndJerryThemeAcapella from "./components/audio/TomAndJerryThemeAcapella.wav"
+import unfurlingScrollSFX from "./components/audio/unfurlingScrollSFX.wav"
+import windowBreaking from "./components/audio/windowBreaking.mp3"
+import wrongInput from "./components/audio/wrongInput.wav"
 
 
 import './App.css';
@@ -111,6 +147,45 @@ function App() {
       </div>
           
       </AppContext.Provider>
+
+      <audio preload="auto">
+        <source src={accessSafe}></source>
+        <source src={AppThemeTune}></source>
+        <source src={boneSFX}></source>
+        <source src={book}></source>
+        <source src={broomSFX}></source>
+        <source src={cellDoor}></source>
+        <source src={closedChest}></source>
+        <source src={correctInput}></source>
+        <source src={detonate}></source>
+        <source src={diggingSFX}></source>
+        <source src={dinnerBellSFX}></source>
+        <source src={dirtSFX}></source>
+        <source src={dogSnarlSFX}></source>
+        <source src={electricHum}></source>
+        <source src={grab}></source>
+        <source src={gulpSFX}></source>
+        <source src={hey}></source>
+        <source src={HeyJoe}></source>
+        <source src={keysJingle}></source>
+        <source src={lightSwitch}></source>
+        <source src={lockedDoor}></source>
+        <source src={openChest}></source>
+        <source src={openDoor}></source>
+        <source src={padlock}></source>
+        <source src={paperCrumpuling}></source>
+        <source src={PaulsTongue}></source>
+        <source src={ping}></source>
+        <source src={powerSwitch}></source>
+        <source src={radioone}></source>
+        <source src={rockSFX}></source>
+        <source src={shovel}></source>
+        <source src={snoringSFX}></source>
+        <source src={TomAndJerryThemeAcapella}></source>
+        <source src={unfurlingScrollSFX}></source>
+        <source src={windowBreaking}></source>
+        <source src={wrongInput}></source>
+      </audio>
     </div>
   )
 
