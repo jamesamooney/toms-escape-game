@@ -7,7 +7,7 @@ export const GeorgeSun = () => {
   const { logs, setLogs } = useContext(AppContext)
 
   const clickGeorge = () => {
-    setLogs([...logs, {type:"inform", text: "George says something"}])
+    setLogs([...logs, {type:"inform", text: "George didn't tell me what to write"}])
   }
   return (
     <div>

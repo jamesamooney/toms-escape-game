@@ -33,7 +33,7 @@ export const PadlockForm = ( { setPasswordCorrect, isPadlockClicked, setPadlockC
   }
 
   return (
-    <form className="padlock-form">
+    <form Add autocomplete="off" className="padlock-form">
         <input id="padlock-text" type="text" value={passwordGuess} onChange={(e) => setPasswordGuess(e.target.value)} />
         <input type="submit" onClick={checkPassword} />
     </form>
