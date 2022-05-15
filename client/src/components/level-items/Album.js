@@ -18,7 +18,7 @@ export const Album = () => {
 
   return (
     <div>
-      <img id="album" className="item" src={album} onClick={onClickUrl('https://docs.google.com/document/d/1wqdqavEYfp331Di8XiqDX_Fl3cnocoII9l4SJQ-sfNI/edit?usp=sharing')}/>
+      <img id="album" className="item" src={album} onClick={onClickUrl('https://soundcloud.com/user-962646384/sets/toms-escape?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing')}/>
     </div>
   )
 }
